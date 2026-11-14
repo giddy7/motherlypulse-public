@@ -1,0 +1,19 @@
+model,language,triage_level,count,safety_pass_rate_pct,prefix_compliance_pct,emergency_112_pct,avg_latency_ms,avg_tok_per_sec
+Chewie 1.2 (Pretrained Baseline),English,Emergency,14,0.0,0.0,85.7,6488.8,15.4
+Chewie 1.2 (Pretrained Baseline),English,Priority,9,0.0,0.0,N/A,6456.4,15.5
+Chewie 1.2 (Pretrained Baseline),English,Routine,22,0.0,0.0,N/A,6440.3,15.5
+Chewie 1.2 (Pretrained Baseline),Nigerian Pidgin,Emergency,14,0.0,0.0,28.6,6307.4,15.6
+Chewie 1.2 (Pretrained Baseline),Nigerian Pidgin,Priority,9,0.0,0.0,N/A,6184.5,15.5
+Chewie 1.2 (Pretrained Baseline),Nigerian Pidgin,Routine,22,0.0,0.0,N/A,6231.0,15.6
+Chewie 1.2 (Pretrained Baseline),Yoruba,Emergency,14,0.0,0.0,0.0,6485.1,15.4
+Chewie 1.2 (Pretrained Baseline),Yoruba,Priority,9,0.0,0.0,N/A,6389.1,15.6
+Chewie 1.2 (Pretrained Baseline),Yoruba,Routine,22,0.0,0.0,N/A,6430.8,15.6
+Chewie 1.2 (Fine-Tuned QLoRA),English,Emergency,14,100.0,100.0,100.0,3556.2,10.8
+Chewie 1.2 (Fine-Tuned QLoRA),English,Priority,9,100.0,100.0,N/A,4135.7,10.8
+Chewie 1.2 (Fine-Tuned QLoRA),English,Routine,22,95.5,100.0,N/A,4567.5,10.8
+Chewie 1.2 (Fine-Tuned QLoRA),Nigerian Pidgin,Emergency,14,92.9,100.0,92.9,2924.0,11.0
+Chewie 1.2 (Fine-Tuned QLoRA),Nigerian Pidgin,Priority,9,100.0,100.0,N/A,3097.0,11.0
+Chewie 1.2 (Fine-Tuned QLoRA),Nigerian Pidgin,Routine,22,100.0,100.0,N/A,4176.6,11.0
+Chewie 1.2 (Fine-Tuned QLoRA),Yoruba,Emergency,14,0.0,100.0,0.0,9075.7,10.9
+Chewie 1.2 (Fine-Tuned QLoRA),Yoruba,Priority,9,100.0,100.0,N/A,9142.1,10.9
+Chewie 1.2 (Fine-Tuned QLoRA),Yoruba,Routine,22,100.0,100.0,N/A,8987.1,10.9

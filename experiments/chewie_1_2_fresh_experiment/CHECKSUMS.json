@@ -1,0 +1,78 @@
+{
+  "MotherlyPulse_Data/04_Conversation_Data/fixed_15_evaluation_prompts.json": {
+    "bytes": 6990,
+    "sha256": "7830ab3d7b8b0f601a464af34387675a53a279d59688e26592321f5b9529e7bc"
+  },
+  "data/test_en.jsonl": {
+    "bytes": 76645,
+    "sha256": "276f076f19d84600f840b05bb5e7cf583b7815ee11b39981ac6612950741b739"
+  },
+  "data/test_pcm.jsonl": {
+    "bytes": 76304,
+    "sha256": "fffdea0494d3f384264bf26527cf0c39d5ac97f8385b48ae61337d2a3720829f"
+  },
+  "data/test_yo.jsonl": {
+    "bytes": 83436,
+    "sha256": "c69cf9d77dc473148e6e6c4222aa0a4551c374bd93b2756d3bd0ed3f6ab64764"
+  },
+  "data/train_en.jsonl": {
+    "bytes": 268826,
+    "sha256": "d40d8ad441f4d356107db32938d720c8a878069de3e9a6d26843442becf90160"
+  },
+  "data/train_pcm.jsonl": {
+    "bytes": 267182,
+    "sha256": "58cf1a5689f4580b2182c2418751620c83f35bbbf04f90666a7b7554eb8f9cd7"
+  },
+  "data/train_yo.jsonl": {
+    "bytes": 292106,
+    "sha256": "961e0c8541a2e3b2994fa75e843591637d8d19e8a882d44862d0b2dcbe38af34"
+  },
+  "data/val_en.jsonl": {
+    "bytes": 38486,
+    "sha256": "c5666c21a1bc8bcbd8cef33ac80d7e9bdb60a256e46657d7a978b83a7e840d58"
+  },
+  "data/val_pcm.jsonl": {
+    "bytes": 38137,
+    "sha256": "5c141e499e4f62f9dd29d7596cddcd018f5a0de17fd7196fd8b02df263f4789b"
+  },
+  "data/val_yo.jsonl": {
+    "bytes": 41587,
+    "sha256": "9ca0df0cca58565782f551957f12eb3ace58b2a595e2a89c57920bc135b10daa"
+  },
+  "experiments/chewie_1_2_fresh_experiment/01_baseline/chewie_1_2_fresh_baseline_eval.csv": {
+    "bytes": 66080,
+    "sha256": "4b86c121476042b111932aaaa6e1c2bd17b1351b6eb17b52c91483600fbcfe26"
+  },
+  "experiments/chewie_1_2_fresh_experiment/01_baseline/colab/Chewie_1_2_Baseline.ipynb": {
+    "bytes": 30530,
+    "sha256": "df0290b34cb1aab943c91ef5438943d37cffc57723b7eaca609a12d6601dc240"
+  },
+  "experiments/chewie_1_2_fresh_experiment/02_finetuning/adapter_checksums.json": {
+    "bytes": 820,
+    "sha256": "2a3f28a7d93539ac1cdc4ac926bcdfdae46b137b56dfa84c81aa8fc21a65690d"
+  },
+  "experiments/chewie_1_2_fresh_experiment/02_finetuning/adapter_config.json": {
+    "bytes": 1176,
+    "sha256": "4c1afba0217b7196fd75f3c0e9ceb56f655a40892700e21d800c03793fd1ed64"
+  },
+  "experiments/chewie_1_2_fresh_experiment/02_finetuning/colab/Chewie_1_2_QLoRA_Training.ipynb": {
+    "bytes": 29826,
+    "sha256": "ad0c6cc23a9559caa03c7a14d65bddfeda8dde95a555a1d64bdcad0b09d99c3a"
+  },
+  "experiments/chewie_1_2_fresh_experiment/02_finetuning/training_log.json": {
+    "bytes": 3810,
+    "sha256": "cda5394829432001dfb31d3245f709d3d862345fb99c1d058fda93632f839cf0"
+  },
+  "experiments/chewie_1_2_fresh_experiment/03_post_eval/chewie_1_2_fresh_finetuned_eval.csv": {
+    "bytes": 45341,
+    "sha256": "49032db78405923b66c003c3222bd384725e086d1c7873ecc26f58e5bfefacc9"
+  },
+  "experiments/chewie_1_2_fresh_experiment/03_post_eval/colab/Chewie_1_2_Post_Eval.ipynb": {
+    "bytes": 69077,
+    "sha256": "9ac368b7f2545b8d1bceed916d4f5913769c2a7cf8b853e7573fb67b0a202861"
+  },
+  "experiments/chewie_1_2_fresh_experiment/EXPERIMENT_PROTOCOL.md": {
+    "bytes": 4341,
+    "sha256": "77154a23013e52550cdea9390f83885ab577c25c74b64306d5749a43a66b13b7"
+  }
+}

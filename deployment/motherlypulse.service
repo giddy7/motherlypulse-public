@@ -1,0 +1,26 @@
+[Unit]
+Description=MotherlyPulse Autonomous Maternal & Infant Health Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=motherlypulse
+Group=motherlypulse
+WorkingDirectory=/opt/motherlypulse
+ExecStart=/opt/motherlypulse/venv/bin/python -u run_telegram_bot.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+EnvironmentFile=/opt/motherlypulse/.env
+Environment=MOTHERLYPULSE_DB_PATH=/var/lib/motherlypulse/motherlypulse_user_store.db
+
+# Security Sandbox & Least-Privilege Isolation
+ProtectSystem=full
+ProtectHome=true
+PrivateTmp=true
+NoNewPrivileges=true
+ReadWritePaths=/var/lib/motherlypulse /var/backups/motherlypulse
+
+[Install]
+WantedBy=multi-user.target

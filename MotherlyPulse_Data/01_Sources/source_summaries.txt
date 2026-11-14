@@ -1,0 +1,12 @@
+Source Summaries and Metadata
+
+1. SRC-WHO-ANC-2016: WHO recommendations on antenatal care for a positive pregnancy experience (2016). Focuses on 8 antenatal contacts, nutritional interventions (iron & folic acid), assessment of fetal well-being, physiological symptom management, and maternal preparation for childbirth.
+2. SRC-WHO-PNC-2022: WHO recommendations on maternal and newborn care for a positive postnatal experience (2022). Emphasizes postnatal stays of minimum 24 hours post-uncomplicated vaginal birth, minimum 4 postnatal contacts, management of postpartum bleeding, depression screening, cord care (clean dry cord care / chlorhexidine in high-infection contexts), exclusive breastfeeding.
+3. SRC-WHO-IMPAC-2017: Managing Complications in Pregnancy and Childbirth (IMPAC 2nd Ed). Clinical danger signs: severe vaginal bleeding, severe pre-eclampsia/eclampsia (severe headache, visual blurring, convulsions), puerperal sepsis, severe abdominal pain, obstructed labour.
+4. SRC-FMOH-ANC-2020: National Antenatal Care Guidelines, Federal Ministry of Health Nigeria. Adapts WHO 8-contact model to Nigeria, includes malaria intermittent preventive treatment in pregnancy with sulfadoxine-pyrimethamine (IPTp-SP) from second trimester, tetanus toxoid immunization (TT/Td), and nutrition counseling using local staples.
+5. SRC-FMOH-LSS-2019: Life Saving Skills Protocol, FMoH & Society of Obstetrics and Gynaecology of Nigeria (SOGON). Emphasizes triage at primary health centres, rapid identification of danger signs, initial stabilization, and emergency transport to secondary/tertiary centres.
+6. SRC-FMOH-HFR-2024: National Health Facility Registry, Federal Ministry of Health, covering Akure South and Akure North LGAs.
+7. SRC-ONDO-MOH-2024: Ondo State Ministry of Health & Primary Health Care Development Agency (OSPHCDA) directory and portal records.
+8. SRC-UNICEF-C4D-2021: UNICEF Facts for Life - Maternal, Infant and Young Child Nutrition & Warning Signs.
+
+9. SRC-NPHCDA-RI-2023: National Routine Immunization Strategic Framework & Vaccine Schedule, National Primary Health Care Development Agency (NPHCDA) Nigeria. Defines national routine childhood vaccination from birth (BCG, OPV 0, Hep B 0) through 6, 10, 14 weeks (Pentavalent, PCV, IPV, Rotavirus) to 9 and 12-15 months (Measles-Rubella, Yellow Fever, MenA, Vitamin A). Covers Solar Direct Drive cold chain maintenance and fixed/outreach session strategies.

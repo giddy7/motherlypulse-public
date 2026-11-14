@@ -1,0 +1,27 @@
+{
+  "README.md": {
+    "sha256": "4adfb7ff9a7ecd4908dabcb88598827ca5e256d3aa0983dae6bea03009bfe755",
+    "size_kb": 5.07
+  },
+  "adapter_config.json": {
+    "sha256": "f43a03286680e5019359f0fb812e0a85f88e5478d5fa20ee9b83a458669bd80b",
+    "size_kb": 1.1
+  },
+  "adapter_model.safetensors": {
+    "sha256": "631042d9cf6f0ec41a35b749fda30b5c3cfb7a03189b5b3d4e5e035d9a232001",
+    "size_kb": 24987.2
+  },
+  "chat_template.jinja": {
+    "sha256": "ecd6ae513fe103f0eb62e8ab5bfa8d0fe45c1074fa398b089c93a7e70c15cfd6",
+    "size_kb": 0.58
+  },
+  "tokenizer.json": {
+    "sha256": "938dc2654808135f42dfc7e17ca92243ab1bd4d97d5e92c5d00055b63bcda156",
+    "size_kb": 33557.75
+  },
+  "tokenizer_config.json": {
+    "sha256": "b2d15305cb82104c37cdd3475b11d8a5623d5cc12a0b4518571dd925e0f1ca02",
+    "size_kb": 0.51
+  }
+}
+

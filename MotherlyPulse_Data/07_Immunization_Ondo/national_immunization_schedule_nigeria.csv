@@ -1,0 +1,22 @@
+target_age,vaccine_name,disease_prevented,dosage_and_route,timing_and_administration_notes,source_guideline
+Birth (within 24 hours),BCG (Bacille Calmette-Guérin),Tuberculosis (TB) - severe disseminated forms,"0.05 ml, intradermal (left upper arm)",Given immediately after birth before hospital discharge or at first clinic contact.,SRC-NPHCDA-RI-2023
+Birth (within 24 hours),OPV 0 (Oral Polio Vaccine birth dose),Poliomyelitis (Infantile paralysis),"2 drops, orally",Birth dose to establish early intestinal mucosal immunity.,SRC-NPHCDA-RI-2023
+Birth (within 24 hours),Hepatitis B birth dose (Hep B 0),Hepatitis B viral infection (liver cirrhosis / cancer),"0.5 ml, intramuscular (anterolateral thigh)",Critically required within 24 hours to prevent mother-to-child vertical transmission.,SRC-NPHCDA-RI-2023
+6 Weeks,Pentavalent 1 (DTP-HepB-Hib 1),"Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae b","0.5 ml, intramuscular (left anterolateral thigh)",First primary multidisease childhood dose.,SRC-NPHCDA-RI-2023
+6 Weeks,PCV 1 (Pneumococcal Conjugate Vaccine 1),Streptococcus pneumoniae (Pneumonia and Meningitis),"0.5 ml, intramuscular (right anterolateral thigh)",Protects against leading causes of bacterial infant pneumonia.,SRC-NPHCDA-RI-2023
+6 Weeks,OPV 1 (Oral Polio Vaccine 1),Poliomyelitis,"2 drops, orally",Second oral dose.,SRC-NPHCDA-RI-2023
+6 Weeks,Rotavirus 1,Rotavirus severe infantile diarrhoea,"Oral drops (dose volume depends on manufacturer)",Protects against lethal dehydrating diarrhoeal illness.,SRC-NPHCDA-RI-2023
+10 Weeks,Pentavalent 2 (DTP-HepB-Hib 2),"Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae b","0.5 ml, intramuscular (left anterolateral thigh)",Second primary dose given 4 weeks after first dose.,SRC-NPHCDA-RI-2023
+10 Weeks,PCV 2 (Pneumococcal Conjugate Vaccine 2),Pneumococcal pneumonia and meningitis,"0.5 ml, intramuscular (right anterolateral thigh)",Second dose.,SRC-NPHCDA-RI-2023
+10 Weeks,OPV 2 (Oral Polio Vaccine 2),Poliomyelitis,"2 drops, orally",Third oral dose.,SRC-NPHCDA-RI-2023
+10 Weeks,Rotavirus 2,Rotavirus severe diarrhoea,"Oral drops",Second rotavirus dose.,SRC-NPHCDA-RI-2023
+14 Weeks,Pentavalent 3 (DTP-HepB-Hib 3),"Diphtheria, Tetanus, Pertussis, Hepatitis B, Haemophilus influenzae b","0.5 ml, intramuscular (left anterolateral thigh)",Third primary dose completing primary series.,SRC-NPHCDA-RI-2023
+14 Weeks,PCV 3 (Pneumococcal Conjugate Vaccine 3),Pneumococcal pneumonia and meningitis,"0.5 ml, intramuscular (right anterolateral thigh)",Completes primary pneumococcal series.,SRC-NPHCDA-RI-2023
+14 Weeks,OPV 3 (Oral Polio Vaccine 3),Poliomyelitis,"2 drops, orally",Fourth oral dose.,SRC-NPHCDA-RI-2023
+14 Weeks,IPV (Inactivated Polio Vaccine),Poliomyelitis (enhanced systemic immunity),"0.5 ml, intramuscular (right anterolateral thigh)",Injectable polio vaccine enhancing circulating antibody levels.,SRC-NPHCDA-RI-2023
+9 Months,Measles-Rubella 1 (MR 1),Measles and Rubella viral infections,"0.5 ml, subcutaneous (right upper arm)",First dose protecting against measles outbreaks and congenital rubella.,SRC-NPHCDA-RI-2023
+9 Months,Yellow Fever Vaccine,Yellow Fever arbovirus,"0.5 ml, subcutaneous (left upper arm)",Single lifetime dose under routine schedule in endemic regions.,SRC-NPHCDA-RI-2023
+9 Months,Meningococcal A Conjugate (MenA),Neisseria meningitidis serogroup A meningitis,"0.5 ml, intramuscular (anterolateral thigh or upper arm)",Protects against epidemic meningitis within the African meningitis belt.,SRC-NPHCDA-RI-2023
+9 Months,Vitamin A Supplementation (first dose),Vitamin A deficiency and severe measles complication prevention,"100,000 IU (blue capsule), orally",Oral vitamin drops to support ocular health and epithelial immunity.,SRC-NPHCDA-RI-2023
+12-15 Months,Measles-Rubella 2 (MR 2),Measles booster,"0.5 ml, subcutaneous (right upper arm)",Second booster dose to ensure 95%+ population immunity.,SRC-NPHCDA-RI-2023
+

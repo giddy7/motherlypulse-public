@@ -1,0 +1,63 @@
+# ==========================================
+# MotherlyPulse .gitignore
+# ==========================================
+
+# Environment & Secrets (NEVER COMMIT)
+.env
+*.env
+.env.*
+!.env.example
+secrets/
+*.token
+*.pem
+*.key
+*.ppk
+
+# Databases & User State (Privacy & Right-to-Erasure)
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+motherlypulse_app/*.db
+motherlypulse_app/*.sqlite
+
+# Python & Runtime Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Binary Model Weights & Joblib Files (Large Artifacts)
+*.joblib
+*.pkl
+*.bin
+*.safetensors
+*.gguf
+models/chewie_adapter/
+
+# Temporary Scripts & Archives
+scratch/
+MotherlyPulse_Data.zip
+MotherlyPulse_Data/backup_*/

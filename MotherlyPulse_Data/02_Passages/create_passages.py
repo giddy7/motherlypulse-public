@@ -1,0 +1,465 @@
+import pathlib
+import csv
+import json
+
+passages = [
+    # 1. Antenatal Care & Visits
+    {
+        "passage_id": "PAS-ANC-001",
+        "topic": "Antenatal Care",
+        "subtopic": "Recommended ANC Contacts",
+        "stage_or_age": "Pregnancy (all trimesters)",
+        "passage_text": "Antenatal care helps keep you and your growing baby healthy throughout pregnancy. Official health guidelines recommend that pregnant women have at least eight scheduled contacts with a qualified midwife, nurse, or doctor. The first visit should happen as early as possible during your first three months of pregnancy. Regular visits give health workers the chance to check your blood pressure, monitor your baby's growth, provide essential vitamins, and detect any potential complications early before they become serious.",
+        "danger_signs_mentioned": "None",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation A.1, Executive Summary, p. xiv",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-ANC-002",
+        "topic": "Antenatal Care",
+        "subtopic": "Routine ANC Tests and Screenings",
+        "stage_or_age": "First and second trimester",
+        "passage_text": "During your antenatal visits, health workers will carry out several routine checks and basic tests. These tests include checking your blood pressure at every visit, testing your urine for protein or infection, and doing blood tests to check your blood level and screen for conditions like HIV, hepatitis, and syphilis. You will also learn your blood group and genotype. These tests are safe and standard routine procedures designed to protect both you and your unborn child.",
+        "danger_signs_mentioned": "High blood pressure, protein in urine",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 3.2, Routine Laboratory Investigations, p. 18-22",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-ANC-003",
+        "topic": "Antenatal Care",
+        "subtopic": "Malaria Prevention in Pregnancy (IPTp)",
+        "stage_or_age": "Second trimester onwards (from 13 weeks)",
+        "passage_text": "In Nigeria, malaria during pregnancy can lead to severe anaemia, miscarriage, or low birth weight for your newborn baby. To prevent malaria, pregnant women receive preventive preventive tablets (IPTp) starting from their fourth month of pregnancy, given during routine clinic visits at least one month apart. Pregnant mothers should also sleep inside an insecticide-treated mosquito bed net every single night. Always take preventive malaria medicine directly from the health clinic as supervised by your nurse or doctor.",
+        "danger_signs_mentioned": "Severe anaemia, high fever",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 4.1, Malaria in Pregnancy Guidelines, p. 29-32",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-ANC-004",
+        "topic": "Antenatal Care",
+        "subtopic": "Tetanus Immunization",
+        "stage_or_age": "Pregnancy (from second trimester)",
+        "passage_text": "Tetanus is a serious infection that can be fatal to newborn babies and mothers. To prevent this condition, every pregnant woman receives tetanus vaccination injections during antenatal care visits according to the national schedule. If you have never been vaccinated before, you will receive at least two doses during your pregnancy. The injections protect your baby from neonatal tetanus after delivery and protect you during childbirth. Check your antenatal card to make sure your vaccination record is up to date.",
+        "danger_signs_mentioned": "None",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 4.3, Maternal Immunization, p. 35-37",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 2. Pregnancy Danger Signs
+    {
+        "passage_id": "PAS-DNG-001",
+        "topic": "Pregnancy Danger Signs",
+        "subtopic": "Vaginal Bleeding in Pregnancy",
+        "stage_or_age": "Any stage of pregnancy",
+        "passage_text": "Any vaginal bleeding during pregnancy is a critical emergency red flag that requires immediate hospital evaluation. Whether the bleeding is light spotting or heavy bleeding, and whether it comes with abdominal cramps or is completely painless, you must not stay at home or wait to see if it stops. Bleeding can indicate an ectopic pregnancy, threatened miscarriage, or problems with the placenta such as placenta praevia or abruptio placentae. Go to the nearest emergency health facility right away.",
+        "danger_signs_mentioned": "Vaginal bleeding, abdominal pain, cramping",
+        "source_id": "SRC-WHO-IMPAC-2017",
+        "source_page_or_section": "Section S-15, Vaginal Bleeding in Early/Late Pregnancy",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-DNG-002",
+        "topic": "Pregnancy Danger Signs",
+        "subtopic": "Severe Headache, Blurred Vision, and Preeclampsia",
+        "stage_or_age": "After 20 weeks of pregnancy",
+        "passage_text": "A severe, throbbing headache that does not go away after rest, blurred vision, seeing spots or flashes of light, severe pain just below your ribs, and sudden swelling of your face, hands, or feet are danger signs of preeclampsia. Preeclampsia is dangerously high blood pressure during pregnancy that can quickly lead to life-threatening seizures (eclampsia) if untreated. If you experience any of these symptoms, do not take simple pain tablets and wait. Seek emergency medical attention at a hospital immediately.",
+        "danger_signs_mentioned": "Severe headache, blurred vision, flashes of light, facial swelling, epigastric pain, convulsions",
+        "source_id": "SRC-WHO-IMPAC-2017",
+        "source_page_or_section": "Section S-45, Elevated Blood Pressure and Pre-eclampsia",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-DNG-003",
+        "topic": "Pregnancy Danger Signs",
+        "subtopic": "Reduced or Absent Fetal Movement",
+        "stage_or_age": "From 24-28 weeks onwards",
+        "passage_text": "After the sixth month of pregnancy, you will regularly feel your baby kick, turn, flutter, or move. A healthy baby moves frequently throughout the day, especially after meals or when you are resting. If you notice that your baby is moving significantly less than usual, or if you have not felt any movements at all for several hours, this is a serious warning sign that your baby may be in distress. Go to your maternity clinic or hospital immediately for fetal heart rate monitoring.",
+        "danger_signs_mentioned": "Reduced baby movement, absent baby kicks, fetal distress",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation B.3, Fetal Assessment, p. 48-50",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-DNG-004",
+        "topic": "Pregnancy Danger Signs",
+        "subtopic": "Premature Rupture of Membranes (Water Breaking)",
+        "stage_or_age": "Any stage before term or active labour",
+        "passage_text": "If you feel fluid leaking, trickling, or gushing from your vagina before your due date or before labour contractions start, your waters may have broken early. This condition, called rupture of membranes, opens a pathway for bacteria to enter the womb and cause dangerous infections to both the mother and baby. Even if you have no pain or contractions, put on a clean sanitary pad, do not insert anything into your vagina, and go straight to the nearest maternity hospital.",
+        "danger_signs_mentioned": "Water breaking, fluid leakage, foul-smelling amniotic fluid",
+        "source_id": "SRC-WHO-IMPAC-2017",
+        "source_page_or_section": "Section S-133, Premature Rupture of Membranes",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 3. Maternal Nutrition and Supplements
+    {
+        "passage_id": "PAS-NUT-001",
+        "topic": "Maternal Nutrition",
+        "subtopic": "Iron and Folic Acid Supplementation",
+        "stage_or_age": "Throughout pregnancy",
+        "passage_text": "Pregnant women require extra iron and folic acid to support their expanding blood volume and the normal development of their unborn baby. Folic acid helps prevent major birth defects of the baby's brain and spinal cord, while iron prevents maternal anaemia. Official guidelines recommend taking a daily oral iron and folic acid supplement throughout pregnancy, as prescribed at your antenatal clinic. To help your body absorb iron better, take it with clean drinking water or vitamin-C rich fruits like oranges, and avoid drinking tea or coffee at the same time.",
+        "danger_signs_mentioned": "Severe anaemia, extreme pale palms/eyes",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation A.2.1, Nutritional Interventions, p. 20-24",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-NUT-002",
+        "topic": "Maternal Nutrition",
+        "subtopic": "Balanced Diet and Local Nigerian Staples",
+        "stage_or_age": "Throughout pregnancy and lactation",
+        "passage_text": "A healthy pregnancy diet does not require expensive imported items; affordable local Nigerian foods provide complete nutrition. Eat a colorful variety of foods each day: energy foods like yam, sweet potatoes, brown rice, and plantain; bodybuilding protein foods such as beans, moi-moi, eggs, fish, lean meat, and groundnuts; and protective vegetables like pumpkin leaves (ugwu), spinach (efo tete), waterleaf, and fresh fruits. Stay well-hydrated by drinking plenty of clean, safe water throughout the day.",
+        "danger_signs_mentioned": "Malnutrition, sudden extreme weight loss",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 5.1, Maternal Nutrition and Dietary Diversity, p. 42-45",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-NUT-003",
+        "topic": "Maternal Nutrition",
+        "subtopic": "Food Cravings, Pica, and Unsafe Substances",
+        "stage_or_age": "Throughout pregnancy",
+        "passage_text": "Some pregnant women experience strong cravings to eat non-food substances such as calabash chalk (nzu), clay, soil, charcoal, or raw starch. This condition is called pica, and it often indicates a nutritional deficiency such as low iron. Eating chalk or soil can expose you to harmful heavy metals, toxic chemicals, and dangerous parasitic worms. If you crave chalk, tell your health worker so they can check your blood levels. Avoid alcohol, unpasteurized drinks, and unprescribed herbal concoctions entirely during pregnancy.",
+        "danger_signs_mentioned": "Pica, heavy metal poisoning, parasitic infection",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 5.4, Harmful Substances and Pica in Pregnancy, p. 48",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 4. Common Pregnancy Symptoms
+    {
+        "passage_id": "PAS-SYM-001",
+        "topic": "Common Pregnancy Symptoms",
+        "subtopic": "Nausea and Morning Sickness",
+        "stage_or_age": "First trimester (weeks 4-14)",
+        "passage_text": "Feeling nauseous or vomiting during early pregnancy is very common and affects many women. It is often caused by changing hormone levels. To manage mild nausea, try eating small, frequent meals throughout the day instead of large portions. Keep dry crackers, toasted bread, or plain biscuits nearby, and sip ginger tea or cool water between meals. Avoid greasy, spicy, or strongly scented foods. If you vomit repeatedly, cannot keep any liquids down for 24 hours, or feel dizzy and faint, see a doctor to treat severe dehydration.",
+        "danger_signs_mentioned": "Hyperemesis gravidarum, severe dehydration, inability to keep liquids down",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation C.1, Common Physiological Symptoms, p. 55-57",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-SYM-002",
+        "topic": "Common Pregnancy Symptoms",
+        "subtopic": "Heartburn and Indigestion",
+        "stage_or_age": "Second and third trimester",
+        "passage_text": "Heartburn is a burning feeling in the chest or throat caused by stomach acids moving upward as pregnancy hormones relax stomach valves and your growing baby presses against your stomach. You can relieve heartburn naturally by eating smaller meals more often, chewing your food slowly, and avoiding fried, heavily peppered, or acidic foods. Try not to lie flat down immediately after eating; stay upright for at least two hours. Do not take over-the-counter antacids without asking your clinic doctor or midwife first.",
+        "danger_signs_mentioned": "Severe upper abdominal pain (epigastric pain)",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation C.2, Relief of Heartburn, p. 58-59",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-SYM-003",
+        "topic": "Common Pregnancy Symptoms",
+        "subtopic": "Mild Leg Swelling versus Preeclampsia Swelling",
+        "stage_or_age": "Third trimester",
+        "passage_text": "Mild swelling in your feet and ankles towards the end of the day is common in late pregnancy, especially in warm weather or after standing for long periods. You can reduce this swelling by resting with your feet elevated on pillows, drinking plenty of water, and avoiding tight shoes. However, if swelling appears suddenly, spreads rapidly to your face, eyelids, or hands, or is accompanied by a severe persistent headache or vision changes, this is an emergency warning sign of preeclampsia and requires immediate hospital care.",
+        "danger_signs_mentioned": "Facial swelling, hand edema, high blood pressure",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation C.4, Edema in Pregnancy, p. 62-63",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-SYM-004",
+        "topic": "Common Pregnancy Symptoms",
+        "subtopic": "Constipation in Pregnancy",
+        "stage_or_age": "Throughout pregnancy",
+        "passage_text": "Constipation is a frequent complaint during pregnancy because pregnancy hormones slow down digestive movement, and routine iron supplements can also make stools firmer. To keep your bowel movements regular, eat plenty of dietary fiber such as oatmeal, whole grains, beans, and fresh fruits and green vegetables like pawpaw and oranges. Drink at least 8 to 10 glasses of clean water every day, and take light daily walks. Never take chemical laxatives or herbal cleansing drinks unless explicitly prescribed by your healthcare provider.",
+        "danger_signs_mentioned": "Severe abdominal cramping, bowel obstruction",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation C.5, Relief of Constipation, p. 64-65",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 5. Labour Preparation and Skilled Birth Attendance
+    {
+        "passage_id": "PAS-LAB-001",
+        "topic": "Labour Preparation",
+        "subtopic": "Individual Birth Preparedness and Complication Readiness Plan",
+        "stage_or_age": "Third trimester (weeks 28 onwards)",
+        "passage_text": "Preparing for childbirth in advance ensures a safe delivery for you and your newborn. An individual birth plan includes choosing a recognized health facility with skilled birth attendants (nurses, midwives, or doctors), saving money for delivery fees and emergency transport, arranging reliable emergency transportation that is available day and night, identifying a trusted birth companion, and setting aside clean baby clothes, diapers, and maternity pads. Being prepared avoids dangerous delays when active labour begins or if complications arise.",
+        "danger_signs_mentioned": "Delays in reaching emergency care",
+        "source_id": "SRC-WHO-ANC-2016",
+        "source_page_or_section": "Recommendation D.1, Birth Preparedness, p. 75-78",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-LAB-002",
+        "topic": "Labour Preparation",
+        "subtopic": "Recognizing True Labour Contractions",
+        "stage_or_age": "From 37 weeks onwards (term)",
+        "passage_text": "True labour contractions feel like tightening or cramping in your abdomen and lower back that come at regular intervals, become progressively stronger, last longer, and occur closer together over time. Walking or resting will not make true labour pains disappear. You may also notice a pinkish or brownish mucus discharge known as the 'bloody show' or your waters breaking. When your contractions occur regularly every five minutes or your water breaks, go directly to your designated maternity delivery facility.",
+        "danger_signs_mentioned": "Prolonged labour, water breaking with green fluid",
+        "source_id": "SRC-WHO-IMPAC-2017",
+        "source_page_or_section": "Section C-1, Diagnosis and Management of Normal Labour",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-LAB-003",
+        "topic": "Labour Preparation",
+        "subtopic": "Importance of Skilled Birth Attendance",
+        "stage_or_age": "Childbirth / Delivery",
+        "passage_text": "Delivering your baby in a registered health facility with a skilled birth attendant—a qualified midwife or medical doctor—is the safest way to give birth. Skilled attendants have the training, sterile instruments, and emergency medicines needed to manage sudden bleeding, assist difficult births, and resuscitate a newborn baby if they cannot breathe immediately. Delivering at home or in unregistered prayer houses without trained medical personnel carries grave risks of fatal haemorrhage and severe newborn asphyxia.",
+        "danger_signs_mentioned": "Maternal haemorrhage, birth asphyxia, obstructed labour",
+        "source_id": "SRC-FMOH-LSS-2019",
+        "source_page_or_section": "Module 1, Principles of Skilled Attendance at Birth, p. 5-10",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 6. Postpartum Recovery and Warning Signs
+    {
+        "passage_id": "PAS-PST-001",
+        "topic": "Postpartum Recovery",
+        "subtopic": "Scheduled Postnatal Care Visits",
+        "stage_or_age": "Postpartum (0 to 6 weeks)",
+        "passage_text": "Care does not stop once your baby is born. The postpartum period is a critical time for both mother and newborn. Health guidelines recommend at least four postnatal checkups: within the first 24 hours after birth, on day 3, between days 7 and 14, and at 6 weeks postpartum. During these visits, the health worker checks your healing, monitors your blood pressure and bleeding, examines your baby, supports breastfeeding, and provides advice on maternal nutrition and family planning.",
+        "danger_signs_mentioned": "Postpartum infection, high blood pressure",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 1, Postnatal Care Contacts, p. 22-26",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-PST-002",
+        "topic": "Postpartum Recovery",
+        "subtopic": "Severe Postpartum Haemorrhage Warning",
+        "stage_or_age": "Postpartum (first 6 weeks)",
+        "passage_text": "While it is normal to experience bloody vaginal discharge (lochia) that gradually changes from red to pink and then yellowish-white over several weeks, heavy bleeding is a medical emergency. If you soak through two or more large sanitary pads completely in less than an hour, pass large blood clots bigger than an egg, or feel dizzy, weak, faint, or cold, you may have postpartum haemorrhage. This condition can worsen very rapidly; seek emergency hospital care without any delay.",
+        "danger_signs_mentioned": "Severe postpartum haemorrhage, passing large blood clots, fainting, shock",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 12, Prevention and Detection of PPH, p. 48-51",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-PST-003",
+        "topic": "Postpartum Recovery",
+        "subtopic": "Postpartum Infection and Sepsis",
+        "stage_or_age": "Postpartum (first 6 weeks)",
+        "passage_text": "Fever, chills, foul-smelling vaginal discharge, severe lower abdominal pain, or a red, swollen, and leaking caesarean section or episiotomy wound are critical signs of postpartum infection (puerperal sepsis). If bacteria enter the uterus or surgical wound, the infection can rapidly spread into the bloodstream and cause life-threatening septic shock. Never ignore a fever after giving birth. Go to your nearest health centre or hospital immediately for antibiotic treatment prescribed by a doctor.",
+        "danger_signs_mentioned": "Postpartum fever, foul lochia, wound dehiscence, puerperal sepsis",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 15, Maternal Postpartum Infections, p. 55-58",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-PST-004",
+        "topic": "Postpartum Recovery",
+        "subtopic": "Perineal and Surgical Wound Healing",
+        "stage_or_age": "Postpartum (first 6 weeks)",
+        "passage_text": "Taking good care of your body after vaginal birth or a caesarean operation allows your tissues to heal cleanly. Keep your perineal area or caesarean wound clean and dry. Wash your genital area gently from front to back with clean warm water after urinating or passing stools, and pat dry with a clean cloth. Change your sanitary pads frequently. If your surgical scar becomes increasingly painful, hot to touch, swollen, red, or starts oozing pus, visit your health centre immediately for medical inspection.",
+        "danger_signs_mentioned": "Infected wound, pus drainage, persistent severe perineal pain",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 18, Perineal and Surgical Wound Care, p. 62-64",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 7. Postpartum Mental Wellbeing
+    {
+        "passage_id": "PAS-MEN-001",
+        "topic": "Postpartum Mental Wellbeing",
+        "subtopic": "Baby Blues versus Postpartum Depression",
+        "stage_or_age": "Postpartum (first year)",
+        "passage_text": "Many new mothers experience mood swings, mild tearfulness, fatigue, and feeling overwhelmed during the first two weeks after delivery, commonly called the 'baby blues', caused by shifting hormones and lack of sleep. However, if deep sadness, severe anxiety, extreme exhaustion, feelings of hopelessness, or inability to bond with your baby persist beyond two weeks, you may be experiencing postpartum depression. Postpartum depression is a common, treatable medical condition, not a personal weakness or spiritual flaw. Talk openly to your midwife or doctor.",
+        "danger_signs_mentioned": "Postpartum depression, severe anxiety",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 24, Maternal Mental Health Screening, p. 74-78",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-MEN-002",
+        "topic": "Postpartum Mental Wellbeing",
+        "subtopic": "Severe Mental Health Crises and Self-Harm Thoughts",
+        "stage_or_age": "Postpartum (first year)",
+        "passage_text": "If a new mother experiences severe confusion, hearing voices, extreme agitation, or frightening thoughts of harming herself or harming her baby, this is a psychiatric emergency that requires urgent medical intervention. Postpartum psychosis and severe depressive crisis are dangerous conditions that require immediate clinical safety support and medical treatment. If you or a loved one have thoughts of suicide or self-harm, reach out immediately to a trusted hospital, family member, or mental health emergency hotline.",
+        "danger_signs_mentioned": "Thoughts of self-harm, thoughts of harming baby, psychosis, hallucination",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 25, Severe Postpartum Psychiatric Disorders, p. 79-81",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 8. Breastfeeding
+    {
+        "passage_id": "PAS-BRS-001",
+        "topic": "Breastfeeding",
+        "subtopic": "Early Initiation and Colostrum",
+        "stage_or_age": "First hour of life and first 3 days",
+        "passage_text": "Put your baby to your breast within the first hour after birth. Immediate skin-to-skin contact warms your baby, builds emotional attachment, and stimulates your breast milk production. The thick, yellowish first milk your breasts produce is called colostrum. Colostrum is exceptionally rich in protective antibodies, proteins, and vitamins that act as your baby's first natural immunization against infections. Never discard colostrum or give concoctions, sugar water, or teas; colostrum gives your newborn the perfect start to life.",
+        "danger_signs_mentioned": "Hypothermia, newborn infection",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 31, Exclusive Breastfeeding Initiation, p. 95-98",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-BRS-002",
+        "topic": "Breastfeeding",
+        "subtopic": "Exclusive Breastfeeding for 6 Months",
+        "stage_or_age": "Infant (0 to 6 months)",
+        "passage_text": "Exclusive breastfeeding means giving your baby only breast milk and nothing else—no plain water, no herbal teas, no animal milk, and no infant formula—for the first six months of life, unless medicines are specifically prescribed by a doctor. Breast milk contains over eighty percent water and all the nutrients your baby needs, even during hot Nigerian weather. Giving water or other drinks introduces dangerous germs that can cause severe diarrhea and malnutrition. Feed your baby on demand whenever they show hunger cues.",
+        "danger_signs_mentioned": "Infantile diarrhea, severe dehydration, malnutrition",
+        "source_id": "SRC-UNICEF-C4D-2021",
+        "source_page_or_section": "Section 2, Optimal Infant Feeding Practices, p. 14-17",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-BRS-003",
+        "topic": "Breastfeeding",
+        "subtopic": "Effective Latch, Breast Care, and Preventing Sore Nipples",
+        "stage_or_age": "Infant (0 to 6 months)",
+        "passage_text": "Proper latching is the secret to comfortable, successful breastfeeding. Your baby's mouth should be opened wide, covering most of the dark area around your nipple (areola), with their bottom lip curled outward and their chin touching your breast. Sore, cracked nipples usually mean the baby is sucking on just the nipple tip rather than taking a deep mouthful. If your breasts become painfully engorged, hard, hot, or red with a fever, you may have mastitis (breast infection). Seek advice from a health worker right away.",
+        "danger_signs_mentioned": "Mastitis, breast abscess, high fever",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 34, Lactation Support and Common Difficulties, p. 102-105",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 9. Newborn Care Basics and Danger Signs
+    {
+        "passage_id": "PAS-NEW-001",
+        "topic": "Newborn Care Basics",
+        "subtopic": "Essential Newborn Care and Umbilical Cord Hygiene",
+        "stage_or_age": "Newborn (first 28 days)",
+        "passage_text": "Keep your newborn baby warm by dressing them in clean layers, putting on a soft hat, and practicing regular skin-to-skin contact. For the umbilical cord, keep the stump clean and dry until it naturally falls off. In health facilities and community settings in Nigeria, health workers recommend applying chlorhexidine gel (4% chlorhexidine) to prevent deadly cord infections. Never apply cow dung, mud, ash, engine oil, dirty charcoal, or unprescribed powders to your baby's cord, as these cause severe neonatal tetanus.",
+        "danger_signs_mentioned": "Neonatal tetanus, cord infection (omphalitis), foul discharge from cord",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 37, Cord Care, p. 110-114",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-NEW-002",
+        "topic": "Newborn Danger Signs",
+        "subtopic": "Recognizing Critical Newborn Danger Signs",
+        "stage_or_age": "Newborn (first 28 days)",
+        "passage_text": "A newborn baby can become seriously ill very quickly. Critical danger signs include: inability to suckle or drink milk, convulsions or abnormal body spasms, breathing very fast (60 breaths per minute or more), chest drawing in deeply when breathing, grunting sounds with every breath, high fever or an abnormally cold body that will not warm up, yellowish skin on the palms and soles (severe jaundice), or redness and pus oozing from the umbilical cord. If you notice any of these signs, rush your baby to the hospital immediately.",
+        "danger_signs_mentioned": "Not feeding, convulsions, fast breathing, chest indrawing, severe jaundice, hypothermia, cord pus",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 40, Assessment of Newborn Danger Signs, p. 120-124",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-NEW-003",
+        "topic": "Newborn Danger Signs",
+        "subtopic": "Newborn Jaundice (Yellow Eyes and Skin)",
+        "stage_or_age": "Newborn (first 2 weeks)",
+        "passage_text": "Mild yellowing of the skin and whites of the eyes can appear in some babies after the second day of life. However, if jaundice appears on the very first day of life, if the yellow color extends down to the baby's chest, abdomen, palms, and the soles of the feet, or if the baby becomes floppy, abnormally sleepy, or refuses to feed, this is severe jaundice. Untreated severe jaundice can cause permanent brain damage (kernicterus). Do not put the baby in sunlight or give pawpaw water; take the baby to a hospital immediately.",
+        "danger_signs_mentioned": "Severe neonatal jaundice, kernicterus, extreme lethargy",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 42, Neonatal Hyperbilirubinemia, p. 126-128",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 10. Family Planning After Birth
+    {
+        "passage_id": "PAS-FMP-001",
+        "topic": "Family Planning",
+        "subtopic": "Healthy Spacing of Pregnancies",
+        "stage_or_age": "Postpartum (6 weeks to 2 years)",
+        "passage_text": "Spacing your pregnancies by waiting at least two years after giving birth before trying to become pregnant again gives your body time to heal and rebuild its nutritional reserves. Healthy spacing also allows you to give your baby dedicated care, nurturing, and breast milk. Closely spaced pregnancies increase the risk of preterm birth, low birth weight, and maternal complications. You can discuss postpartum family planning methods with your clinic nurse at your six-week postnatal visit to choose a method that suits you and your family.",
+        "danger_signs_mentioned": "None",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 48, Postpartum Contraception, p. 140-144",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-FMP-002",
+        "topic": "Family Planning",
+        "subtopic": "Lactational Amenorrhea Method (LAM) and Contraceptive Options",
+        "stage_or_age": "Postpartum (0 to 6 months)",
+        "passage_text": "Exclusive breastfeeding can naturally delay the return of fertility, a method called Lactational Amenorrhea (LAM). However, LAM is only effective if three criteria are all met: your monthly periods have not returned, you are exclusively breastfeeding day and night without giving any other food or water, and your baby is under six months old. If any of these three conditions changes, or if you want extra protection, visit a primary health centre to learn about modern family planning methods like implants, injectables, or IUDs.",
+        "danger_signs_mentioned": "Unplanned pregnancy",
+        "source_id": "SRC-WHO-PNC-2022",
+        "source_page_or_section": "Recommendation 49, Contraceptive Options during Lactation, p. 145-148",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+
+    # 11. Taking Medicines Only as Prescribed
+    {
+        "passage_id": "PAS-MED-001",
+        "topic": "Medication Safety",
+        "subtopic": "Avoiding Self-Medication in Pregnancy",
+        "stage_or_age": "Throughout pregnancy",
+        "passage_text": "Never take any medicines, tablets, injections, or herbal remedies during pregnancy unless they are specifically prescribed or recommended by a qualified midwife or doctor. Many common medications, including common anti-inflammatory pain relievers like ibuprofen, certain antibiotics, and unverified traditional herbs (agbo), can cross the placenta into the baby's bloodstream and cause serious birth defects, severe bleeding, or miscarriage. Always inform your doctor or pharmacist that you are pregnant before accepting any medication.",
+        "danger_signs_mentioned": "Miscarriage, drug toxicity, fetal malformation",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 6.1, Rational Drug Use in Pregnancy, p. 52-54",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-MED-002",
+        "topic": "Medication Safety",
+        "subtopic": "Adherence to Prescribed Clinic Dosages",
+        "stage_or_age": "Throughout pregnancy and postpartum",
+        "passage_text": "When your health worker prescribes routine supplements or treatment medicines such as iron tablets, folic acid, calcium, or malaria preventive drugs, always take them exactly according to instructions. Do not skip doses, stop early when you feel better, or take a double dose if you forgot a previous pill. If a medicine causes unpleasant side effects like mild stomach irritation or dark stools (which is common and harmless with iron), speak to your clinic nurse instead of stopping your medication on your own.",
+        "danger_signs_mentioned": "Medication underdose, treatment failure",
+        "source_id": "SRC-FMOH-ANC-2020",
+        "source_page_or_section": "Section 6.3, Patient Adherence and Counseling, p. 55-56",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    },
+    {
+        "passage_id": "PAS-MED-003",
+        "topic": "Medication Safety",
+        "subtopic": "Herbal Concoctions and Traditional Teas Warning",
+        "stage_or_age": "Pregnancy and newborn period",
+        "passage_text": "In many Nigerian communities, traditional herbal concoctions (agbo) are promoted for cleansing the womb, easing labour, or treating newborn illnesses. However, these herbal mixtures have unknown strengths, contain untested active ingredients, and can carry harmful toxins that damage the liver and kidneys of both mother and baby. Some herbs cause violent uterine contractions leading to womb rupture and fetal death. Protect your health and your baby's life by relying exclusively on proven, safe medical care provided at official healthcare clinics.",
+        "danger_signs_mentioned": "Uterine rupture, kidney/liver toxicity, fetal demise",
+        "source_id": "SRC-FMOH-LSS-2019",
+        "source_page_or_section": "Module 3, Community Practices and Harmful Remedies, p. 28-30",
+        "adaptation_note": "simplified plain-English adaptation",
+        "review_status": "pending clinical review"
+    }
+]
+
+print(f"Total passages prepared: {len(passages)}")
+
+# Write CSV
+csv_path = str(pathlib.Path(__file__).resolve().parents[2] / "MotherlyPulse_Data/02_Passages/passages.csv")
+fieldnames = list(passages[0].keys())
+with open(csv_path, mode="w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(passages)
+
+# Write JSON
+json_path = str(pathlib.Path(__file__).resolve().parents[2] / "MotherlyPulse_Data/02_Passages/passages.json")
+with open(json_path, mode="w", encoding="utf-8") as f:
+    json.dump(passages, f, indent=2, ensure_ascii=False)
+
+print("Passages written successfully to CSV and JSON.")
+

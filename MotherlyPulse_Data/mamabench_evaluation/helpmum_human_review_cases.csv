@@ -1,0 +1,13 @@
+case_id,pair_id,ground_truth,narrative,review_status,clinical_concern
+CASE_180,PAIR_090,Child Neglect,"My friend’s child is 2 years old
+He was born at 29 weeks 
+He is unable to walk nor stand
+He is slow to talk 
+My child does not behave like other children of the same age
+He doesn’t behave like his siblings when they were that age
+My child has difficulty learning new things
+He looks poorly cared for
+He is often hungry
+He is not supervised properly
+My child has poor interaction with others
+He cried at birth",FLAGGED_FOR_HUMAN_REVIEW,Non-accidental social/forensic vulnerability requiring multidisciplinary child safeguarding review rather than medical emergency triage.

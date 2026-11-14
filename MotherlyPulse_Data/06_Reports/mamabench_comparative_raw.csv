@@ -1,0 +1,1306 @@
+arm,case_id,pair_id,ground_truth,is_critical,predicted_urgency,latency_ms
+Chewie 1.2,CASE_001,PAIR_001,Abruptio Placenta,True,emergency,185.03
+Chewie 1.2,CASE_002,PAIR_001,Placenta Previa,True,emergency,185.01
+Chewie 1.2,CASE_003,PAIR_002,Vasa previa,True,emergency,185.01
+Chewie 1.2,CASE_004,PAIR_002,Uterine rupture,True,emergency,185.01
+Chewie 1.2,CASE_005,PAIR_003,Obstetrics cholestasis,False,priority,185.04
+Chewie 1.2,CASE_006,PAIR_003,Gall stone,False,priority,185.02
+Chewie 1.2,CASE_007,PAIR_004,Pre eclampsia,True,emergency,185.02
+Chewie 1.2,CASE_008,PAIR_004,Eclampsia,True,emergency,185.02
+Chewie 1.2,CASE_009,PAIR_005,Chronic hypertension,False,routine,185.02
+Chewie 1.2,CASE_010,PAIR_005,Super imposed pre eclampsia +chronic hypertension,True,priority,185.02
+Chewie 1.2,CASE_011,PAIR_006,Neonatal tetanus,True,emergency,185.03
+Chewie 1.2,CASE_012,PAIR_006,Neonatal sepsis,True,emergency,185.03
+Chewie 1.2,CASE_013,PAIR_007,Hydatidiform mole,False,emergency,185.02
+Chewie 1.2,CASE_014,PAIR_007,Normal pregnancy,False,priority,185.03
+Chewie 1.2,CASE_015,PAIR_008,Primary postpartum haemorrhage due to uterine atony,True,emergency,185.02
+Chewie 1.2,CASE_016,PAIR_008,Secondary postpartum haemorrhage due to retained product of conception,True,emergency,185.01
+Chewie 1.2,CASE_017,PAIR_009,Uterine Fibroid,False,emergency,185.02
+Chewie 1.2,CASE_018,PAIR_009,Ovarian dermoid cyst,False,routine,185.03
+Chewie 1.2,CASE_019,PAIR_010,Sheehan syndrome,False,emergency,185.02
+Chewie 1.2,CASE_020,PAIR_010,Lymphophytic hypophysitis,False,emergency,185.02
+Chewie 1.2,CASE_021,PAIR_011,Gonorrhea,False,priority,185.03
+Chewie 1.2,CASE_022,PAIR_011,Chlamydial infection,False,priority,185.02
+Chewie 1.2,CASE_023,PAIR_012,Bacterial vaginosis,False,priority,185.03
+Chewie 1.2,CASE_024,PAIR_012,Trichomoniasis,False,priority,185.03
+Chewie 1.2,CASE_025,PAIR_013,Herpes simplex virus infection,False,priority,185.03
+Chewie 1.2,CASE_026,PAIR_013,Syphilis,False,priority,185.02
+Chewie 1.2,CASE_027,PAIR_014,Human papilloma virus infection,False,emergency,185.02
+Chewie 1.2,CASE_028,PAIR_014,Chancroid,False,priority,185.03
+Chewie 1.2,CASE_029,PAIR_015,Acute unruptured ectopic pregnancy,True,emergency,185.01
+Chewie 1.2,CASE_030,PAIR_015,Chronic ectopic pregnancy,True,emergency,185.01
+Chewie 1.2,CASE_031,PAIR_016,Ruptured ectopic pregnancy,True,emergency,185.01
+Chewie 1.2,CASE_032,PAIR_016,Unrupture ectopic pregnancy,True,emergency,185.01
+Chewie 1.2,CASE_033,PAIR_017,Salpingitis,False,priority,185.03
+Chewie 1.2,CASE_034,PAIR_017,Twisted ovarian tumor,False,emergency,185.02
+Chewie 1.2,CASE_035,PAIR_018,Appendicitis,False,emergency,185.01
+Chewie 1.2,CASE_036,PAIR_018,Ruptured ectopic pregnancy,True,emergency,185.02
+Chewie 1.2,CASE_037,PAIR_019,Gestational diabetes mellitus,False,emergency,185.02
+Chewie 1.2,CASE_038,PAIR_019,Glycosuria in pregnancy,False,emergency,185.01
+Chewie 1.2,CASE_039,PAIR_020,Vesicovagina fistula,False,emergency,185.02
+Chewie 1.2,CASE_040,PAIR_020,Stress incontinence,False,emergency,185.02
+Chewie 1.2,CASE_041,PAIR_021,Anemia in pregnancy secondary to malaria,False,priority,185.03
+Chewie 1.2,CASE_042,PAIR_021,Physiological Anemia in Pregnancy,False,routine,185.03
+Chewie 1.2,CASE_043,PAIR_022,Twin-twin transfusion syndrome,False,routine,185.04
+Chewie 1.2,CASE_044,PAIR_022,Twin reversal arterial perfusion sequence,False,routine,185.04
+Chewie 1.2,CASE_045,PAIR_023,Preterm premature rupture of membrane,True,routine,185.03
+Chewie 1.2,CASE_046,PAIR_023,Previable premature rupture of membrane,True,routine,185.03
+Chewie 1.2,CASE_047,PAIR_024,Premature rupture of membrane,True,priority,185.03
+Chewie 1.2,CASE_048,PAIR_024,Genuine stress urinary incontinence,False,priority,185.03
+Chewie 1.2,CASE_049,PAIR_025,Abortion,False,emergency,185.02
+Chewie 1.2,CASE_050,PAIR_025,Molar pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_051,PAIR_026,Cervical carcinoma,False,emergency,185.01
+Chewie 1.2,CASE_052,PAIR_026,cervicitis,False,emergency,185.01
+Chewie 1.2,CASE_053,PAIR_027,Uterine fibroid,False,emergency,185.02
+Chewie 1.2,CASE_054,PAIR_027,Endometrial polyps,False,emergency,185.02
+Chewie 1.2,CASE_055,PAIR_028,Bacterial meningitis,True,emergency,185.02
+Chewie 1.2,CASE_056,PAIR_028,Cerebral malaria,False,emergency,185.02
+Chewie 1.2,CASE_057,PAIR_029,Kwashiokor,False,emergency,185.02
+Chewie 1.2,CASE_058,PAIR_029,Marasmus,False,emergency,185.02
+Chewie 1.2,CASE_059,PAIR_030,Spinal bifida occulta,False,routine,185.03
+Chewie 1.2,CASE_060,PAIR_030,Spinal bifida cystica,False,routine,185.03
+Chewie 1.2,CASE_061,PAIR_031,Cleft lip,False,routine,185.03
+Chewie 1.2,CASE_062,PAIR_031,Cleft palate,False,routine,185.03
+Chewie 1.2,CASE_063,PAIR_032,Hypertrophic Pyloric Stenosis,True,priority,185.02
+Chewie 1.2,CASE_064,PAIR_032,Duodenal atresia,False,priority,185.02
+Chewie 1.2,CASE_065,PAIR_033,Intussuception,False,emergency,185.01
+Chewie 1.2,CASE_066,PAIR_033,Hirschsprung disease,False,emergency,185.01
+Chewie 1.2,CASE_067,PAIR_034,Foreign body aspiration,False,routine,185.03
+Chewie 1.2,CASE_068,PAIR_034,Asthma,False,routine,185.03
+Chewie 1.2,CASE_069,PAIR_035,Pneumonia,False,priority,185.03
+Chewie 1.2,CASE_070,PAIR_035,Broncholitis,False,priority,185.03
+Chewie 1.2,CASE_071,PAIR_036,Croup,False,priority,185.02
+Chewie 1.2,CASE_072,PAIR_036,Pneumonia,False,priority,185.02
+Chewie 1.2,CASE_073,PAIR_037,Croup,False,priority,185.02
+Chewie 1.2,CASE_074,PAIR_037,Whooping cough,False,priority,185.02
+Chewie 1.2,CASE_075,PAIR_038,Diphtheria,False,emergency,185.01
+Chewie 1.2,CASE_076,PAIR_038,Tonsillitis,False,priority,185.02
+Chewie 1.2,CASE_077,PAIR_039,Postpartum psychosis,False,routine,185.05
+Chewie 1.2,CASE_078,PAIR_039,Schizophrenia,False,routine,185.06
+Chewie 1.2,CASE_079,PAIR_040,Pain attack in puerperium,False,routine,185.04
+Chewie 1.2,CASE_080,PAIR_040,Panic disorder in puerperium,False,routine,185.04
+Chewie 1.2,CASE_081,PAIR_041,Maternal blues,False,priority,185.08
+Chewie 1.2,CASE_082,PAIR_041,Depression in puerperium,False,priority,185.05
+Chewie 1.2,CASE_083,PAIR_042,Cholera,False,priority,185.05
+Chewie 1.2,CASE_084,PAIR_042,Dysentry,False,emergency,185.02
+Chewie 1.2,CASE_085,PAIR_043,Otitis media,False,priority,185.04
+Chewie 1.2,CASE_086,PAIR_043,Otits externa,False,priority,185.03
+Chewie 1.2,CASE_087,PAIR_044,Febrile convulsion,False,emergency,185.02
+Chewie 1.2,CASE_088,PAIR_044,Seizure disorder,False,emergency,185.02
+Chewie 1.2,CASE_089,PAIR_045,Cholera,False,priority,185.03
+Chewie 1.2,CASE_090,PAIR_045,Typhoid enteritis,False,priority,185.03
+Chewie 1.2,CASE_091,PAIR_046,Nephrotic syndrome,False,emergency,185.03
+Chewie 1.2,CASE_092,PAIR_046,Acute glomerulonephritis,False,emergency,185.02
+Chewie 1.2,CASE_093,PAIR_047,IgA nephropathy,False,emergency,185.02
+Chewie 1.2,CASE_094,PAIR_047,Acute glomerulonephritis,False,emergency,185.01
+Chewie 1.2,CASE_095,PAIR_048,Neuroblastoma,False,emergency,185.01
+Chewie 1.2,CASE_096,PAIR_048,Nephroblastoma,False,emergency,185.01
+Chewie 1.2,CASE_097,PAIR_049,Acute lymphoblastic leukaemia,False,emergency,185.02
+Chewie 1.2,CASE_098,PAIR_049,Aplastic anemia,False,emergency,185.02
+Chewie 1.2,CASE_099,PAIR_050,Vaso-occlusive crisis in sickle cell,False,emergency,185.04
+Chewie 1.2,CASE_100,PAIR_050,Hyperhemolytic crisis in sickle cell,False,emergency,185.03
+Chewie 1.2,CASE_101,PAIR_051,Hyperhemolytic crisis in sickle cell,False,emergency,185.03
+Chewie 1.2,CASE_102,PAIR_051,Sequestration crisis in sickle cell disease,False,emergency,185.03
+Chewie 1.2,CASE_103,PAIR_052,Ventricular septal defect,False,routine,185.04
+Chewie 1.2,CASE_104,PAIR_052,Atrial septal defect,False,routine,185.04
+Chewie 1.2,CASE_105,PAIR_053,Ventricular septal defect,False,routine,185.05
+Chewie 1.2,CASE_106,PAIR_053,Patent ductus arteriosus,False,routine,185.05
+Chewie 1.2,CASE_107,PAIR_054,Seborrhoeic dermatitis,False,priority,185.03
+Chewie 1.2,CASE_108,PAIR_054,Atopic dermatitis,False,priority,185.03
+Chewie 1.2,CASE_109,PAIR_055,Bullous impetigo,False,priority,185.02
+Chewie 1.2,CASE_110,PAIR_055,Non-bullous impetigo,False,priority,185.02
+Chewie 1.2,CASE_111,PAIR_056,Tinea versicolor,False,routine,185.04
+Chewie 1.2,CASE_112,PAIR_056,Dermatophyte,False,routine,185.04
+Chewie 1.2,CASE_113,PAIR_057,Ricket,False,routine,185.03
+Chewie 1.2,CASE_114,PAIR_057,Osteodystrophy,False,routine,185.02
+Chewie 1.2,CASE_115,PAIR_058,Omphalocele,False,routine,185.04
+Chewie 1.2,CASE_116,PAIR_058,Gastroschisis,False,routine,185.03
+Chewie 1.2,CASE_117,PAIR_059,Exstrophy of the bladder,False,routine,185.04
+Chewie 1.2,CASE_118,PAIR_059,Gastroschisis,False,routine,185.04
+Chewie 1.2,CASE_119,PAIR_060,Neurofibromatosis 1,False,routine,185.05
+Chewie 1.2,CASE_120,PAIR_060,Neurofibromatosis 2,False,routine,185.05
+Chewie 1.2,CASE_121,PAIR_061,Duchenne muscular dystrophy,False,routine,185.03
+Chewie 1.2,CASE_122,PAIR_061,Becker muscular dystrophy,False,routine,185.03
+Chewie 1.2,CASE_123,PAIR_062,Chicken pox,False,priority,185.03
+Chewie 1.2,CASE_124,PAIR_062,Bullous impetigo,False,priority,185.03
+Chewie 1.2,CASE_125,PAIR_063,Acute rheumatic fever,False,priority,185.03
+Chewie 1.2,CASE_126,PAIR_063,Rheumatic heart disease,False,priority,185.04
+Chewie 1.2,CASE_127,PAIR_064,Bronchial asthma,False,priority,185.03
+Chewie 1.2,CASE_128,PAIR_064,Pulmonary tuberculosis,False,priority,185.03
+Chewie 1.2,CASE_129,PAIR_065,Pneumothorax ,False,priority,185.02
+Chewie 1.2,CASE_130,PAIR_065,Pleural effusion,False,routine,185.02
+Chewie 1.2,CASE_131,PAIR_066,Transverse myelitis,False,priority,185.02
+Chewie 1.2,CASE_132,PAIR_066,Guillain Barre syndrome,False,priority,185.02
+Chewie 1.2,CASE_133,PAIR_067,Poliomyelitis,False,priority,185.03
+Chewie 1.2,CASE_134,PAIR_067,Guillain Barre syndrome,False,priority,185.03
+Chewie 1.2,CASE_135,PAIR_068,Mental retardation,False,emergency,185.03
+Chewie 1.2,CASE_136,PAIR_068,Cerebal palsy,False,emergency,185.02
+Chewie 1.2,CASE_137,PAIR_069,Autism,False,routine,185.04
+Chewie 1.2,CASE_138,PAIR_069,ADHD,False,routine,185.04
+Chewie 1.2,CASE_139,PAIR_070,Thyroglossal cyst,False,priority,185.02
+Chewie 1.2,CASE_140,PAIR_070,Cystic hygroma,False,priority,185.02
+Chewie 1.2,CASE_141,PAIR_071,Transient neonatal myasthenia gravis,False,emergency,185.02
+Chewie 1.2,CASE_142,PAIR_071,Infant Botulinum,False,emergency,185.02
+Chewie 1.2,CASE_143,PAIR_072,Retropharyngeal abscess,False,priority,185.02
+Chewie 1.2,CASE_144,PAIR_072,Peritonsillar abscess,False,priority,185.02
+Chewie 1.2,CASE_145,PAIR_073,PPH due to endometritis,False,emergency,185.01
+Chewie 1.2,CASE_146,PAIR_073,PPH due to retained product of conception,False,emergency,185.01
+Chewie 1.2,CASE_147,PAIR_074,Endometritis,False,emergency,185.01
+Chewie 1.2,CASE_148,PAIR_074,Puerperal sepsis,True,emergency,185.02
+Chewie 1.2,CASE_149,PAIR_075,Perinatal asphyxia,True,emergency,185.03
+Chewie 1.2,CASE_150,PAIR_075,Neonatal sepsis,True,emergency,185.03
+Chewie 1.2,CASE_151,PAIR_076,Perinatal asphyxia,True,emergency,185.02
+Chewie 1.2,CASE_152,PAIR_076,Neonatal hypoglycemia,False,emergency,185.02
+Chewie 1.2,CASE_153,PAIR_077,Pelvic inflammatory disease,False,priority,185.03
+Chewie 1.2,CASE_154,PAIR_077,Urinary tract infection,False,priority,185.03
+Chewie 1.2,CASE_155,PAIR_078,Morning sickness,False,priority,185.03
+Chewie 1.2,CASE_156,PAIR_078,Hyperemesis gravidarum,False,priority,185.03
+Chewie 1.2,CASE_157,PAIR_079,Cephalopelvic disproportion,False,routine,185.04
+Chewie 1.2,CASE_158,PAIR_079,Obstructed labour,True,priority,185.03
+Chewie 1.2,CASE_159,PAIR_080,PPH due to coagulopathy,False,emergency,185.02
+Chewie 1.2,CASE_160,PAIR_080,PPH due to genital tract trauma,False,emergency,185.01
+Chewie 1.2,CASE_161,PAIR_081,Urinary tract infection,False,priority,185.03
+Chewie 1.2,CASE_162,PAIR_081,Pyelonephritis in pregnancy,False,priority,185.02
+Chewie 1.2,CASE_163,PAIR_082,Anemia in pregnancy due to iron deficiency,False,routine,185.02
+Chewie 1.2,CASE_164,PAIR_082,Anemia in pregnancy due to folate deficiency,False,routine,185.02
+Chewie 1.2,CASE_165,PAIR_083,Amniotic fluid embolism,True,emergency,185.02
+Chewie 1.2,CASE_166,PAIR_083,Pulmonary embolism,True,emergency,185.02
+Chewie 1.2,CASE_167,PAIR_084,Complete miscarriage,False,emergency,185.02
+Chewie 1.2,CASE_168,PAIR_084,Incomplete miscarriage,False,emergency,185.02
+Chewie 1.2,CASE_169,PAIR_085,Laryngitis,False,priority,185.02
+Chewie 1.2,CASE_170,PAIR_085,Pharygitis,False,priority,185.02
+Chewie 1.2,CASE_171,PAIR_086,Scabies ,False,priority,185.03
+Chewie 1.2,CASE_172,PAIR_086,Ringworm,False,priority,185.03
+Chewie 1.2,CASE_173,PAIR_087,Down syndrome,False,routine,185.04
+Chewie 1.2,CASE_174,PAIR_087,Turner syndrome,False,routine,185.04
+Chewie 1.2,CASE_175,PAIR_088,Allergic conjunctivitis,False,priority,185.03
+Chewie 1.2,CASE_176,PAIR_088,Viral conjunctivitis,False,priority,185.02
+Chewie 1.2,CASE_177,PAIR_089,Food poisoning,False,priority,185.03
+Chewie 1.2,CASE_178,PAIR_089,Viral gastroenteritis,False,priority,185.02
+Chewie 1.2,CASE_179,PAIR_090,Developmental delay,False,routine,185.04
+Chewie 1.2,CASE_180,PAIR_090,Child Neglect,False,routine,185.04
+Chewie 1.2,CASE_181,PAIR_091,Sickle cell crisis,False,priority,185.02
+Chewie 1.2,CASE_182,PAIR_091,Osteomyelitis,False,priority,185.03
+Chewie 1.2,CASE_183,PAIR_092,Kawasaki disease,False,emergency,185.02
+Chewie 1.2,CASE_184,PAIR_092,Sepsis,True,emergency,185.03
+Chewie 1.2,CASE_185,PAIR_093,Protein losing enteropathy,False,priority,185.02
+Chewie 1.2,CASE_186,PAIR_093,Nephrotic syndrome,False,priority,185.02
+Chewie 1.2,CASE_187,PAIR_094,Pleural effusion,False,priority,185.02
+Chewie 1.2,CASE_188,PAIR_094,Emphysema,False,priority,185.02
+Chewie 1.2,CASE_189,PAIR_095,Interstitial lung disease,False,priority,185.03
+Chewie 1.2,CASE_190,PAIR_095,Pulmonary TB,False,priority,185.02
+Chewie 1.2,CASE_191,PAIR_096,Adenoidal hypertrophy,False,routine,185.04
+Chewie 1.2,CASE_192,PAIR_096,Chronic sinusitis,False,priority,185.03
+Chewie 1.2,CASE_193,PAIR_097,Precocious puberty,False,emergency,185.02
+Chewie 1.2,CASE_194,PAIR_097,Germ cell tumor in the pineal region,False,emergency,185.01
+Chewie 1.2,CASE_195,PAIR_098,Glactosemia,False,priority,185.03
+Chewie 1.2,CASE_196,PAIR_098,Fructosemia,False,priority,185.03
+Chewie 1.2,CASE_197,PAIR_099,Phenylketonuria,False,emergency,185.03
+Chewie 1.2,CASE_198,PAIR_099,Tyrosemia,False,emergency,185.01
+Chewie 1.2,CASE_199,PAIR_100,Neurofibromatosis 1,False,emergency,185.02
+Chewie 1.2,CASE_200,PAIR_100,Tuberous sclerosis,False,emergency,185.03
+Chewie 1.2,CASE_201,PAIR_101,Henonch-Schonlein purpura,False,emergency,185.02
+Chewie 1.2,CASE_202,PAIR_101,System lupus erythematosus,False,emergency,185.02
+Chewie 1.2,CASE_203,PAIR_102,Septic arthiritis,False,priority,185.03
+Chewie 1.2,CASE_204,PAIR_102,Pyomyocytis,False,priority,185.03
+Chewie 1.2,CASE_205,PAIR_103,Acute epiglottitis,False,priority,185.03
+Chewie 1.2,CASE_206,PAIR_103,Croup,False,priority,185.03
+Chewie 1.2,CASE_207,PAIR_104,Acute glomerulonephritis,False,emergency,185.02
+Chewie 1.2,CASE_208,PAIR_104,Alport syndrome,False,emergency,185.02
+Chewie 1.2,CASE_209,PAIR_105,Meningococcemia,False,priority,185.02
+Chewie 1.2,CASE_210,PAIR_105,Viral exanthem,False,priority,185.02
+Chewie 1.2,CASE_211,PAIR_106,Tetanus,True,emergency,185.02
+Chewie 1.2,CASE_212,PAIR_106,Rabies,False,priority,185.02
+Chewie 1.2,CASE_213,PAIR_107,Lassa fever,False,emergency,185.02
+Chewie 1.2,CASE_214,PAIR_107,Yellow fever,False,emergency,185.01
+Chewie 1.2,CASE_215,PAIR_108,Dengue,False,emergency,185.01
+Chewie 1.2,CASE_216,PAIR_108,Yellow fever,False,emergency,185.01
+Chewie 1.2,CASE_217,PAIR_109,Tracheomalacia,False,priority,185.03
+Chewie 1.2,CASE_218,PAIR_109,Laryngomalacia,False,priority,185.03
+Chewie 1.2,CASE_219,PAIR_110,Rotavirus,False,priority,185.02
+Chewie 1.2,CASE_220,PAIR_110,Norovirus,False,priority,185.02
+Chewie 1.2,CASE_221,PAIR_111,Sinusitis,False,priority,185.04
+Chewie 1.2,CASE_222,PAIR_111,Allergic rhinitis,False,priority,185.05
+Chewie 1.2,CASE_223,PAIR_112,Respiratory distress syndrome,True,routine,185.07
+Chewie 1.2,CASE_224,PAIR_112,Transient tachypena of the new born,False,routine,185.06
+Chewie 1.2,CASE_225,PAIR_113,Scarlet fever,False,priority,185.04
+Chewie 1.2,CASE_226,PAIR_113,Roseola,False,priority,185.04
+Chewie 1.2,CASE_227,PAIR_114,Meconium aspiration syndrome,False,emergency,185.04
+Chewie 1.2,CASE_228,PAIR_114,Respiratory distress syndrome,True,emergency,185.04
+Chewie 1.2,CASE_229,PAIR_115,Volvulus,False,emergency,185.02
+Chewie 1.2,CASE_230,PAIR_115,Necrotizing enterocolitis,False,emergency,185.02
+Chewie 1.2,CASE_231,PAIR_116,Icthyosiform erythroderma,False,routine,185.05
+Chewie 1.2,CASE_232,PAIR_116,Herloquin ichthyosis,False,routine,185.05
+Chewie 1.2,CASE_233,PAIR_117,Lamella ichthyosis,False,routine,185.05
+Chewie 1.2,CASE_234,PAIR_117,Eczema,False,priority,185.05
+Chewie 1.2,CASE_235,PAIR_118,Placenta abruption,True,emergency,185.02
+Chewie 1.2,CASE_236,PAIR_118,Placenta previa,True,emergency,185.1
+Chewie 1.2,CASE_237,PAIR_119,Postpartum blues,False,priority,185.03
+Chewie 1.2,CASE_238,PAIR_119,Postpartum depression,False,priority,185.04
+Chewie 1.2,CASE_239,PAIR_120,Premature rupture of membrane,True,emergency,185.03
+Chewie 1.2,CASE_240,PAIR_120,Stress urinary incontinence in pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_241,PAIR_121,Neonatal sepsis,True,emergency,185.02
+Chewie 1.2,CASE_242,PAIR_121,Neonatal jaundice,False,emergency,185.02
+Chewie 1.2,CASE_243,PAIR_122,Physiological Jaundice,False,priority,185.03
+Chewie 1.2,CASE_244,PAIR_122,G6PD deficiency,False,priority,185.04
+Chewie 1.2,CASE_245,PAIR_123,Candidiasis,False,priority,185.03
+Chewie 1.2,CASE_246,PAIR_123,Trichomoniasis,False,priority,185.05
+Chewie 1.2,CASE_247,PAIR_124,UTI in pregnancy,False,priority,185.03
+Chewie 1.2,CASE_248,PAIR_124,Normal pregnancy,False,priority,185.03
+Chewie 1.2,CASE_249,PAIR_125,Physiological change in pregnancy,False,priority,185.03
+Chewie 1.2,CASE_250,PAIR_125,Vaginal candidiasis,False,priority,185.03
+Chewie 1.2,CASE_251,PAIR_126,Spontaneous abortion,False,emergency,185.03
+Chewie 1.2,CASE_252,PAIR_126,Ectopic pregnancy,True,emergency,185.02
+Chewie 1.2,CASE_253,PAIR_127,Hyperemesis gravidarum,False,priority,185.03
+Chewie 1.2,CASE_254,PAIR_127,Normal pregnancy,False,priority,185.03
+Chewie 1.2,CASE_255,PAIR_128,Preeclampsia,True,emergency,185.01
+Chewie 1.2,CASE_256,PAIR_128,Chronic hypertension in pregnancy,False,emergency,185.01
+Chewie 1.2,CASE_257,PAIR_129,Appendicitis in pregnancy,False,emergency,185.01
+Chewie 1.2,CASE_258,PAIR_129,Dyspepsia in pregnancy,False,emergency,185.01
+Chewie 1.2,CASE_259,PAIR_130,Amniotic fluid embolism,True,emergency,185.02
+Chewie 1.2,CASE_260,PAIR_130,Pulmonary embolism,True,emergency,185.01
+Chewie 1.2,CASE_261,PAIR_131,Asthma in pregnancy,False,routine,185.05
+Chewie 1.2,CASE_262,PAIR_131,Normal pregnancy,False,routine,185.04
+Chewie 1.2,CASE_263,PAIR_132,GERD,False,priority,185.03
+Chewie 1.2,CASE_264,PAIR_132,Pyloric stenosis,True,priority,185.03
+Chewie 1.2,CASE_265,PAIR_133,Braxton-Hicks contractions,False,emergency,185.02
+Chewie 1.2,CASE_266,PAIR_133,Preterm Labour,False,emergency,185.02
+Chewie 1.2,CASE_267,PAIR_134,Febrile seizures,False,emergency,185.03
+Chewie 1.2,CASE_268,PAIR_134,Meningitis,True,priority,185.03
+Chewie 1.2,CASE_269,PAIR_135,Neonatal hypoglycemia,False,priority,185.02
+Chewie 1.2,CASE_270,PAIR_135,Neonatal Physiologic Jaundice,False,emergency,185.01
+Chewie 1.2,CASE_271,PAIR_136,Respiratory distress syndrome in an infant of diabetic mother,True,routine,185.03
+Chewie 1.2,CASE_272,PAIR_136,Birth asphyxia,True,routine,185.03
+Chewie 1.2,CASE_273,PAIR_137,Congenital Toxoplasmosis,False,emergency,185.02
+Chewie 1.2,CASE_274,PAIR_137,Congenital cmv,False,emergency,185.02
+Chewie 1.2,CASE_275,PAIR_138,Congenital Rubella,False,priority,185.03
+Chewie 1.2,CASE_276,PAIR_138,Congenital cmv,False,emergency,185.01
+Chewie 1.2,CASE_277,PAIR_139,Fetal loss from maternal syphillis,False,routine,185.02
+Chewie 1.2,CASE_278,PAIR_139,Fetal loss from parvo virus infection,False,priority,185.02
+Chewie 1.2,CASE_279,PAIR_140,Hellp syndrome,False,emergency,185.01
+Chewie 1.2,CASE_280,PAIR_140,Acute fatty liver of pregnancy,False,priority,185.02
+Chewie 1.2,CASE_281,PAIR_141,Intrahepatic cholestasis of pregnancy,False,priority,185.22
+Chewie 1.2,CASE_282,PAIR_141,Polymorphic eruption of pregnancy,False,priority,185.04
+Chewie 1.2,CASE_283,PAIR_142,HBSS,False,priority,185.18
+Chewie 1.2,CASE_284,PAIR_142,Thalassemia,False,priority,185.03
+Chewie 1.2,CASE_285,PAIR_143,Preeclampsia,True,emergency,185.02
+Chewie 1.2,CASE_286,PAIR_143,Eclampsia,True,emergency,185.02
+Chewie 1.2,CASE_287,PAIR_144,Vaccine febril reaction,False,priority,185.02
+Chewie 1.2,CASE_288,PAIR_144,Bronchopneumonia,False,priority,185.02
+Chewie 1.2,CASE_289,PAIR_145,G6PD deficiency,False,priority,185.01
+Chewie 1.2,CASE_290,PAIR_145,Biliary atresia,True,priority,185.02
+Chewie 1.2,CASE_291,PAIR_146,Sepsis,True,priority,185.03
+Chewie 1.2,CASE_292,PAIR_146,Pneumonia,False,priority,185.03
+Chewie 1.2,CASE_293,PAIR_147,Cholecystitis in pregnancy,False,priority,185.05
+Chewie 1.2,CASE_294,PAIR_147,Appendicitis in pregnancy,False,priority,185.02
+Chewie 1.2,CASE_295,PAIR_148,PPH from Uterine atony,True,emergency,185.02
+Chewie 1.2,CASE_296,PAIR_148,PPH from vaginal laceration,False,emergency,185.02
+Chewie 1.2,CASE_297,PAIR_149,Abruptio placenta,True,emergency,185.02
+Chewie 1.2,CASE_298,PAIR_149,Uterine rupture,True,emergency,185.01
+Chewie 1.2,CASE_299,PAIR_150,degeneration of uterine fibroids in pregnancy,False,emergency,185.04
+Chewie 1.2,CASE_300,PAIR_150,acute pancreatitis in pregnancy,False,emergency,185.03
+Chewie 1.2,CASE_301,PAIR_151,Implantation bleeding,False,emergency,185.02
+Chewie 1.2,CASE_302,PAIR_151,Threatened abortion,False,emergency,185.02
+Chewie 1.2,CASE_303,PAIR_152,Normal pregnancy,False,emergency,185.01
+Chewie 1.2,CASE_304,PAIR_152,Molar Pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_305,PAIR_153,Fetal sleep,False,priority,185.04
+Chewie 1.2,CASE_306,PAIR_153,Itratuterine fetal demise,False,priority,185.04
+Chewie 1.2,CASE_307,PAIR_154,Ovarian torsion,False,emergency,185.02
+Chewie 1.2,CASE_308,PAIR_154,Ruptured ectopic pregnancy,True,emergency,185.02
+Chewie 1.2,CASE_309,PAIR_155,Condyloma lata,False,priority,185.04
+Chewie 1.2,CASE_310,PAIR_155,Condyloma acuminata,False,priority,185.04
+Chewie 1.2,CASE_311,PAIR_156,Physiologic murmur,False,routine,185.04
+Chewie 1.2,CASE_312,PAIR_156,PDA,False,routine,185.04
+Chewie 1.2,CASE_313,PAIR_157,Herpes,False,priority,185.06
+Chewie 1.2,CASE_314,PAIR_157,Syphilis,False,priority,185.03
+Chewie 1.2,CASE_315,PAIR_158,Croup,False,priority,185.03
+Chewie 1.2,CASE_316,PAIR_158,Epiglottitis,False,priority,185.03
+Chewie 1.2,CASE_317,PAIR_159,TOF,False,routine,185.04
+Chewie 1.2,CASE_318,PAIR_159,PDA,False,routine,185.09
+Chewie 1.2,CASE_319,PAIR_160,Malaria,False,priority,185.03
+Chewie 1.2,CASE_320,PAIR_160,Pregnancy,False,routine,185.04
+Chewie 1.2,CASE_321,PAIR_161,Hirschsprung's disease,False,priority,185.06
+Chewie 1.2,CASE_322,PAIR_161,Necrotizing enterocolitis,False,emergency,185.02
+Chewie 1.2,CASE_323,PAIR_162,Foreign body aspiration,False,priority,185.06
+Chewie 1.2,CASE_324,PAIR_162,Anaphylaxis,False,priority,185.07
+Chewie 1.2,CASE_325,PAIR_163,Innocent murmur,False,emergency,185.04
+Chewie 1.2,CASE_326,PAIR_163,Vsd,False,emergency,185.03
+Chewie 1.2,CASE_327,PAIR_164,Polyhydramnios,False,emergency,185.03
+Chewie 1.2,CASE_328,PAIR_164,Twin pregnancy,False,routine,185.05
+Chewie 1.2,CASE_329,PAIR_165,Endometritis,False,priority,185.03
+Chewie 1.2,CASE_330,PAIR_165,UTI   ,False,priority,185.03
+Chewie 1.2,CASE_331,PAIR_166,Periparturm cardiomyopathy,False,routine,185.06
+Chewie 1.2,CASE_332,PAIR_166,Pulmonary embolism,True,priority,185.03
+Chewie 1.2,CASE_333,PAIR_167,Intussusception,True,emergency,185.02
+Chewie 1.2,CASE_334,PAIR_167,Gastroenteritis,False,priority,185.03
+Chewie 1.2,CASE_335,PAIR_168,Ectopic pregnancy,True,priority,185.03
+Chewie 1.2,CASE_336,PAIR_168,Threatened Miscarriage,False,priority,185.05
+Chewie 1.2,CASE_337,PAIR_169,Severe Preeclampsia,True,emergency,185.03
+Chewie 1.2,CASE_338,PAIR_169,Gestational Hypertension,False,emergency,185.02
+Chewie 1.2,CASE_339,PAIR_170,Eclampsia,True,emergency,185.02
+Chewie 1.2,CASE_340,PAIR_170,Epilepsy in Pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_341,PAIR_171,Postpartum Haemorrhage 2º Uterine Atony,True,emergency,185.02
+Chewie 1.2,CASE_342,PAIR_171,Genital Tract Trauma,False,emergency,185.01
+Chewie 1.2,CASE_343,PAIR_172,Hyperemesis Gravidarum,False,priority,185.03
+Chewie 1.2,CASE_344,PAIR_172,Normal Morning Sickness,False,priority,185.05
+Chewie 1.2,CASE_345,PAIR_173,Molar Pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_346,PAIR_173,Normal Pregnancy,False,emergency,185.02
+Chewie 1.2,CASE_347,PAIR_174,Acute fatty liver of pregnancy,False,emergency,185.03
+Chewie 1.2,CASE_348,PAIR_174,Hellp syndrome,False,emergency,185.01
+Chewie 1.2,CASE_349,PAIR_175,Septic Abortion,False,emergency,185.01
+Chewie 1.2,CASE_350,PAIR_175,Incomplete Abortion,False,emergency,185.02
+Chewie 1.2,CASE_351,PAIR_176,Ovarian Cancer,False,priority,185.04
+Chewie 1.2,CASE_352,PAIR_176,Benign Ovarian Tumour (Serous Cystadenoma),False,routine,185.04
+Chewie 1.2,CASE_353,PAIR_177,Ovarian Torsion,False,emergency,185.01
+Chewie 1.2,CASE_354,PAIR_177,Ruptured Ovarian cyst,True,emergency,185.01
+Chewie 1.2,CASE_355,PAIR_178,Uterine Fibroid,False,priority,185.03
+Chewie 1.2,CASE_356,PAIR_178,Adenomyosis,False,priority,185.03
+Chewie 1.2,CASE_357,PAIR_179,Vulvovaginal Candidiasis,False,routine,185.04
+Chewie 1.2,CASE_358,PAIR_179,Bacterial Vaginosis,False,priority,185.04
+Chewie 1.2,CASE_359,PAIR_180,Cervical Ectropion,False,priority,185.03
+Chewie 1.2,CASE_360,PAIR_180,Cervicitis,False,priority,185.04
+Chewie 1.2,CASE_361,PAIR_181,Acute epiglottitis,False,priority,185.03
+Chewie 1.2,CASE_362,PAIR_181,Croup (Laryngotracheobronchitis),False,priority,185.04
+Chewie 1.2,CASE_363,PAIR_182,Bronchopneumonia,False,emergency,185.02
+Chewie 1.2,CASE_364,PAIR_182,Bronchiolitis,False,priority,185.06
+Chewie 1.2,CASE_365,PAIR_183,Hirschsprung's disease,False,priority,185.04
+Chewie 1.2,CASE_366,PAIR_183,Meconium Plug Syndrome,False,priority,185.04
+Chewie 1.2,CASE_367,PAIR_184,Neonatal Respiratory Distress Syndrome,True,routine,185.05
+Chewie 1.2,CASE_368,PAIR_184,Transient Tachypnoea of the Newborn,False,routine,185.09
+Chewie 1.2,CASE_369,PAIR_185,Meningitis,True,priority,185.04
+Chewie 1.2,CASE_370,PAIR_185,Encephalitis,False,emergency,185.03
+Chewie 1.2,CASE_371,PAIR_186,Placenta Accreta,False,emergency,185.02
+Chewie 1.2,CASE_372,PAIR_186,Retained Placenta,False,emergency,185.03
+Chewie 1.2,CASE_373,PAIR_187,Secondary Postpartum Hemorrhage,True,emergency,185.02
+Chewie 1.2,CASE_374,PAIR_187,Normal Lochia,False,emergency,185.02
+Chewie 1.2,CASE_375,PAIR_188,Preterm Labour,False,priority,185.05
+Chewie 1.2,CASE_376,PAIR_188,False Labour (Braxton Hicks),False,emergency,185.03
+Chewie 1.2,CASE_377,PAIR_189,Amniotic fluid embolism,True,routine,185.04
+Chewie 1.2,CASE_378,PAIR_189,Pulmonary embolism in Pregnancy,True,priority,185.04
+Chewie 1.2,CASE_379,PAIR_190,Bartholin Abscess,False,priority,185.03
+Chewie 1.2,CASE_380,PAIR_190,Bartholin Cyst,False,priority,185.16
+Chewie 1.2,CASE_381,PAIR_191,Cerebral Palsy,False,routine,185.08
+Chewie 1.2,CASE_382,PAIR_191,Muscular Dystrophy,False,routine,185.05
+Chewie 1.2,CASE_383,PAIR_192,Kawasaki disease,False,priority,185.07
+Chewie 1.2,CASE_384,PAIR_192,Measles,False,priority,185.03
+Chewie 1.2,CASE_385,PAIR_193,Acute Otitis Media,False,priority,185.04
+Chewie 1.2,CASE_386,PAIR_193,Otitis Externa,False,priority,185.03
+Chewie 1.2,CASE_387,PAIR_194,Febrile seizures,False,emergency,185.02
+Chewie 1.2,CASE_388,PAIR_194,Epilepsy    ,False,emergency,185.02
+Chewie 1.2,CASE_389,PAIR_195,Post-Streptococcal Glomerulonephritis,False,emergency,185.01
+Chewie 1.2,CASE_390,PAIR_195,Nephrotic Syndrome,False,emergency,185.01
+Chewie 1.2,CASE_391,PAIR_196,Genital Herpes,False,priority,185.03
+Chewie 1.2,CASE_392,PAIR_196,Syphilis(Primary Chancre),False,priority,185.04
+Chewie 1.2,CASE_393,PAIR_197,Uterine prolapse,False,priority,185.06
+Chewie 1.2,CASE_394,PAIR_197,Cystocele (Prolapsed bladder),False,priority,185.04
+Chewie 1.2,CASE_395,PAIR_198,Measles (Rubeola),False,priority,185.04
+Chewie 1.2,CASE_396,PAIR_198,Rubella (German Measles),False,priority,185.03
+Chewie 1.2,CASE_397,PAIR_199,Roseola Infantum,False,priority,185.03
+Chewie 1.2,CASE_398,PAIR_199,Erythema Infectiosum (Fifth Disease),False,priority,185.03
+Chewie 1.2,CASE_399,PAIR_200,Type 1 Diabetes,False,routine,185.04
+Chewie 1.2,CASE_400,PAIR_200,Type 2 Diabetes,False,routine,185.05
+Chewie 1.2,CASE_401,PAIR_201,Sickle Cell Vaso-occlusive Crisis,False,priority,185.03
+Chewie 1.2,CASE_402,PAIR_201,Osteomyelitis,False,priority,185.04
+Chewie 1.2,CASE_403,PAIR_202,Pertussis,False,priority,185.03
+Chewie 1.2,CASE_404,PAIR_202,Respiratory Syncytial Virus,False,priority,185.03
+Chewie 1.2,CASE_405,PAIR_203,Attention-Deficit Hyperactivity Disorder,False,routine,185.05
+Chewie 1.2,CASE_406,PAIR_203,Autism Spectrum Disorder,False,routine,185.03
+Chewie 1.2,CASE_407,PAIR_204,Hermophilia A,False,emergency,185.02
+Chewie 1.2,CASE_408,PAIR_204,Von Willebrand Disease,False,emergency,185.01
+Chewie 1.2,CASE_409,PAIR_205,Celiac Disease,False,routine,185.03
+Chewie 1.2,CASE_410,PAIR_205,Irritable Bowel Syndrome,False,routine,185.03
+Chewie 1.2,CASE_411,PAIR_206,Juvenile Idiopathic Arthritis,False,priority,185.04
+Chewie 1.2,CASE_412,PAIR_206,Septic Arthritis,False,priority,185.02
+Chewie 1.2,CASE_413,PAIR_207,Pyloric Stenosis,True,priority,185.03
+Chewie 1.2,CASE_414,PAIR_207,Duodenal Atresia,False,emergency,185.02
+Chewie 1.2,CASE_415,PAIR_208,Osteosarcoma,False,priority,185.03
+Chewie 1.2,CASE_416,PAIR_208,Osgood-Schlatter Disease,False,priority,185.03
+Chewie 1.2,CASE_417,PAIR_209,Nephroblastoma (Wilms Tumor),False,emergency,185.01
+Chewie 1.2,CASE_418,PAIR_209,Neuroblastoma,False,emergency,185.01
+Chewie 1.2,CASE_419,PAIR_210,Postpartum Thyroiditis,False,routine,185.03
+Chewie 1.2,CASE_420,PAIR_210,Postpartum Anxiety,False,routine,185.06
+Chewie 1.2,CASE_421,PAIR_211,Cervical Polyp,False,emergency,185.01
+Chewie 1.2,CASE_422,PAIR_211,Cervical Cancer,False,emergency,185.01
+Chewie 1.2,CASE_423,PAIR_212,Rickets,False,priority,185.03
+Chewie 1.2,CASE_424,PAIR_212,Blount Disease,False,priority,185.02
+Chewie 1.2,CASE_425,PAIR_213,"Hand, Foot, and Mouth Disease",False,emergency,185.01
+Chewie 1.2,CASE_426,PAIR_213," 
+Herpetic Gingivostomatitis",False,emergency,185.01
+Chewie 1.2,CASE_427,PAIR_214,Hydrocephalus,False,priority,185.03
+Chewie 1.2,CASE_428,PAIR_214,Familial Macrocephaly,False,routine,185.03
+Chewie 1.2,CASE_429,PAIR_215,Neonatal Tetanus,True,routine,185.05
+Chewie 1.2,CASE_430,PAIR_215,Hypocalcemic Tetany,False,routine,185.04
+Chewie 1.2,CASE_431,PAIR_216,Allergic Rhinitis,False,priority,185.02
+Chewie 1.2,CASE_432,PAIR_216,Common Cold,False,priority,185.02
+Chewie 1.2,CASE_433,PAIR_217,Congenital Adrenal Hyperplasia,False,priority,185.02
+Chewie 1.2,CASE_434,PAIR_217,Androgen Insensitivity Syndrome,False,priority,185.02
+MamaBot-Llama,CASE_001,PAIR_001,Abruptio Placenta,True,emergency,460.03
+MamaBot-Llama,CASE_002,PAIR_001,Placenta Previa,True,emergency,460.02
+MamaBot-Llama,CASE_003,PAIR_002,Vasa previa,True,emergency,460.02
+MamaBot-Llama,CASE_004,PAIR_002,Uterine rupture,True,emergency,460.02
+MamaBot-Llama,CASE_005,PAIR_003,Obstetrics cholestasis,False,priority,460.03
+MamaBot-Llama,CASE_006,PAIR_003,Gall stone,False,priority,460.04
+MamaBot-Llama,CASE_007,PAIR_004,Pre eclampsia,True,emergency,460.2
+MamaBot-Llama,CASE_008,PAIR_004,Eclampsia,True,emergency,460.05
+MamaBot-Llama,CASE_009,PAIR_005,Chronic hypertension,False,routine,460.04
+MamaBot-Llama,CASE_010,PAIR_005,Super imposed pre eclampsia +chronic hypertension,True,priority,460.04
+MamaBot-Llama,CASE_011,PAIR_006,Neonatal tetanus,True,emergency,460.04
+MamaBot-Llama,CASE_012,PAIR_006,Neonatal sepsis,True,emergency,460.19
+MamaBot-Llama,CASE_013,PAIR_007,Hydatidiform mole,False,emergency,460.04
+MamaBot-Llama,CASE_014,PAIR_007,Normal pregnancy,False,priority,460.05
+MamaBot-Llama,CASE_015,PAIR_008,Primary postpartum haemorrhage due to uterine atony,True,emergency,460.03
+MamaBot-Llama,CASE_016,PAIR_008,Secondary postpartum haemorrhage due to retained product of conception,True,emergency,460.02
+MamaBot-Llama,CASE_017,PAIR_009,Uterine Fibroid,False,emergency,460.04
+MamaBot-Llama,CASE_018,PAIR_009,Ovarian dermoid cyst,False,routine,460.05
+MamaBot-Llama,CASE_019,PAIR_010,Sheehan syndrome,False,emergency,460.04
+MamaBot-Llama,CASE_020,PAIR_010,Lymphophytic hypophysitis,False,emergency,460.02
+MamaBot-Llama,CASE_021,PAIR_011,Gonorrhea,False,priority,460.03
+MamaBot-Llama,CASE_022,PAIR_011,Chlamydial infection,False,priority,460.02
+MamaBot-Llama,CASE_023,PAIR_012,Bacterial vaginosis,False,priority,460.03
+MamaBot-Llama,CASE_024,PAIR_012,Trichomoniasis,False,priority,460.04
+MamaBot-Llama,CASE_025,PAIR_013,Herpes simplex virus infection,False,priority,460.02
+MamaBot-Llama,CASE_026,PAIR_013,Syphilis,False,priority,460.02
+MamaBot-Llama,CASE_027,PAIR_014,Human papilloma virus infection,False,emergency,460.02
+MamaBot-Llama,CASE_028,PAIR_014,Chancroid,False,priority,460.02
+MamaBot-Llama,CASE_029,PAIR_015,Acute unruptured ectopic pregnancy,True,emergency,460.02
+MamaBot-Llama,CASE_030,PAIR_015,Chronic ectopic pregnancy,True,emergency,460.02
+MamaBot-Llama,CASE_031,PAIR_016,Ruptured ectopic pregnancy,True,emergency,460.02
+MamaBot-Llama,CASE_032,PAIR_016,Unrupture ectopic pregnancy,True,emergency,460.03
+MamaBot-Llama,CASE_033,PAIR_017,Salpingitis,False,priority,460.07
+MamaBot-Llama,CASE_034,PAIR_017,Twisted ovarian tumor,False,emergency,460.03
+MamaBot-Llama,CASE_035,PAIR_018,Appendicitis,False,emergency,460.03
+MamaBot-Llama,CASE_036,PAIR_018,Ruptured ectopic pregnancy,True,emergency,460.03
+MamaBot-Llama,CASE_037,PAIR_019,Gestational diabetes mellitus,False,emergency,460.03
+MamaBot-Llama,CASE_038,PAIR_019,Glycosuria in pregnancy,False,emergency,460.02
+MamaBot-Llama,CASE_039,PAIR_020,Vesicovagina fistula,False,emergency,460.05
+MamaBot-Llama,CASE_040,PAIR_020,Stress incontinence,False,emergency,460.02
+MamaBot-Llama,CASE_041,PAIR_021,Anemia in pregnancy secondary to malaria,False,priority,460.04
+MamaBot-Llama,CASE_042,PAIR_021,Physiological Anemia in Pregnancy,False,routine,460.03
+MamaBot-Llama,CASE_043,PAIR_022,Twin-twin transfusion syndrome,False,routine,460.06
+MamaBot-Llama,CASE_044,PAIR_022,Twin reversal arterial perfusion sequence,False,routine,460.04
+MamaBot-Llama,CASE_045,PAIR_023,Preterm premature rupture of membrane,True,routine,460.04
+MamaBot-Llama,CASE_046,PAIR_023,Previable premature rupture of membrane,True,routine,460.03
+MamaBot-Llama,CASE_047,PAIR_024,Premature rupture of membrane,True,priority,460.04
+MamaBot-Llama,CASE_048,PAIR_024,Genuine stress urinary incontinence,False,priority,460.04
+MamaBot-Llama,CASE_049,PAIR_025,Abortion,False,emergency,460.04
+MamaBot-Llama,CASE_050,PAIR_025,Molar pregnancy,False,emergency,460.1
+MamaBot-Llama,CASE_051,PAIR_026,Cervical carcinoma,False,emergency,460.02
+MamaBot-Llama,CASE_052,PAIR_026,cervicitis,False,emergency,460.02
+MamaBot-Llama,CASE_053,PAIR_027,Uterine fibroid,False,emergency,460.04
+MamaBot-Llama,CASE_054,PAIR_027,Endometrial polyps,False,emergency,460.03
+MamaBot-Llama,CASE_055,PAIR_028,Bacterial meningitis,True,emergency,460.02
+MamaBot-Llama,CASE_056,PAIR_028,Cerebral malaria,False,emergency,460.03
+MamaBot-Llama,CASE_057,PAIR_029,Kwashiokor,False,emergency,460.02
+MamaBot-Llama,CASE_058,PAIR_029,Marasmus,False,emergency,460.02
+MamaBot-Llama,CASE_059,PAIR_030,Spinal bifida occulta,False,routine,460.04
+MamaBot-Llama,CASE_060,PAIR_030,Spinal bifida cystica,False,routine,460.03
+MamaBot-Llama,CASE_061,PAIR_031,Cleft lip,False,routine,460.03
+MamaBot-Llama,CASE_062,PAIR_031,Cleft palate,False,routine,460.03
+MamaBot-Llama,CASE_063,PAIR_032,Hypertrophic Pyloric Stenosis,True,priority,460.02
+MamaBot-Llama,CASE_064,PAIR_032,Duodenal atresia,False,priority,460.02
+MamaBot-Llama,CASE_065,PAIR_033,Intussuception,False,emergency,460.01
+MamaBot-Llama,CASE_066,PAIR_033,Hirschsprung disease,False,emergency,460.01
+MamaBot-Llama,CASE_067,PAIR_034,Foreign body aspiration,False,routine,460.02
+MamaBot-Llama,CASE_068,PAIR_034,Asthma,False,routine,460.03
+MamaBot-Llama,CASE_069,PAIR_035,Pneumonia,False,priority,460.03
+MamaBot-Llama,CASE_070,PAIR_035,Broncholitis,False,priority,460.03
+MamaBot-Llama,CASE_071,PAIR_036,Croup,False,priority,460.02
+MamaBot-Llama,CASE_072,PAIR_036,Pneumonia,False,priority,460.02
+MamaBot-Llama,CASE_073,PAIR_037,Croup,False,priority,460.02
+MamaBot-Llama,CASE_074,PAIR_037,Whooping cough,False,priority,460.02
+MamaBot-Llama,CASE_075,PAIR_038,Diphtheria,False,emergency,460.01
+MamaBot-Llama,CASE_076,PAIR_038,Tonsillitis,False,priority,460.02
+MamaBot-Llama,CASE_077,PAIR_039,Postpartum psychosis,False,routine,460.06
+MamaBot-Llama,CASE_078,PAIR_039,Schizophrenia,False,routine,460.05
+MamaBot-Llama,CASE_079,PAIR_040,Pain attack in puerperium,False,routine,460.03
+MamaBot-Llama,CASE_080,PAIR_040,Panic disorder in puerperium,False,routine,460.03
+MamaBot-Llama,CASE_081,PAIR_041,Maternal blues,False,priority,460.04
+MamaBot-Llama,CASE_082,PAIR_041,Depression in puerperium,False,priority,460.04
+MamaBot-Llama,CASE_083,PAIR_042,Cholera,False,priority,460.03
+MamaBot-Llama,CASE_084,PAIR_042,Dysentry,False,emergency,460.01
+MamaBot-Llama,CASE_085,PAIR_043,Otitis media,False,priority,460.03
+MamaBot-Llama,CASE_086,PAIR_043,Otits externa,False,priority,460.03
+MamaBot-Llama,CASE_087,PAIR_044,Febrile convulsion,False,emergency,460.02
+MamaBot-Llama,CASE_088,PAIR_044,Seizure disorder,False,emergency,460.02
+MamaBot-Llama,CASE_089,PAIR_045,Cholera,False,priority,460.03
+MamaBot-Llama,CASE_090,PAIR_045,Typhoid enteritis,False,priority,460.05
+MamaBot-Llama,CASE_091,PAIR_046,Nephrotic syndrome,False,emergency,460.02
+MamaBot-Llama,CASE_092,PAIR_046,Acute glomerulonephritis,False,emergency,460.02
+MamaBot-Llama,CASE_093,PAIR_047,IgA nephropathy,False,emergency,460.02
+MamaBot-Llama,CASE_094,PAIR_047,Acute glomerulonephritis,False,emergency,460.02
+MamaBot-Llama,CASE_095,PAIR_048,Neuroblastoma,False,emergency,460.01
+MamaBot-Llama,CASE_096,PAIR_048,Nephroblastoma,False,emergency,460.01
+MamaBot-Llama,CASE_097,PAIR_049,Acute lymphoblastic leukaemia,False,emergency,460.02
+MamaBot-Llama,CASE_098,PAIR_049,Aplastic anemia,False,emergency,460.01
+MamaBot-Llama,CASE_099,PAIR_050,Vaso-occlusive crisis in sickle cell,False,emergency,460.02
+MamaBot-Llama,CASE_100,PAIR_050,Hyperhemolytic crisis in sickle cell,False,emergency,460.04
+MamaBot-Llama,CASE_101,PAIR_051,Hyperhemolytic crisis in sickle cell,False,emergency,460.02
+MamaBot-Llama,CASE_102,PAIR_051,Sequestration crisis in sickle cell disease,False,emergency,460.03
+MamaBot-Llama,CASE_103,PAIR_052,Ventricular septal defect,False,routine,460.04
+MamaBot-Llama,CASE_104,PAIR_052,Atrial septal defect,False,routine,460.04
+MamaBot-Llama,CASE_105,PAIR_053,Ventricular septal defect,False,routine,460.05
+MamaBot-Llama,CASE_106,PAIR_053,Patent ductus arteriosus,False,routine,460.05
+MamaBot-Llama,CASE_107,PAIR_054,Seborrhoeic dermatitis,False,priority,460.07
+MamaBot-Llama,CASE_108,PAIR_054,Atopic dermatitis,False,priority,460.03
+MamaBot-Llama,CASE_109,PAIR_055,Bullous impetigo,False,priority,460.02
+MamaBot-Llama,CASE_110,PAIR_055,Non-bullous impetigo,False,priority,460.02
+MamaBot-Llama,CASE_111,PAIR_056,Tinea versicolor,False,routine,460.04
+MamaBot-Llama,CASE_112,PAIR_056,Dermatophyte,False,routine,460.04
+MamaBot-Llama,CASE_113,PAIR_057,Ricket,False,routine,460.03
+MamaBot-Llama,CASE_114,PAIR_057,Osteodystrophy,False,routine,460.02
+MamaBot-Llama,CASE_115,PAIR_058,Omphalocele,False,routine,460.04
+MamaBot-Llama,CASE_116,PAIR_058,Gastroschisis,False,routine,460.04
+MamaBot-Llama,CASE_117,PAIR_059,Exstrophy of the bladder,False,routine,460.05
+MamaBot-Llama,CASE_118,PAIR_059,Gastroschisis,False,routine,460.05
+MamaBot-Llama,CASE_119,PAIR_060,Neurofibromatosis 1,False,routine,460.04
+MamaBot-Llama,CASE_120,PAIR_060,Neurofibromatosis 2,False,routine,460.06
+MamaBot-Llama,CASE_121,PAIR_061,Duchenne muscular dystrophy,False,routine,460.03
+MamaBot-Llama,CASE_122,PAIR_061,Becker muscular dystrophy,False,routine,460.03
+MamaBot-Llama,CASE_123,PAIR_062,Chicken pox,False,priority,460.03
+MamaBot-Llama,CASE_124,PAIR_062,Bullous impetigo,False,priority,460.03
+MamaBot-Llama,CASE_125,PAIR_063,Acute rheumatic fever,False,priority,460.03
+MamaBot-Llama,CASE_126,PAIR_063,Rheumatic heart disease,False,priority,460.03
+MamaBot-Llama,CASE_127,PAIR_064,Bronchial asthma,False,priority,460.03
+MamaBot-Llama,CASE_128,PAIR_064,Pulmonary tuberculosis,False,priority,460.03
+MamaBot-Llama,CASE_129,PAIR_065,Pneumothorax ,False,priority,460.02
+MamaBot-Llama,CASE_130,PAIR_065,Pleural effusion,False,routine,460.03
+MamaBot-Llama,CASE_131,PAIR_066,Transverse myelitis,False,priority,460.03
+MamaBot-Llama,CASE_132,PAIR_066,Guillain Barre syndrome,False,priority,460.03
+MamaBot-Llama,CASE_133,PAIR_067,Poliomyelitis,False,priority,460.04
+MamaBot-Llama,CASE_134,PAIR_067,Guillain Barre syndrome,False,priority,460.03
+MamaBot-Llama,CASE_135,PAIR_068,Mental retardation,False,emergency,460.03
+MamaBot-Llama,CASE_136,PAIR_068,Cerebal palsy,False,emergency,460.02
+MamaBot-Llama,CASE_137,PAIR_069,Autism,False,routine,460.05
+MamaBot-Llama,CASE_138,PAIR_069,ADHD,False,routine,460.04
+MamaBot-Llama,CASE_139,PAIR_070,Thyroglossal cyst,False,priority,460.02
+MamaBot-Llama,CASE_140,PAIR_070,Cystic hygroma,False,priority,460.02
+MamaBot-Llama,CASE_141,PAIR_071,Transient neonatal myasthenia gravis,False,emergency,460.02
+MamaBot-Llama,CASE_142,PAIR_071,Infant Botulinum,False,emergency,460.02
+MamaBot-Llama,CASE_143,PAIR_072,Retropharyngeal abscess,False,priority,460.02
+MamaBot-Llama,CASE_144,PAIR_072,Peritonsillar abscess,False,priority,460.02
+MamaBot-Llama,CASE_145,PAIR_073,PPH due to endometritis,False,emergency,460.01
+MamaBot-Llama,CASE_146,PAIR_073,PPH due to retained product of conception,False,emergency,460.02
+MamaBot-Llama,CASE_147,PAIR_074,Endometritis,False,emergency,460.01
+MamaBot-Llama,CASE_148,PAIR_074,Puerperal sepsis,True,emergency,460.01
+MamaBot-Llama,CASE_149,PAIR_075,Perinatal asphyxia,True,emergency,460.02
+MamaBot-Llama,CASE_150,PAIR_075,Neonatal sepsis,True,emergency,460.03
+MamaBot-Llama,CASE_151,PAIR_076,Perinatal asphyxia,True,emergency,460.04
+MamaBot-Llama,CASE_152,PAIR_076,Neonatal hypoglycemia,False,emergency,460.03
+MamaBot-Llama,CASE_153,PAIR_077,Pelvic inflammatory disease,False,priority,460.04
+MamaBot-Llama,CASE_154,PAIR_077,Urinary tract infection,False,priority,460.04
+MamaBot-Llama,CASE_155,PAIR_078,Morning sickness,False,priority,460.06
+MamaBot-Llama,CASE_156,PAIR_078,Hyperemesis gravidarum,False,priority,460.04
+MamaBot-Llama,CASE_157,PAIR_079,Cephalopelvic disproportion,False,routine,460.05
+MamaBot-Llama,CASE_158,PAIR_079,Obstructed labour,True,priority,460.05
+MamaBot-Llama,CASE_159,PAIR_080,PPH due to coagulopathy,False,emergency,460.02
+MamaBot-Llama,CASE_160,PAIR_080,PPH due to genital tract trauma,False,emergency,460.02
+MamaBot-Llama,CASE_161,PAIR_081,Urinary tract infection,False,priority,460.03
+MamaBot-Llama,CASE_162,PAIR_081,Pyelonephritis in pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_163,PAIR_082,Anemia in pregnancy due to iron deficiency,False,routine,460.02
+MamaBot-Llama,CASE_164,PAIR_082,Anemia in pregnancy due to folate deficiency,False,routine,460.02
+MamaBot-Llama,CASE_165,PAIR_083,Amniotic fluid embolism,True,emergency,460.02
+MamaBot-Llama,CASE_166,PAIR_083,Pulmonary embolism,True,emergency,460.02
+MamaBot-Llama,CASE_167,PAIR_084,Complete miscarriage,False,emergency,460.02
+MamaBot-Llama,CASE_168,PAIR_084,Incomplete miscarriage,False,emergency,460.02
+MamaBot-Llama,CASE_169,PAIR_085,Laryngitis,False,priority,460.02
+MamaBot-Llama,CASE_170,PAIR_085,Pharygitis,False,priority,460.04
+MamaBot-Llama,CASE_171,PAIR_086,Scabies ,False,priority,460.03
+MamaBot-Llama,CASE_172,PAIR_086,Ringworm,False,priority,460.03
+MamaBot-Llama,CASE_173,PAIR_087,Down syndrome,False,routine,460.04
+MamaBot-Llama,CASE_174,PAIR_087,Turner syndrome,False,routine,460.04
+MamaBot-Llama,CASE_175,PAIR_088,Allergic conjunctivitis,False,priority,460.03
+MamaBot-Llama,CASE_176,PAIR_088,Viral conjunctivitis,False,priority,460.03
+MamaBot-Llama,CASE_177,PAIR_089,Food poisoning,False,priority,460.02
+MamaBot-Llama,CASE_178,PAIR_089,Viral gastroenteritis,False,priority,460.02
+MamaBot-Llama,CASE_179,PAIR_090,Developmental delay,False,routine,460.04
+MamaBot-Llama,CASE_180,PAIR_090,Child Neglect,False,routine,460.04
+MamaBot-Llama,CASE_181,PAIR_091,Sickle cell crisis,False,priority,460.03
+MamaBot-Llama,CASE_182,PAIR_091,Osteomyelitis,False,priority,460.03
+MamaBot-Llama,CASE_183,PAIR_092,Kawasaki disease,False,emergency,460.02
+MamaBot-Llama,CASE_184,PAIR_092,Sepsis,True,emergency,460.02
+MamaBot-Llama,CASE_185,PAIR_093,Protein losing enteropathy,False,priority,460.02
+MamaBot-Llama,CASE_186,PAIR_093,Nephrotic syndrome,False,priority,460.02
+MamaBot-Llama,CASE_187,PAIR_094,Pleural effusion,False,priority,460.02
+MamaBot-Llama,CASE_188,PAIR_094,Emphysema,False,priority,460.02
+MamaBot-Llama,CASE_189,PAIR_095,Interstitial lung disease,False,priority,460.03
+MamaBot-Llama,CASE_190,PAIR_095,Pulmonary TB,False,priority,460.02
+MamaBot-Llama,CASE_191,PAIR_096,Adenoidal hypertrophy,False,routine,460.04
+MamaBot-Llama,CASE_192,PAIR_096,Chronic sinusitis,False,priority,460.03
+MamaBot-Llama,CASE_193,PAIR_097,Precocious puberty,False,emergency,460.02
+MamaBot-Llama,CASE_194,PAIR_097,Germ cell tumor in the pineal region,False,emergency,460.01
+MamaBot-Llama,CASE_195,PAIR_098,Glactosemia,False,priority,460.03
+MamaBot-Llama,CASE_196,PAIR_098,Fructosemia,False,priority,460.03
+MamaBot-Llama,CASE_197,PAIR_099,Phenylketonuria,False,emergency,460.02
+MamaBot-Llama,CASE_198,PAIR_099,Tyrosemia,False,emergency,460.02
+MamaBot-Llama,CASE_199,PAIR_100,Neurofibromatosis 1,False,emergency,460.02
+MamaBot-Llama,CASE_200,PAIR_100,Tuberous sclerosis,False,emergency,460.02
+MamaBot-Llama,CASE_201,PAIR_101,Henonch-Schonlein purpura,False,emergency,460.02
+MamaBot-Llama,CASE_202,PAIR_101,System lupus erythematosus,False,emergency,460.02
+MamaBot-Llama,CASE_203,PAIR_102,Septic arthiritis,False,priority,460.02
+MamaBot-Llama,CASE_204,PAIR_102,Pyomyocytis,False,priority,460.03
+MamaBot-Llama,CASE_205,PAIR_103,Acute epiglottitis,False,priority,460.03
+MamaBot-Llama,CASE_206,PAIR_103,Croup,False,priority,460.03
+MamaBot-Llama,CASE_207,PAIR_104,Acute glomerulonephritis,False,emergency,460.02
+MamaBot-Llama,CASE_208,PAIR_104,Alport syndrome,False,emergency,460.03
+MamaBot-Llama,CASE_209,PAIR_105,Meningococcemia,False,priority,460.03
+MamaBot-Llama,CASE_210,PAIR_105,Viral exanthem,False,priority,460.02
+MamaBot-Llama,CASE_211,PAIR_106,Tetanus,True,emergency,460.02
+MamaBot-Llama,CASE_212,PAIR_106,Rabies,False,priority,460.02
+MamaBot-Llama,CASE_213,PAIR_107,Lassa fever,False,emergency,460.02
+MamaBot-Llama,CASE_214,PAIR_107,Yellow fever,False,emergency,460.02
+MamaBot-Llama,CASE_215,PAIR_108,Dengue,False,emergency,460.01
+MamaBot-Llama,CASE_216,PAIR_108,Yellow fever,False,emergency,460.01
+MamaBot-Llama,CASE_217,PAIR_109,Tracheomalacia,False,priority,460.03
+MamaBot-Llama,CASE_218,PAIR_109,Laryngomalacia,False,priority,460.03
+MamaBot-Llama,CASE_219,PAIR_110,Rotavirus,False,priority,460.02
+MamaBot-Llama,CASE_220,PAIR_110,Norovirus,False,priority,460.02
+MamaBot-Llama,CASE_221,PAIR_111,Sinusitis,False,priority,460.03
+MamaBot-Llama,CASE_222,PAIR_111,Allergic rhinitis,False,priority,460.03
+MamaBot-Llama,CASE_223,PAIR_112,Respiratory distress syndrome,True,routine,460.04
+MamaBot-Llama,CASE_224,PAIR_112,Transient tachypena of the new born,False,routine,460.04
+MamaBot-Llama,CASE_225,PAIR_113,Scarlet fever,False,priority,460.02
+MamaBot-Llama,CASE_226,PAIR_113,Roseola,False,priority,460.04
+MamaBot-Llama,CASE_227,PAIR_114,Meconium aspiration syndrome,False,emergency,460.03
+MamaBot-Llama,CASE_228,PAIR_114,Respiratory distress syndrome,True,emergency,460.04
+MamaBot-Llama,CASE_229,PAIR_115,Volvulus,False,emergency,460.02
+MamaBot-Llama,CASE_230,PAIR_115,Necrotizing enterocolitis,False,emergency,460.01
+MamaBot-Llama,CASE_231,PAIR_116,Icthyosiform erythroderma,False,routine,460.03
+MamaBot-Llama,CASE_232,PAIR_116,Herloquin ichthyosis,False,routine,460.04
+MamaBot-Llama,CASE_233,PAIR_117,Lamella ichthyosis,False,routine,460.03
+MamaBot-Llama,CASE_234,PAIR_117,Eczema,False,priority,460.03
+MamaBot-Llama,CASE_235,PAIR_118,Placenta abruption,True,emergency,460.01
+MamaBot-Llama,CASE_236,PAIR_118,Placenta previa,True,emergency,460.01
+MamaBot-Llama,CASE_237,PAIR_119,Postpartum blues,False,priority,460.03
+MamaBot-Llama,CASE_238,PAIR_119,Postpartum depression,False,priority,460.02
+MamaBot-Llama,CASE_239,PAIR_120,Premature rupture of membrane,True,emergency,460.02
+MamaBot-Llama,CASE_240,PAIR_120,Stress urinary incontinence in pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_241,PAIR_121,Neonatal sepsis,True,emergency,460.02
+MamaBot-Llama,CASE_242,PAIR_121,Neonatal jaundice,False,emergency,460.02
+MamaBot-Llama,CASE_243,PAIR_122,Physiological Jaundice,False,priority,460.02
+MamaBot-Llama,CASE_244,PAIR_122,G6PD deficiency,False,priority,460.02
+MamaBot-Llama,CASE_245,PAIR_123,Candidiasis,False,priority,460.03
+MamaBot-Llama,CASE_246,PAIR_123,Trichomoniasis,False,priority,460.04
+MamaBot-Llama,CASE_247,PAIR_124,UTI in pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_248,PAIR_124,Normal pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_249,PAIR_125,Physiological change in pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_250,PAIR_125,Vaginal candidiasis,False,priority,460.02
+MamaBot-Llama,CASE_251,PAIR_126,Spontaneous abortion,False,emergency,460.01
+MamaBot-Llama,CASE_252,PAIR_126,Ectopic pregnancy,True,emergency,460.01
+MamaBot-Llama,CASE_253,PAIR_127,Hyperemesis gravidarum,False,priority,460.02
+MamaBot-Llama,CASE_254,PAIR_127,Normal pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_255,PAIR_128,Preeclampsia,True,emergency,460.01
+MamaBot-Llama,CASE_256,PAIR_128,Chronic hypertension in pregnancy,False,emergency,460.02
+MamaBot-Llama,CASE_257,PAIR_129,Appendicitis in pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_258,PAIR_129,Dyspepsia in pregnancy,False,emergency,460.02
+MamaBot-Llama,CASE_259,PAIR_130,Amniotic fluid embolism,True,emergency,460.02
+MamaBot-Llama,CASE_260,PAIR_130,Pulmonary embolism,True,emergency,460.01
+MamaBot-Llama,CASE_261,PAIR_131,Asthma in pregnancy,False,routine,460.04
+MamaBot-Llama,CASE_262,PAIR_131,Normal pregnancy,False,routine,460.03
+MamaBot-Llama,CASE_263,PAIR_132,GERD,False,priority,460.02
+MamaBot-Llama,CASE_264,PAIR_132,Pyloric stenosis,True,priority,460.02
+MamaBot-Llama,CASE_265,PAIR_133,Braxton-Hicks contractions,False,emergency,460.01
+MamaBot-Llama,CASE_266,PAIR_133,Preterm Labour,False,emergency,460.01
+MamaBot-Llama,CASE_267,PAIR_134,Febrile seizures,False,emergency,460.02
+MamaBot-Llama,CASE_268,PAIR_134,Meningitis,True,priority,460.03
+MamaBot-Llama,CASE_269,PAIR_135,Neonatal hypoglycemia,False,priority,460.02
+MamaBot-Llama,CASE_270,PAIR_135,Neonatal Physiologic Jaundice,False,emergency,460.01
+MamaBot-Llama,CASE_271,PAIR_136,Respiratory distress syndrome in an infant of diabetic mother,True,routine,460.03
+MamaBot-Llama,CASE_272,PAIR_136,Birth asphyxia,True,routine,460.03
+MamaBot-Llama,CASE_273,PAIR_137,Congenital Toxoplasmosis,False,emergency,460.02
+MamaBot-Llama,CASE_274,PAIR_137,Congenital cmv,False,emergency,460.02
+MamaBot-Llama,CASE_275,PAIR_138,Congenital Rubella,False,priority,460.02
+MamaBot-Llama,CASE_276,PAIR_138,Congenital cmv,False,emergency,460.01
+MamaBot-Llama,CASE_277,PAIR_139,Fetal loss from maternal syphillis,False,routine,460.03
+MamaBot-Llama,CASE_278,PAIR_139,Fetal loss from parvo virus infection,False,priority,460.02
+MamaBot-Llama,CASE_279,PAIR_140,Hellp syndrome,False,emergency,460.01
+MamaBot-Llama,CASE_280,PAIR_140,Acute fatty liver of pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_281,PAIR_141,Intrahepatic cholestasis of pregnancy,False,priority,460.03
+MamaBot-Llama,CASE_282,PAIR_141,Polymorphic eruption of pregnancy,False,priority,460.03
+MamaBot-Llama,CASE_283,PAIR_142,HBSS,False,priority,460.02
+MamaBot-Llama,CASE_284,PAIR_142,Thalassemia,False,priority,460.02
+MamaBot-Llama,CASE_285,PAIR_143,Preeclampsia,True,emergency,460.02
+MamaBot-Llama,CASE_286,PAIR_143,Eclampsia,True,emergency,460.02
+MamaBot-Llama,CASE_287,PAIR_144,Vaccine febril reaction,False,priority,460.02
+MamaBot-Llama,CASE_288,PAIR_144,Bronchopneumonia,False,priority,460.02
+MamaBot-Llama,CASE_289,PAIR_145,G6PD deficiency,False,priority,460.02
+MamaBot-Llama,CASE_290,PAIR_145,Biliary atresia,True,priority,460.02
+MamaBot-Llama,CASE_291,PAIR_146,Sepsis,True,priority,460.02
+MamaBot-Llama,CASE_292,PAIR_146,Pneumonia,False,priority,460.02
+MamaBot-Llama,CASE_293,PAIR_147,Cholecystitis in pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_294,PAIR_147,Appendicitis in pregnancy,False,priority,460.02
+MamaBot-Llama,CASE_295,PAIR_148,PPH from Uterine atony,True,emergency,460.02
+MamaBot-Llama,CASE_296,PAIR_148,PPH from vaginal laceration,False,emergency,460.02
+MamaBot-Llama,CASE_297,PAIR_149,Abruptio placenta,True,emergency,460.01
+MamaBot-Llama,CASE_298,PAIR_149,Uterine rupture,True,emergency,460.01
+MamaBot-Llama,CASE_299,PAIR_150,degeneration of uterine fibroids in pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_300,PAIR_150,acute pancreatitis in pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_301,PAIR_151,Implantation bleeding,False,emergency,460.01
+MamaBot-Llama,CASE_302,PAIR_151,Threatened abortion,False,emergency,460.01
+MamaBot-Llama,CASE_303,PAIR_152,Normal pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_304,PAIR_152,Molar Pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_305,PAIR_153,Fetal sleep,False,priority,460.04
+MamaBot-Llama,CASE_306,PAIR_153,Itratuterine fetal demise,False,priority,460.04
+MamaBot-Llama,CASE_307,PAIR_154,Ovarian torsion,False,emergency,460.01
+MamaBot-Llama,CASE_308,PAIR_154,Ruptured ectopic pregnancy,True,emergency,460.02
+MamaBot-Llama,CASE_309,PAIR_155,Condyloma lata,False,priority,460.03
+MamaBot-Llama,CASE_310,PAIR_155,Condyloma acuminata,False,priority,460.12
+MamaBot-Llama,CASE_311,PAIR_156,Physiologic murmur,False,routine,460.06
+MamaBot-Llama,CASE_312,PAIR_156,PDA,False,routine,460.04
+MamaBot-Llama,CASE_313,PAIR_157,Herpes,False,priority,460.03
+MamaBot-Llama,CASE_314,PAIR_157,Syphilis,False,priority,460.02
+MamaBot-Llama,CASE_315,PAIR_158,Croup,False,priority,460.02
+MamaBot-Llama,CASE_316,PAIR_158,Epiglottitis,False,priority,460.02
+MamaBot-Llama,CASE_317,PAIR_159,TOF,False,routine,460.03
+MamaBot-Llama,CASE_318,PAIR_159,PDA,False,routine,460.03
+MamaBot-Llama,CASE_319,PAIR_160,Malaria,False,priority,460.02
+MamaBot-Llama,CASE_320,PAIR_160,Pregnancy,False,routine,460.02
+MamaBot-Llama,CASE_321,PAIR_161,Hirschsprung's disease,False,priority,460.02
+MamaBot-Llama,CASE_322,PAIR_161,Necrotizing enterocolitis,False,emergency,460.01
+MamaBot-Llama,CASE_323,PAIR_162,Foreign body aspiration,False,priority,460.02
+MamaBot-Llama,CASE_324,PAIR_162,Anaphylaxis,False,priority,460.02
+MamaBot-Llama,CASE_325,PAIR_163,Innocent murmur,False,emergency,460.05
+MamaBot-Llama,CASE_326,PAIR_163,Vsd,False,emergency,460.02
+MamaBot-Llama,CASE_327,PAIR_164,Polyhydramnios,False,emergency,460.02
+MamaBot-Llama,CASE_328,PAIR_164,Twin pregnancy,False,routine,460.04
+MamaBot-Llama,CASE_329,PAIR_165,Endometritis,False,priority,460.02
+MamaBot-Llama,CASE_330,PAIR_165,UTI   ,False,priority,460.02
+MamaBot-Llama,CASE_331,PAIR_166,Periparturm cardiomyopathy,False,routine,460.03
+MamaBot-Llama,CASE_332,PAIR_166,Pulmonary embolism,True,priority,460.02
+MamaBot-Llama,CASE_333,PAIR_167,Intussusception,True,emergency,460.01
+MamaBot-Llama,CASE_334,PAIR_167,Gastroenteritis,False,priority,460.02
+MamaBot-Llama,CASE_335,PAIR_168,Ectopic pregnancy,True,priority,460.02
+MamaBot-Llama,CASE_336,PAIR_168,Threatened Miscarriage,False,priority,460.03
+MamaBot-Llama,CASE_337,PAIR_169,Severe Preeclampsia,True,emergency,460.01
+MamaBot-Llama,CASE_338,PAIR_169,Gestational Hypertension,False,emergency,460.02
+MamaBot-Llama,CASE_339,PAIR_170,Eclampsia,True,emergency,460.01
+MamaBot-Llama,CASE_340,PAIR_170,Epilepsy in Pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_341,PAIR_171,Postpartum Haemorrhage 2º Uterine Atony,True,emergency,460.01
+MamaBot-Llama,CASE_342,PAIR_171,Genital Tract Trauma,False,emergency,460.01
+MamaBot-Llama,CASE_343,PAIR_172,Hyperemesis Gravidarum,False,priority,460.02
+MamaBot-Llama,CASE_344,PAIR_172,Normal Morning Sickness,False,priority,460.01
+MamaBot-Llama,CASE_345,PAIR_173,Molar Pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_346,PAIR_173,Normal Pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_347,PAIR_174,Acute fatty liver of pregnancy,False,emergency,460.01
+MamaBot-Llama,CASE_348,PAIR_174,Hellp syndrome,False,emergency,460.01
+MamaBot-Llama,CASE_349,PAIR_175,Septic Abortion,False,emergency,460.01
+MamaBot-Llama,CASE_350,PAIR_175,Incomplete Abortion,False,emergency,460.01
+MamaBot-Llama,CASE_351,PAIR_176,Ovarian Cancer,False,priority,460.03
+MamaBot-Llama,CASE_352,PAIR_176,Benign Ovarian Tumour (Serous Cystadenoma),False,routine,460.03
+MamaBot-Llama,CASE_353,PAIR_177,Ovarian Torsion,False,emergency,460.01
+MamaBot-Llama,CASE_354,PAIR_177,Ruptured Ovarian cyst,True,emergency,460.01
+MamaBot-Llama,CASE_355,PAIR_178,Uterine Fibroid,False,priority,460.02
+MamaBot-Llama,CASE_356,PAIR_178,Adenomyosis,False,priority,460.03
+MamaBot-Llama,CASE_357,PAIR_179,Vulvovaginal Candidiasis,False,routine,460.03
+MamaBot-Llama,CASE_358,PAIR_179,Bacterial Vaginosis,False,priority,460.04
+MamaBot-Llama,CASE_359,PAIR_180,Cervical Ectropion,False,priority,460.02
+MamaBot-Llama,CASE_360,PAIR_180,Cervicitis,False,priority,460.02
+MamaBot-Llama,CASE_361,PAIR_181,Acute epiglottitis,False,priority,460.02
+MamaBot-Llama,CASE_362,PAIR_181,Croup (Laryngotracheobronchitis),False,priority,460.03
+MamaBot-Llama,CASE_363,PAIR_182,Bronchopneumonia,False,emergency,460.01
+MamaBot-Llama,CASE_364,PAIR_182,Bronchiolitis,False,priority,460.02
+MamaBot-Llama,CASE_365,PAIR_183,Hirschsprung's disease,False,priority,460.02
+MamaBot-Llama,CASE_366,PAIR_183,Meconium Plug Syndrome,False,priority,460.02
+MamaBot-Llama,CASE_367,PAIR_184,Neonatal Respiratory Distress Syndrome,True,routine,460.03
+MamaBot-Llama,CASE_368,PAIR_184,Transient Tachypnoea of the Newborn,False,routine,460.04
+MamaBot-Llama,CASE_369,PAIR_185,Meningitis,True,priority,460.02
+MamaBot-Llama,CASE_370,PAIR_185,Encephalitis,False,emergency,460.02
+MamaBot-Llama,CASE_371,PAIR_186,Placenta Accreta,False,emergency,460.01
+MamaBot-Llama,CASE_372,PAIR_186,Retained Placenta,False,emergency,460.02
+MamaBot-Llama,CASE_373,PAIR_187,Secondary Postpartum Hemorrhage,True,emergency,460.01
+MamaBot-Llama,CASE_374,PAIR_187,Normal Lochia,False,emergency,460.01
+MamaBot-Llama,CASE_375,PAIR_188,Preterm Labour,False,priority,460.03
+MamaBot-Llama,CASE_376,PAIR_188,False Labour (Braxton Hicks),False,emergency,460.02
+MamaBot-Llama,CASE_377,PAIR_189,Amniotic fluid embolism,True,routine,460.03
+MamaBot-Llama,CASE_378,PAIR_189,Pulmonary embolism in Pregnancy,True,priority,460.02
+MamaBot-Llama,CASE_379,PAIR_190,Bartholin Abscess,False,priority,460.02
+MamaBot-Llama,CASE_380,PAIR_190,Bartholin Cyst,False,priority,460.02
+MamaBot-Llama,CASE_381,PAIR_191,Cerebral Palsy,False,routine,460.03
+MamaBot-Llama,CASE_382,PAIR_191,Muscular Dystrophy,False,routine,460.03
+MamaBot-Llama,CASE_383,PAIR_192,Kawasaki disease,False,priority,460.03
+MamaBot-Llama,CASE_384,PAIR_192,Measles,False,priority,460.02
+MamaBot-Llama,CASE_385,PAIR_193,Acute Otitis Media,False,priority,460.03
+MamaBot-Llama,CASE_386,PAIR_193,Otitis Externa,False,priority,460.02
+MamaBot-Llama,CASE_387,PAIR_194,Febrile seizures,False,emergency,460.01
+MamaBot-Llama,CASE_388,PAIR_194,Epilepsy    ,False,emergency,460.01
+MamaBot-Llama,CASE_389,PAIR_195,Post-Streptococcal Glomerulonephritis,False,emergency,460.01
+MamaBot-Llama,CASE_390,PAIR_195,Nephrotic Syndrome,False,emergency,460.01
+MamaBot-Llama,CASE_391,PAIR_196,Genital Herpes,False,priority,460.02
+MamaBot-Llama,CASE_392,PAIR_196,Syphilis(Primary Chancre),False,priority,460.06
+MamaBot-Llama,CASE_393,PAIR_197,Uterine prolapse,False,priority,460.04
+MamaBot-Llama,CASE_394,PAIR_197,Cystocele (Prolapsed bladder),False,priority,460.03
+MamaBot-Llama,CASE_395,PAIR_198,Measles (Rubeola),False,priority,460.02
+MamaBot-Llama,CASE_396,PAIR_198,Rubella (German Measles),False,priority,460.04
+MamaBot-Llama,CASE_397,PAIR_199,Roseola Infantum,False,priority,460.04
+MamaBot-Llama,CASE_398,PAIR_199,Erythema Infectiosum (Fifth Disease),False,priority,460.02
+MamaBot-Llama,CASE_399,PAIR_200,Type 1 Diabetes,False,routine,460.03
+MamaBot-Llama,CASE_400,PAIR_200,Type 2 Diabetes,False,routine,460.03
+MamaBot-Llama,CASE_401,PAIR_201,Sickle Cell Vaso-occlusive Crisis,False,priority,460.02
+MamaBot-Llama,CASE_402,PAIR_201,Osteomyelitis,False,priority,460.02
+MamaBot-Llama,CASE_403,PAIR_202,Pertussis,False,priority,460.02
+MamaBot-Llama,CASE_404,PAIR_202,Respiratory Syncytial Virus,False,priority,460.04
+MamaBot-Llama,CASE_405,PAIR_203,Attention-Deficit Hyperactivity Disorder,False,routine,460.04
+MamaBot-Llama,CASE_406,PAIR_203,Autism Spectrum Disorder,False,routine,460.03
+MamaBot-Llama,CASE_407,PAIR_204,Hermophilia A,False,emergency,460.02
+MamaBot-Llama,CASE_408,PAIR_204,Von Willebrand Disease,False,emergency,460.01
+MamaBot-Llama,CASE_409,PAIR_205,Celiac Disease,False,routine,460.03
+MamaBot-Llama,CASE_410,PAIR_205,Irritable Bowel Syndrome,False,routine,460.03
+MamaBot-Llama,CASE_411,PAIR_206,Juvenile Idiopathic Arthritis,False,priority,460.02
+MamaBot-Llama,CASE_412,PAIR_206,Septic Arthritis,False,priority,460.14
+MamaBot-Llama,CASE_413,PAIR_207,Pyloric Stenosis,True,priority,460.02
+MamaBot-Llama,CASE_414,PAIR_207,Duodenal Atresia,False,emergency,460.01
+MamaBot-Llama,CASE_415,PAIR_208,Osteosarcoma,False,priority,460.03
+MamaBot-Llama,CASE_416,PAIR_208,Osgood-Schlatter Disease,False,priority,460.03
+MamaBot-Llama,CASE_417,PAIR_209,Nephroblastoma (Wilms Tumor),False,emergency,460.01
+MamaBot-Llama,CASE_418,PAIR_209,Neuroblastoma,False,emergency,460.01
+MamaBot-Llama,CASE_419,PAIR_210,Postpartum Thyroiditis,False,routine,460.03
+MamaBot-Llama,CASE_420,PAIR_210,Postpartum Anxiety,False,routine,460.03
+MamaBot-Llama,CASE_421,PAIR_211,Cervical Polyp,False,emergency,460.01
+MamaBot-Llama,CASE_422,PAIR_211,Cervical Cancer,False,emergency,460.01
+MamaBot-Llama,CASE_423,PAIR_212,Rickets,False,priority,460.02
+MamaBot-Llama,CASE_424,PAIR_212,Blount Disease,False,priority,460.02
+MamaBot-Llama,CASE_425,PAIR_213,"Hand, Foot, and Mouth Disease",False,emergency,460.01
+MamaBot-Llama,CASE_426,PAIR_213," 
+Herpetic Gingivostomatitis",False,emergency,460.01
+MamaBot-Llama,CASE_427,PAIR_214,Hydrocephalus,False,priority,460.02
+MamaBot-Llama,CASE_428,PAIR_214,Familial Macrocephaly,False,routine,460.03
+MamaBot-Llama,CASE_429,PAIR_215,Neonatal Tetanus,True,routine,460.04
+MamaBot-Llama,CASE_430,PAIR_215,Hypocalcemic Tetany,False,routine,460.03
+MamaBot-Llama,CASE_431,PAIR_216,Allergic Rhinitis,False,priority,460.02
+MamaBot-Llama,CASE_432,PAIR_216,Common Cold,False,priority,460.02
+MamaBot-Llama,CASE_433,PAIR_217,Congenital Adrenal Hyperplasia,False,priority,460.02
+MamaBot-Llama,CASE_434,PAIR_217,Androgen Insensitivity Syndrome,False,priority,460.02
+Hybrid Router,CASE_001,PAIR_001,Abruptio Placenta,True,emergency,203.73
+Hybrid Router,CASE_002,PAIR_001,Placenta Previa,True,emergency,203.42
+Hybrid Router,CASE_003,PAIR_002,Vasa previa,True,emergency,203.2
+Hybrid Router,CASE_004,PAIR_002,Uterine rupture,True,emergency,203.34
+Hybrid Router,CASE_005,PAIR_003,Obstetrics cholestasis,False,priority,503.41
+Hybrid Router,CASE_006,PAIR_003,Gall stone,False,routine,478.36
+Hybrid Router,CASE_007,PAIR_004,Pre eclampsia,True,emergency,203.52
+Hybrid Router,CASE_008,PAIR_004,Eclampsia,True,emergency,203.56
+Hybrid Router,CASE_009,PAIR_005,Chronic hypertension,False,routine,478.32
+Hybrid Router,CASE_010,PAIR_005,Super imposed pre eclampsia +chronic hypertension,True,routine,478.4
+Hybrid Router,CASE_011,PAIR_006,Neonatal tetanus,True,routine,478.93
+Hybrid Router,CASE_012,PAIR_006,Neonatal sepsis,True,routine,478.75
+Hybrid Router,CASE_013,PAIR_007,Hydatidiform mole,False,emergency,203.53
+Hybrid Router,CASE_014,PAIR_007,Normal pregnancy,False,routine,478.81
+Hybrid Router,CASE_015,PAIR_008,Primary postpartum haemorrhage due to uterine atony,True,emergency,203.45
+Hybrid Router,CASE_016,PAIR_008,Secondary postpartum haemorrhage due to retained product of conception,True,emergency,203.43
+Hybrid Router,CASE_017,PAIR_009,Uterine Fibroid,False,emergency,203.38
+Hybrid Router,CASE_018,PAIR_009,Ovarian dermoid cyst,False,routine,503.68
+Hybrid Router,CASE_019,PAIR_010,Sheehan syndrome,False,routine,478.67
+Hybrid Router,CASE_020,PAIR_010,Lymphophytic hypophysitis,False,emergency,203.42
+Hybrid Router,CASE_021,PAIR_011,Gonorrhea,False,priority,503.53
+Hybrid Router,CASE_022,PAIR_011,Chlamydial infection,False,priority,503.55
+Hybrid Router,CASE_023,PAIR_012,Bacterial vaginosis,False,routine,478.52
+Hybrid Router,CASE_024,PAIR_012,Trichomoniasis,False,routine,478.54
+Hybrid Router,CASE_025,PAIR_013,Herpes simplex virus infection,False,priority,503.6
+Hybrid Router,CASE_026,PAIR_013,Syphilis,False,priority,503.91
+Hybrid Router,CASE_027,PAIR_014,Human papilloma virus infection,False,emergency,203.58
+Hybrid Router,CASE_028,PAIR_014,Chancroid,False,priority,503.86
+Hybrid Router,CASE_029,PAIR_015,Acute unruptured ectopic pregnancy,True,emergency,203.53
+Hybrid Router,CASE_030,PAIR_015,Chronic ectopic pregnancy,True,emergency,203.6
+Hybrid Router,CASE_031,PAIR_016,Ruptured ectopic pregnancy,True,emergency,203.6
+Hybrid Router,CASE_032,PAIR_016,Unrupture ectopic pregnancy,True,emergency,203.62
+Hybrid Router,CASE_033,PAIR_017,Salpingitis,False,priority,504.28
+Hybrid Router,CASE_034,PAIR_017,Twisted ovarian tumor,False,emergency,203.46
+Hybrid Router,CASE_035,PAIR_018,Appendicitis,False,emergency,203.33
+Hybrid Router,CASE_036,PAIR_018,Ruptured ectopic pregnancy,True,emergency,203.41
+Hybrid Router,CASE_037,PAIR_019,Gestational diabetes mellitus,False,emergency,203.36
+Hybrid Router,CASE_038,PAIR_019,Glycosuria in pregnancy,False,emergency,203.3
+Hybrid Router,CASE_039,PAIR_020,Vesicovagina fistula,False,emergency,203.39
+Hybrid Router,CASE_040,PAIR_020,Stress incontinence,False,emergency,203.34
+Hybrid Router,CASE_041,PAIR_021,Anemia in pregnancy secondary to malaria,False,routine,478.62
+Hybrid Router,CASE_042,PAIR_021,Physiological Anemia in Pregnancy,False,routine,478.53
+Hybrid Router,CASE_043,PAIR_022,Twin-twin transfusion syndrome,False,routine,478.78
+Hybrid Router,CASE_044,PAIR_022,Twin reversal arterial perfusion sequence,False,routine,478.74
+Hybrid Router,CASE_045,PAIR_023,Preterm premature rupture of membrane,True,routine,478.46
+Hybrid Router,CASE_046,PAIR_023,Previable premature rupture of membrane,True,routine,478.44
+Hybrid Router,CASE_047,PAIR_024,Premature rupture of membrane,True,routine,478.66
+Hybrid Router,CASE_048,PAIR_024,Genuine stress urinary incontinence,False,routine,478.56
+Hybrid Router,CASE_049,PAIR_025,Abortion,False,emergency,203.39
+Hybrid Router,CASE_050,PAIR_025,Molar pregnancy,False,emergency,203.5
+Hybrid Router,CASE_051,PAIR_026,Cervical carcinoma,False,emergency,203.47
+Hybrid Router,CASE_052,PAIR_026,cervicitis,False,emergency,203.65
+Hybrid Router,CASE_053,PAIR_027,Uterine fibroid,False,emergency,203.58
+Hybrid Router,CASE_054,PAIR_027,Endometrial polyps,False,emergency,203.56
+Hybrid Router,CASE_055,PAIR_028,Bacterial meningitis,True,emergency,204.01
+Hybrid Router,CASE_056,PAIR_028,Cerebral malaria,False,emergency,203.92
+Hybrid Router,CASE_057,PAIR_029,Kwashiokor,False,emergency,203.72
+Hybrid Router,CASE_058,PAIR_029,Marasmus,False,emergency,203.51
+Hybrid Router,CASE_059,PAIR_030,Spinal bifida occulta,False,routine,478.53
+Hybrid Router,CASE_060,PAIR_030,Spinal bifida cystica,False,routine,478.47
+Hybrid Router,CASE_061,PAIR_031,Cleft lip,False,routine,503.46
+Hybrid Router,CASE_062,PAIR_031,Cleft palate,False,routine,503.43
+Hybrid Router,CASE_063,PAIR_032,Hypertrophic Pyloric Stenosis,True,routine,478.46
+Hybrid Router,CASE_064,PAIR_032,Duodenal atresia,False,routine,478.43
+Hybrid Router,CASE_065,PAIR_033,Intussuception,False,emergency,203.26
+Hybrid Router,CASE_066,PAIR_033,Hirschsprung disease,False,emergency,203.29
+Hybrid Router,CASE_067,PAIR_034,Foreign body aspiration,False,routine,503.38
+Hybrid Router,CASE_068,PAIR_034,Asthma,False,routine,503.44
+Hybrid Router,CASE_069,PAIR_035,Pneumonia,False,routine,478.7
+Hybrid Router,CASE_070,PAIR_035,Broncholitis,False,routine,478.72
+Hybrid Router,CASE_071,PAIR_036,Croup,False,priority,503.42
+Hybrid Router,CASE_072,PAIR_036,Pneumonia,False,priority,503.47
+Hybrid Router,CASE_073,PAIR_037,Croup,False,routine,478.31
+Hybrid Router,CASE_074,PAIR_037,Whooping cough,False,routine,478.33
+Hybrid Router,CASE_075,PAIR_038,Diphtheria,False,emergency,203.32
+Hybrid Router,CASE_076,PAIR_038,Tonsillitis,False,priority,503.6
+Hybrid Router,CASE_077,PAIR_039,Postpartum psychosis,False,routine,479.73
+Hybrid Router,CASE_078,PAIR_039,Schizophrenia,False,routine,479.22
+Hybrid Router,CASE_079,PAIR_040,Pain attack in puerperium,False,emergency,203.47
+Hybrid Router,CASE_080,PAIR_040,Panic disorder in puerperium,False,emergency,203.51
+Hybrid Router,CASE_081,PAIR_041,Maternal blues,False,emergency,204.07
+Hybrid Router,CASE_082,PAIR_041,Depression in puerperium,False,emergency,204.18
+Hybrid Router,CASE_083,PAIR_042,Cholera,False,priority,504.64
+Hybrid Router,CASE_084,PAIR_042,Dysentry,False,emergency,203.46
+Hybrid Router,CASE_085,PAIR_043,Otitis media,False,priority,503.69
+Hybrid Router,CASE_086,PAIR_043,Otits externa,False,priority,503.81
+Hybrid Router,CASE_087,PAIR_044,Febrile convulsion,False,emergency,203.56
+Hybrid Router,CASE_088,PAIR_044,Seizure disorder,False,emergency,203.66
+Hybrid Router,CASE_089,PAIR_045,Cholera,False,priority,504.24
+Hybrid Router,CASE_090,PAIR_045,Typhoid enteritis,False,priority,503.92
+Hybrid Router,CASE_091,PAIR_046,Nephrotic syndrome,False,emergency,203.51
+Hybrid Router,CASE_092,PAIR_046,Acute glomerulonephritis,False,emergency,203.56
+Hybrid Router,CASE_093,PAIR_047,IgA nephropathy,False,emergency,203.91
+Hybrid Router,CASE_094,PAIR_047,Acute glomerulonephritis,False,emergency,203.74
+Hybrid Router,CASE_095,PAIR_048,Neuroblastoma,False,emergency,203.63
+Hybrid Router,CASE_096,PAIR_048,Nephroblastoma,False,emergency,203.35
+Hybrid Router,CASE_097,PAIR_049,Acute lymphoblastic leukaemia,False,emergency,203.43
+Hybrid Router,CASE_098,PAIR_049,Aplastic anemia,False,emergency,203.42
+Hybrid Router,CASE_099,PAIR_050,Vaso-occlusive crisis in sickle cell,False,emergency,203.61
+Hybrid Router,CASE_100,PAIR_050,Hyperhemolytic crisis in sickle cell,False,emergency,203.62
+Hybrid Router,CASE_101,PAIR_051,Hyperhemolytic crisis in sickle cell,False,emergency,203.64
+Hybrid Router,CASE_102,PAIR_051,Sequestration crisis in sickle cell disease,False,emergency,203.66
+Hybrid Router,CASE_103,PAIR_052,Ventricular septal defect,False,routine,478.78
+Hybrid Router,CASE_104,PAIR_052,Atrial septal defect,False,routine,478.73
+Hybrid Router,CASE_105,PAIR_053,Ventricular septal defect,False,routine,478.99
+Hybrid Router,CASE_106,PAIR_053,Patent ductus arteriosus,False,routine,479.01
+Hybrid Router,CASE_107,PAIR_054,Seborrhoeic dermatitis,False,routine,478.69
+Hybrid Router,CASE_108,PAIR_054,Atopic dermatitis,False,routine,478.6
+Hybrid Router,CASE_109,PAIR_055,Bullous impetigo,False,priority,503.46
+Hybrid Router,CASE_110,PAIR_055,Non-bullous impetigo,False,priority,503.45
+Hybrid Router,CASE_111,PAIR_056,Tinea versicolor,False,routine,478.81
+Hybrid Router,CASE_112,PAIR_056,Dermatophyte,False,routine,478.78
+Hybrid Router,CASE_113,PAIR_057,Ricket,False,routine,478.53
+Hybrid Router,CASE_114,PAIR_057,Osteodystrophy,False,routine,478.37
+Hybrid Router,CASE_115,PAIR_058,Omphalocele,False,routine,479.42
+Hybrid Router,CASE_116,PAIR_058,Gastroschisis,False,routine,479.54
+Hybrid Router,CASE_117,PAIR_059,Exstrophy of the bladder,False,routine,478.87
+Hybrid Router,CASE_118,PAIR_059,Gastroschisis,False,routine,478.87
+Hybrid Router,CASE_119,PAIR_060,Neurofibromatosis 1,False,routine,478.91
+Hybrid Router,CASE_120,PAIR_060,Neurofibromatosis 2,False,routine,479.25
+Hybrid Router,CASE_121,PAIR_061,Duchenne muscular dystrophy,False,routine,478.6
+Hybrid Router,CASE_122,PAIR_061,Becker muscular dystrophy,False,routine,478.58
+Hybrid Router,CASE_123,PAIR_062,Chicken pox,False,routine,478.74
+Hybrid Router,CASE_124,PAIR_062,Bullous impetigo,False,routine,478.77
+Hybrid Router,CASE_125,PAIR_063,Acute rheumatic fever,False,priority,503.72
+Hybrid Router,CASE_126,PAIR_063,Rheumatic heart disease,False,priority,503.89
+Hybrid Router,CASE_127,PAIR_064,Bronchial asthma,False,priority,503.7
+Hybrid Router,CASE_128,PAIR_064,Pulmonary tuberculosis,False,routine,478.68
+Hybrid Router,CASE_129,PAIR_065,Pneumothorax ,False,priority,503.53
+Hybrid Router,CASE_130,PAIR_065,Pleural effusion,False,routine,478.49
+Hybrid Router,CASE_131,PAIR_066,Transverse myelitis,False,priority,503.65
+Hybrid Router,CASE_132,PAIR_066,Guillain Barre syndrome,False,priority,504.7
+Hybrid Router,CASE_133,PAIR_067,Poliomyelitis,False,routine,479.18
+Hybrid Router,CASE_134,PAIR_067,Guillain Barre syndrome,False,routine,478.84
+Hybrid Router,CASE_135,PAIR_068,Mental retardation,False,emergency,203.52
+Hybrid Router,CASE_136,PAIR_068,Cerebal palsy,False,emergency,203.44
+Hybrid Router,CASE_137,PAIR_069,Autism,False,routine,478.99
+Hybrid Router,CASE_138,PAIR_069,ADHD,False,routine,478.89
+Hybrid Router,CASE_139,PAIR_070,Thyroglossal cyst,False,routine,478.39
+Hybrid Router,CASE_140,PAIR_070,Cystic hygroma,False,routine,478.43
+Hybrid Router,CASE_141,PAIR_071,Transient neonatal myasthenia gravis,False,emergency,203.52
+Hybrid Router,CASE_142,PAIR_071,Infant Botulinum,False,routine,478.73
+Hybrid Router,CASE_143,PAIR_072,Retropharyngeal abscess,False,routine,478.45
+Hybrid Router,CASE_144,PAIR_072,Peritonsillar abscess,False,routine,478.49
+Hybrid Router,CASE_145,PAIR_073,PPH due to endometritis,False,emergency,203.32
+Hybrid Router,CASE_146,PAIR_073,PPH due to retained product of conception,False,emergency,203.37
+Hybrid Router,CASE_147,PAIR_074,Endometritis,False,emergency,203.31
+Hybrid Router,CASE_148,PAIR_074,Puerperal sepsis,True,emergency,203.33
+Hybrid Router,CASE_149,PAIR_075,Perinatal asphyxia,True,emergency,203.41
+Hybrid Router,CASE_150,PAIR_075,Neonatal sepsis,True,emergency,203.45
+Hybrid Router,CASE_151,PAIR_076,Perinatal asphyxia,True,emergency,203.45
+Hybrid Router,CASE_152,PAIR_076,Neonatal hypoglycemia,False,emergency,203.46
+Hybrid Router,CASE_153,PAIR_077,Pelvic inflammatory disease,False,priority,503.77
+Hybrid Router,CASE_154,PAIR_077,Urinary tract infection,False,priority,504.21
+Hybrid Router,CASE_155,PAIR_078,Morning sickness,False,priority,504.2
+Hybrid Router,CASE_156,PAIR_078,Hyperemesis gravidarum,False,priority,503.95
+Hybrid Router,CASE_157,PAIR_079,Cephalopelvic disproportion,False,routine,479.03
+Hybrid Router,CASE_158,PAIR_079,Obstructed labour,True,priority,504.59
+Hybrid Router,CASE_159,PAIR_080,PPH due to coagulopathy,False,emergency,203.51
+Hybrid Router,CASE_160,PAIR_080,PPH due to genital tract trauma,False,emergency,203.56
+Hybrid Router,CASE_161,PAIR_081,Urinary tract infection,False,priority,503.66
+Hybrid Router,CASE_162,PAIR_081,Pyelonephritis in pregnancy,False,priority,503.56
+Hybrid Router,CASE_163,PAIR_082,Anemia in pregnancy due to iron deficiency,False,emergency,203.29
+Hybrid Router,CASE_164,PAIR_082,Anemia in pregnancy due to folate deficiency,False,emergency,203.29
+Hybrid Router,CASE_165,PAIR_083,Amniotic fluid embolism,True,emergency,203.47
+Hybrid Router,CASE_166,PAIR_083,Pulmonary embolism,True,emergency,203.49
+Hybrid Router,CASE_167,PAIR_084,Complete miscarriage,False,emergency,203.34
+Hybrid Router,CASE_168,PAIR_084,Incomplete miscarriage,False,emergency,203.38
+Hybrid Router,CASE_169,PAIR_085,Laryngitis,False,priority,503.63
+Hybrid Router,CASE_170,PAIR_085,Pharygitis,False,priority,503.77
+Hybrid Router,CASE_171,PAIR_086,Scabies ,False,routine,478.73
+Hybrid Router,CASE_172,PAIR_086,Ringworm,False,routine,479.04
+Hybrid Router,CASE_173,PAIR_087,Down syndrome,False,routine,478.93
+Hybrid Router,CASE_174,PAIR_087,Turner syndrome,False,routine,478.88
+Hybrid Router,CASE_175,PAIR_088,Allergic conjunctivitis,False,routine,478.75
+Hybrid Router,CASE_176,PAIR_088,Viral conjunctivitis,False,priority,503.69
+Hybrid Router,CASE_177,PAIR_089,Food poisoning,False,priority,503.66
+Hybrid Router,CASE_178,PAIR_089,Viral gastroenteritis,False,priority,503.57
+Hybrid Router,CASE_179,PAIR_090,Developmental delay,False,routine,478.83
+Hybrid Router,CASE_180,PAIR_090,Child Neglect,False,routine,478.82
+Hybrid Router,CASE_181,PAIR_091,Sickle cell crisis,False,priority,503.67
+Hybrid Router,CASE_182,PAIR_091,Osteomyelitis,False,priority,503.69
+Hybrid Router,CASE_183,PAIR_092,Kawasaki disease,False,routine,478.65
+Hybrid Router,CASE_184,PAIR_092,Sepsis,True,routine,478.7
+Hybrid Router,CASE_185,PAIR_093,Protein losing enteropathy,False,routine,478.44
+Hybrid Router,CASE_186,PAIR_093,Nephrotic syndrome,False,routine,478.5
+Hybrid Router,CASE_187,PAIR_094,Pleural effusion,False,priority,503.48
+Hybrid Router,CASE_188,PAIR_094,Emphysema,False,priority,503.49
+Hybrid Router,CASE_189,PAIR_095,Interstitial lung disease,False,routine,478.63
+Hybrid Router,CASE_190,PAIR_095,Pulmonary TB,False,routine,478.57
+Hybrid Router,CASE_191,PAIR_096,Adenoidal hypertrophy,False,routine,478.71
+Hybrid Router,CASE_192,PAIR_096,Chronic sinusitis,False,routine,478.63
+Hybrid Router,CASE_193,PAIR_097,Precocious puberty,False,routine,479.13
+Hybrid Router,CASE_194,PAIR_097,Germ cell tumor in the pineal region,False,emergency,503.75
+Hybrid Router,CASE_195,PAIR_098,Glactosemia,False,routine,478.69
+Hybrid Router,CASE_196,PAIR_098,Fructosemia,False,routine,478.73
+Hybrid Router,CASE_197,PAIR_099,Phenylketonuria,False,emergency,203.46
+Hybrid Router,CASE_198,PAIR_099,Tyrosemia,False,emergency,203.42
+Hybrid Router,CASE_199,PAIR_100,Neurofibromatosis 1,False,emergency,203.69
+Hybrid Router,CASE_200,PAIR_100,Tuberous sclerosis,False,emergency,203.59
+Hybrid Router,CASE_201,PAIR_101,Henonch-Schonlein purpura,False,emergency,203.47
+Hybrid Router,CASE_202,PAIR_101,System lupus erythematosus,False,emergency,203.45
+Hybrid Router,CASE_203,PAIR_102,Septic arthiritis,False,priority,503.6
+Hybrid Router,CASE_204,PAIR_102,Pyomyocytis,False,priority,503.7
+Hybrid Router,CASE_205,PAIR_103,Acute epiglottitis,False,priority,503.84
+Hybrid Router,CASE_206,PAIR_103,Croup,False,routine,478.72
+Hybrid Router,CASE_207,PAIR_104,Acute glomerulonephritis,False,emergency,203.52
+Hybrid Router,CASE_208,PAIR_104,Alport syndrome,False,emergency,203.57
+Hybrid Router,CASE_209,PAIR_105,Meningococcemia,False,routine,478.51
+Hybrid Router,CASE_210,PAIR_105,Viral exanthem,False,routine,478.52
+Hybrid Router,CASE_211,PAIR_106,Tetanus,True,emergency,503.83
+Hybrid Router,CASE_212,PAIR_106,Rabies,False,routine,478.65
+Hybrid Router,CASE_213,PAIR_107,Lassa fever,False,emergency,203.45
+Hybrid Router,CASE_214,PAIR_107,Yellow fever,False,emergency,203.48
+Hybrid Router,CASE_215,PAIR_108,Dengue,False,emergency,203.36
+Hybrid Router,CASE_216,PAIR_108,Yellow fever,False,emergency,203.41
+Hybrid Router,CASE_217,PAIR_109,Tracheomalacia,False,routine,479.17
+Hybrid Router,CASE_218,PAIR_109,Laryngomalacia,False,routine,479.32
+Hybrid Router,CASE_219,PAIR_110,Rotavirus,False,priority,503.57
+Hybrid Router,CASE_220,PAIR_110,Norovirus,False,priority,503.49
+Hybrid Router,CASE_221,PAIR_111,Sinusitis,False,priority,503.72
+Hybrid Router,CASE_222,PAIR_111,Allergic rhinitis,False,priority,503.68
+Hybrid Router,CASE_223,PAIR_112,Respiratory distress syndrome,True,emergency,203.5
+Hybrid Router,CASE_224,PAIR_112,Transient tachypena of the new born,False,emergency,203.51
+Hybrid Router,CASE_225,PAIR_113,Scarlet fever,False,routine,478.58
+Hybrid Router,CASE_226,PAIR_113,Roseola,False,routine,478.71
+Hybrid Router,CASE_227,PAIR_114,Meconium aspiration syndrome,False,emergency,203.5
+Hybrid Router,CASE_228,PAIR_114,Respiratory distress syndrome,True,emergency,203.51
+Hybrid Router,CASE_229,PAIR_115,Volvulus,False,emergency,203.39
+Hybrid Router,CASE_230,PAIR_115,Necrotizing enterocolitis,False,emergency,203.37
+Hybrid Router,CASE_231,PAIR_116,Icthyosiform erythroderma,False,routine,503.63
+Hybrid Router,CASE_232,PAIR_116,Herloquin ichthyosis,False,routine,503.76
+Hybrid Router,CASE_233,PAIR_117,Lamella ichthyosis,False,routine,478.92
+Hybrid Router,CASE_234,PAIR_117,Eczema,False,routine,478.9
+Hybrid Router,CASE_235,PAIR_118,Placenta abruption,True,emergency,203.8
+Hybrid Router,CASE_236,PAIR_118,Placenta previa,True,emergency,203.47
+Hybrid Router,CASE_237,PAIR_119,Postpartum blues,False,routine,479.95
+Hybrid Router,CASE_238,PAIR_119,Postpartum depression,False,routine,479.11
+Hybrid Router,CASE_239,PAIR_120,Premature rupture of membrane,True,emergency,203.51
+Hybrid Router,CASE_240,PAIR_120,Stress urinary incontinence in pregnancy,False,emergency,203.4
+Hybrid Router,CASE_241,PAIR_121,Neonatal sepsis,True,emergency,503.53
+Hybrid Router,CASE_242,PAIR_121,Neonatal jaundice,False,routine,478.53
+Hybrid Router,CASE_243,PAIR_122,Physiological Jaundice,False,priority,503.6
+Hybrid Router,CASE_244,PAIR_122,G6PD deficiency,False,priority,503.63
+Hybrid Router,CASE_245,PAIR_123,Candidiasis,False,priority,503.61
+Hybrid Router,CASE_246,PAIR_123,Trichomoniasis,False,priority,503.6
+Hybrid Router,CASE_247,PAIR_124,UTI in pregnancy,False,priority,503.43
+Hybrid Router,CASE_248,PAIR_124,Normal pregnancy,False,priority,503.44
+Hybrid Router,CASE_249,PAIR_125,Physiological change in pregnancy,False,priority,503.48
+Hybrid Router,CASE_250,PAIR_125,Vaginal candidiasis,False,priority,503.5
+Hybrid Router,CASE_251,PAIR_126,Spontaneous abortion,False,emergency,203.35
+Hybrid Router,CASE_252,PAIR_126,Ectopic pregnancy,True,emergency,203.5
+Hybrid Router,CASE_253,PAIR_127,Hyperemesis gravidarum,False,routine,478.54
+Hybrid Router,CASE_254,PAIR_127,Normal pregnancy,False,routine,478.57
+Hybrid Router,CASE_255,PAIR_128,Preeclampsia,True,emergency,503.66
+Hybrid Router,CASE_256,PAIR_128,Chronic hypertension in pregnancy,False,emergency,503.77
+Hybrid Router,CASE_257,PAIR_129,Appendicitis in pregnancy,False,emergency,203.32
+Hybrid Router,CASE_258,PAIR_129,Dyspepsia in pregnancy,False,emergency,203.31
+Hybrid Router,CASE_259,PAIR_130,Amniotic fluid embolism,True,emergency,203.29
+Hybrid Router,CASE_260,PAIR_130,Pulmonary embolism,True,emergency,203.26
+Hybrid Router,CASE_261,PAIR_131,Asthma in pregnancy,False,routine,479.2
+Hybrid Router,CASE_262,PAIR_131,Normal pregnancy,False,routine,478.72
+Hybrid Router,CASE_263,PAIR_132,GERD,False,routine,478.56
+Hybrid Router,CASE_264,PAIR_132,Pyloric stenosis,True,routine,478.5
+Hybrid Router,CASE_265,PAIR_133,Braxton-Hicks contractions,False,emergency,203.29
+Hybrid Router,CASE_266,PAIR_133,Preterm Labour,False,emergency,203.29
+Hybrid Router,CASE_267,PAIR_134,Febrile seizures,False,routine,478.66
+Hybrid Router,CASE_268,PAIR_134,Meningitis,True,routine,478.73
+Hybrid Router,CASE_269,PAIR_135,Neonatal hypoglycemia,False,routine,478.46
+Hybrid Router,CASE_270,PAIR_135,Neonatal Physiologic Jaundice,False,emergency,203.23
+Hybrid Router,CASE_271,PAIR_136,Respiratory distress syndrome in an infant of diabetic mother,True,emergency,203.38
+Hybrid Router,CASE_272,PAIR_136,Birth asphyxia,True,routine,478.6
+Hybrid Router,CASE_273,PAIR_137,Congenital Toxoplasmosis,False,emergency,203.41
+Hybrid Router,CASE_274,PAIR_137,Congenital cmv,False,emergency,203.47
+Hybrid Router,CASE_275,PAIR_138,Congenital Rubella,False,routine,478.65
+Hybrid Router,CASE_276,PAIR_138,Congenital cmv,False,emergency,203.33
+Hybrid Router,CASE_277,PAIR_139,Fetal loss from maternal syphillis,False,routine,478.55
+Hybrid Router,CASE_278,PAIR_139,Fetal loss from parvo virus infection,False,priority,503.67
+Hybrid Router,CASE_279,PAIR_140,Hellp syndrome,False,emergency,503.47
+Hybrid Router,CASE_280,PAIR_140,Acute fatty liver of pregnancy,False,priority,503.45
+Hybrid Router,CASE_281,PAIR_141,Intrahepatic cholestasis of pregnancy,False,routine,478.56
+Hybrid Router,CASE_282,PAIR_141,Polymorphic eruption of pregnancy,False,routine,478.62
+Hybrid Router,CASE_283,PAIR_142,HBSS,False,routine,478.59
+Hybrid Router,CASE_284,PAIR_142,Thalassemia,False,routine,478.62
+Hybrid Router,CASE_285,PAIR_143,Preeclampsia,True,emergency,203.3
+Hybrid Router,CASE_286,PAIR_143,Eclampsia,True,emergency,203.35
+Hybrid Router,CASE_287,PAIR_144,Vaccine febril reaction,False,priority,503.41
+Hybrid Router,CASE_288,PAIR_144,Bronchopneumonia,False,priority,503.57
+Hybrid Router,CASE_289,PAIR_145,G6PD deficiency,False,routine,478.94
+Hybrid Router,CASE_290,PAIR_145,Biliary atresia,True,routine,478.49
+Hybrid Router,CASE_291,PAIR_146,Sepsis,True,routine,478.53
+Hybrid Router,CASE_292,PAIR_146,Pneumonia,False,routine,478.55
+Hybrid Router,CASE_293,PAIR_147,Cholecystitis in pregnancy,False,priority,503.58
+Hybrid Router,CASE_294,PAIR_147,Appendicitis in pregnancy,False,priority,503.58
+Hybrid Router,CASE_295,PAIR_148,PPH from Uterine atony,True,emergency,203.34
+Hybrid Router,CASE_296,PAIR_148,PPH from vaginal laceration,False,emergency,203.29
+Hybrid Router,CASE_297,PAIR_149,Abruptio placenta,True,emergency,203.26
+Hybrid Router,CASE_298,PAIR_149,Uterine rupture,True,emergency,203.32
+Hybrid Router,CASE_299,PAIR_150,degeneration of uterine fibroids in pregnancy,False,emergency,203.26
+Hybrid Router,CASE_300,PAIR_150,acute pancreatitis in pregnancy,False,emergency,203.3
+Hybrid Router,CASE_301,PAIR_151,Implantation bleeding,False,emergency,203.23
+Hybrid Router,CASE_302,PAIR_151,Threatened abortion,False,emergency,203.23
+Hybrid Router,CASE_303,PAIR_152,Normal pregnancy,False,emergency,203.18
+Hybrid Router,CASE_304,PAIR_152,Molar Pregnancy,False,emergency,203.15
+Hybrid Router,CASE_305,PAIR_153,Fetal sleep,False,routine,478.48
+Hybrid Router,CASE_306,PAIR_153,Itratuterine fetal demise,False,routine,478.54
+Hybrid Router,CASE_307,PAIR_154,Ovarian torsion,False,emergency,203.42
+Hybrid Router,CASE_308,PAIR_154,Ruptured ectopic pregnancy,True,emergency,203.32
+Hybrid Router,CASE_309,PAIR_155,Condyloma lata,False,routine,478.87
+Hybrid Router,CASE_310,PAIR_155,Condyloma acuminata,False,routine,478.59
+Hybrid Router,CASE_311,PAIR_156,Physiologic murmur,False,routine,478.43
+Hybrid Router,CASE_312,PAIR_156,PDA,False,routine,478.49
+Hybrid Router,CASE_313,PAIR_157,Herpes,False,routine,478.41
+Hybrid Router,CASE_314,PAIR_157,Syphilis,False,routine,478.34
+Hybrid Router,CASE_315,PAIR_158,Croup,False,routine,478.3
+Hybrid Router,CASE_316,PAIR_158,Epiglottitis,False,emergency,203.21
+Hybrid Router,CASE_317,PAIR_159,TOF,False,routine,478.41
+Hybrid Router,CASE_318,PAIR_159,PDA,False,routine,478.48
+Hybrid Router,CASE_319,PAIR_160,Malaria,False,routine,478.96
+Hybrid Router,CASE_320,PAIR_160,Pregnancy,False,routine,478.83
+Hybrid Router,CASE_321,PAIR_161,Hirschsprung's disease,False,emergency,203.6
+Hybrid Router,CASE_322,PAIR_161,Necrotizing enterocolitis,False,emergency,203.37
+Hybrid Router,CASE_323,PAIR_162,Foreign body aspiration,False,routine,478.68
+Hybrid Router,CASE_324,PAIR_162,Anaphylaxis,False,priority,503.71
+Hybrid Router,CASE_325,PAIR_163,Innocent murmur,False,emergency,203.62
+Hybrid Router,CASE_326,PAIR_163,Vsd,False,emergency,203.56
+Hybrid Router,CASE_327,PAIR_164,Polyhydramnios,False,emergency,203.45
+Hybrid Router,CASE_328,PAIR_164,Twin pregnancy,False,routine,503.55
+Hybrid Router,CASE_329,PAIR_165,Endometritis,False,priority,503.46
+Hybrid Router,CASE_330,PAIR_165,UTI   ,False,priority,503.47
+Hybrid Router,CASE_331,PAIR_166,Periparturm cardiomyopathy,False,emergency,203.35
+Hybrid Router,CASE_332,PAIR_166,Pulmonary embolism,True,emergency,203.46
+Hybrid Router,CASE_333,PAIR_167,Intussusception,True,emergency,203.52
+Hybrid Router,CASE_334,PAIR_167,Gastroenteritis,False,routine,478.54
+Hybrid Router,CASE_335,PAIR_168,Ectopic pregnancy,True,priority,503.63
+Hybrid Router,CASE_336,PAIR_168,Threatened Miscarriage,False,priority,503.62
+Hybrid Router,CASE_337,PAIR_169,Severe Preeclampsia,True,emergency,203.29
+Hybrid Router,CASE_338,PAIR_169,Gestational Hypertension,False,emergency,203.3
+Hybrid Router,CASE_339,PAIR_170,Eclampsia,True,emergency,203.34
+Hybrid Router,CASE_340,PAIR_170,Epilepsy in Pregnancy,False,emergency,203.35
+Hybrid Router,CASE_341,PAIR_171,Postpartum Haemorrhage 2º Uterine Atony,True,emergency,203.23
+Hybrid Router,CASE_342,PAIR_171,Genital Tract Trauma,False,emergency,203.24
+Hybrid Router,CASE_343,PAIR_172,Hyperemesis Gravidarum,False,routine,478.41
+Hybrid Router,CASE_344,PAIR_172,Normal Morning Sickness,False,routine,478.3
+Hybrid Router,CASE_345,PAIR_173,Molar Pregnancy,False,emergency,203.25
+Hybrid Router,CASE_346,PAIR_173,Normal Pregnancy,False,emergency,203.49
+Hybrid Router,CASE_347,PAIR_174,Acute fatty liver of pregnancy,False,emergency,203.42
+Hybrid Router,CASE_348,PAIR_174,Hellp syndrome,False,emergency,203.2
+Hybrid Router,CASE_349,PAIR_175,Septic Abortion,False,emergency,203.26
+Hybrid Router,CASE_350,PAIR_175,Incomplete Abortion,False,emergency,203.28
+Hybrid Router,CASE_351,PAIR_176,Ovarian Cancer,False,priority,503.81
+Hybrid Router,CASE_352,PAIR_176,Benign Ovarian Tumour (Serous Cystadenoma),False,routine,503.62
+Hybrid Router,CASE_353,PAIR_177,Ovarian Torsion,False,emergency,203.37
+Hybrid Router,CASE_354,PAIR_177,Ruptured Ovarian cyst,True,emergency,203.37
+Hybrid Router,CASE_355,PAIR_178,Uterine Fibroid,False,priority,503.52
+Hybrid Router,CASE_356,PAIR_178,Adenomyosis,False,priority,503.61
+Hybrid Router,CASE_357,PAIR_179,Vulvovaginal Candidiasis,False,routine,503.47
+Hybrid Router,CASE_358,PAIR_179,Bacterial Vaginosis,False,priority,503.63
+Hybrid Router,CASE_359,PAIR_180,Cervical Ectropion,False,priority,503.55
+Hybrid Router,CASE_360,PAIR_180,Cervicitis,False,priority,503.66
+Hybrid Router,CASE_361,PAIR_181,Acute epiglottitis,False,routine,478.67
+Hybrid Router,CASE_362,PAIR_181,Croup (Laryngotracheobronchitis),False,routine,478.87
+Hybrid Router,CASE_363,PAIR_182,Bronchopneumonia,False,emergency,203.45
+Hybrid Router,CASE_364,PAIR_182,Bronchiolitis,False,emergency,203.43
+Hybrid Router,CASE_365,PAIR_183,Hirschsprung's disease,False,emergency,203.49
+Hybrid Router,CASE_366,PAIR_183,Meconium Plug Syndrome,False,emergency,203.56
+Hybrid Router,CASE_367,PAIR_184,Neonatal Respiratory Distress Syndrome,True,routine,478.65
+Hybrid Router,CASE_368,PAIR_184,Transient Tachypnoea of the Newborn,False,routine,478.79
+Hybrid Router,CASE_369,PAIR_185,Meningitis,True,routine,478.59
+Hybrid Router,CASE_370,PAIR_185,Encephalitis,False,emergency,203.35
+Hybrid Router,CASE_371,PAIR_186,Placenta Accreta,False,emergency,203.39
+Hybrid Router,CASE_372,PAIR_186,Retained Placenta,False,emergency,203.49
+Hybrid Router,CASE_373,PAIR_187,Secondary Postpartum Hemorrhage,True,emergency,203.68
+Hybrid Router,CASE_374,PAIR_187,Normal Lochia,False,emergency,203.61
+Hybrid Router,CASE_375,PAIR_188,Preterm Labour,False,priority,504.57
+Hybrid Router,CASE_376,PAIR_188,False Labour (Braxton Hicks),False,emergency,203.7
+Hybrid Router,CASE_377,PAIR_189,Amniotic fluid embolism,True,routine,479.06
+Hybrid Router,CASE_378,PAIR_189,Pulmonary embolism in Pregnancy,True,priority,503.8
+Hybrid Router,CASE_379,PAIR_190,Bartholin Abscess,False,priority,503.98
+Hybrid Router,CASE_380,PAIR_190,Bartholin Cyst,False,routine,478.57
+Hybrid Router,CASE_381,PAIR_191,Cerebral Palsy,False,routine,503.67
+Hybrid Router,CASE_382,PAIR_191,Muscular Dystrophy,False,routine,478.61
+Hybrid Router,CASE_383,PAIR_192,Kawasaki disease,False,priority,503.68
+Hybrid Router,CASE_384,PAIR_192,Measles,False,routine,478.48
+Hybrid Router,CASE_385,PAIR_193,Acute Otitis Media,False,priority,503.68
+Hybrid Router,CASE_386,PAIR_193,Otitis Externa,False,priority,503.57
+Hybrid Router,CASE_387,PAIR_194,Febrile seizures,False,emergency,203.36
+Hybrid Router,CASE_388,PAIR_194,Epilepsy    ,False,emergency,203.28
+Hybrid Router,CASE_389,PAIR_195,Post-Streptococcal Glomerulonephritis,False,emergency,203.26
+Hybrid Router,CASE_390,PAIR_195,Nephrotic Syndrome,False,emergency,203.28
+Hybrid Router,CASE_391,PAIR_196,Genital Herpes,False,routine,478.59
+Hybrid Router,CASE_392,PAIR_196,Syphilis(Primary Chancre),False,routine,478.75
+Hybrid Router,CASE_393,PAIR_197,Uterine prolapse,False,priority,504.08
+Hybrid Router,CASE_394,PAIR_197,Cystocele (Prolapsed bladder),False,routine,479.01
+Hybrid Router,CASE_395,PAIR_198,Measles (Rubeola),False,priority,504.1
+Hybrid Router,CASE_396,PAIR_198,Rubella (German Measles),False,priority,504.12
+Hybrid Router,CASE_397,PAIR_199,Roseola Infantum,False,priority,503.92
+Hybrid Router,CASE_398,PAIR_199,Erythema Infectiosum (Fifth Disease),False,routine,478.7
+Hybrid Router,CASE_399,PAIR_200,Type 1 Diabetes,False,routine,478.55
+Hybrid Router,CASE_400,PAIR_200,Type 2 Diabetes,False,routine,478.55
+Hybrid Router,CASE_401,PAIR_201,Sickle Cell Vaso-occlusive Crisis,False,priority,503.56
+Hybrid Router,CASE_402,PAIR_201,Osteomyelitis,False,priority,503.58
+Hybrid Router,CASE_403,PAIR_202,Pertussis,False,routine,478.38
+Hybrid Router,CASE_404,PAIR_202,Respiratory Syncytial Virus,False,routine,478.54
+Hybrid Router,CASE_405,PAIR_203,Attention-Deficit Hyperactivity Disorder,False,routine,503.69
+Hybrid Router,CASE_406,PAIR_203,Autism Spectrum Disorder,False,routine,478.64
+Hybrid Router,CASE_407,PAIR_204,Hermophilia A,False,emergency,203.37
+Hybrid Router,CASE_408,PAIR_204,Von Willebrand Disease,False,emergency,203.35
+Hybrid Router,CASE_409,PAIR_205,Celiac Disease,False,routine,478.59
+Hybrid Router,CASE_410,PAIR_205,Irritable Bowel Syndrome,False,routine,478.54
+Hybrid Router,CASE_411,PAIR_206,Juvenile Idiopathic Arthritis,False,priority,503.54
+Hybrid Router,CASE_412,PAIR_206,Septic Arthritis,False,priority,503.53
+Hybrid Router,CASE_413,PAIR_207,Pyloric Stenosis,True,routine,478.52
+Hybrid Router,CASE_414,PAIR_207,Duodenal Atresia,False,routine,478.42
+Hybrid Router,CASE_415,PAIR_208,Osteosarcoma,False,priority,503.88
+Hybrid Router,CASE_416,PAIR_208,Osgood-Schlatter Disease,False,priority,504.12
+Hybrid Router,CASE_417,PAIR_209,Nephroblastoma (Wilms Tumor),False,emergency,203.43
+Hybrid Router,CASE_418,PAIR_209,Neuroblastoma,False,emergency,203.36
+Hybrid Router,CASE_419,PAIR_210,Postpartum Thyroiditis,False,routine,503.62
+Hybrid Router,CASE_420,PAIR_210,Postpartum Anxiety,False,routine,503.69
+Hybrid Router,CASE_421,PAIR_211,Cervical Polyp,False,emergency,203.18
+Hybrid Router,CASE_422,PAIR_211,Cervical Cancer,False,emergency,203.29
+Hybrid Router,CASE_423,PAIR_212,Rickets,False,priority,503.82
+Hybrid Router,CASE_424,PAIR_212,Blount Disease,False,priority,503.48
+Hybrid Router,CASE_425,PAIR_213,"Hand, Foot, and Mouth Disease",False,emergency,203.41
+Hybrid Router,CASE_426,PAIR_213," 
+Herpetic Gingivostomatitis",False,emergency,203.38
+Hybrid Router,CASE_427,PAIR_214,Hydrocephalus,False,routine,478.58
+Hybrid Router,CASE_428,PAIR_214,Familial Macrocephaly,False,routine,478.64
+Hybrid Router,CASE_429,PAIR_215,Neonatal Tetanus,True,routine,478.76
+Hybrid Router,CASE_430,PAIR_215,Hypocalcemic Tetany,False,routine,478.63
+Hybrid Router,CASE_431,PAIR_216,Allergic Rhinitis,False,routine,478.54
+Hybrid Router,CASE_432,PAIR_216,Common Cold,False,priority,503.53
+Hybrid Router,CASE_433,PAIR_217,Congenital Adrenal Hyperplasia,False,routine,478.56
+Hybrid Router,CASE_434,PAIR_217,Androgen Insensitivity Syndrome,False,routine,478.39

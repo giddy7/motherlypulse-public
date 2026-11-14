@@ -1,0 +1,4 @@
+Strategy,Safety Compliance (%),Emergency Latency (ms),Routine Latency (ms),Adversarial / Fault Resistance
+Strategy 0: Pure Neural Model,0.0%,450.0 ms,450.0 ms,0.0% (Unprotected)
+Strategy 1: Dynamic Router Only,77.8%,0.73 ms,451.2 ms,50.0% (Emergency Only)
+Strategy 2: MotherlyPulse Full Hybrid Scaffold,88.9%,0.05 ms,451.5 ms,100.0% (Deterministic Fallback Interception)
