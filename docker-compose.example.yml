@@ -1,0 +1,69 @@
+# Public-safe Docker Compose template for MotherlyPulse.
+# Copy .env.example to .env and configure your own values before running:
+#   docker compose -f docker-compose.example.yml up -d --build
+#
+# Note: Production deployments use a private .env (never committed) and
+# host-specific volume paths. See docs/DEPLOYMENT.md for details.
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/var/lib/motherlypulse
+      - ./backups:/var/backups/motherlypulse
+    networks:
+      - default
+      - ai_internal_net
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 512m
+    cpus: 1.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  llm:
+    image: ghcr.io/ggml-org/llama.cpp:server
+    restart: unless-stopped
+    # Place the exported Q4_K_M GGUF model in ./models/chewie-1.2-q4_k_m.gguf
+    command:
+      - --model
+      - /models/chewie-1.2-q4_k_m.gguf
+      - --alias
+      - chewie-1.2
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+      - --ctx-size
+      - "2048"
+      - --n-gpu-layers
+      - "0"
+    volumes:
+      - ./models:/models:ro
+    networks:
+      - ai_internal_net
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 2560m
+    cpus: 3.0
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  ai_internal_net:
+    internal: true

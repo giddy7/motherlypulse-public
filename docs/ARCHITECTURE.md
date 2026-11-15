@@ -38,12 +38,12 @@ User Input (Telegram Bot / HTTP API / CLI)
 
 ## 2. Deployment Architecture
 
-In production on the Linux VPS, MotherlyPulse runs as a two-container Docker Compose stack (`motherlypulse`), isolated within `/opt/apps/motherlypulse/`:
+In production on the Linux VPS, MotherlyPulse runs as a two-container Docker Compose stack (reproducible templates are provided in [`../Dockerfile`](../Dockerfile) and [`../docker-compose.example.yml`](../docker-compose.example.yml)):
 
-- **`motherlypulse-bot` (`python:3.11-slim-bookworm`, non-root `10001:10001`, `1.0` CPU, `512 MiB` RAM):** Handles outbound HTTPS Telegram long polling (`@MotherlyPulse_bot`), `DynamicTriageClassifier`, `ClinicalInvariantValidator`, `LocationService`, `ReminderEngine`, and SQLite WAL persistence (`./data/motherlypulse_user_store.db`).
-- **`chewie-llm` (`ghcr.io/ggml-org/llama.cpp:server`, `3.0` CPUs, `2560 MiB` RAM):** Serves `chewie-1.2-q4_k_m.gguf` (mounted read-only `:ro`) over an internal-only Docker bridge network (`http://chewie-llm:8080/v1/chat/completions`) with zero public host ports.
+- **Bot Container (`python:3.11-slim-bookworm`, non-root `10001:10001`):** Handles outbound HTTPS Telegram long polling (`@MotherlyPulse_bot`), `DynamicTriageClassifier`, `ClinicalInvariantValidator`, `LocationService`, `ReminderEngine`, and SQLite WAL persistence (`./data/motherlypulse_user_store.db`).
+- **LLM Container (`ghcr.io/ggml-org/llama.cpp:server`):** Serves `chewie-1.2-q4_k_m.gguf` (mounted read-only `:ro`) over an internal-only Docker bridge network with zero public host ports.
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for full container topology, backup arrangements, security hardening, and verification results.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for container templates, configuration distinction, backup arrangements, security hardening, and limitations.
 
 ---
 
@@ -51,11 +51,11 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for full container topology, backup arrangeme
 
 | Component | Status | Notes |
 | :--- | :--- | :--- |
-| Deterministic Triage & `112` Bypass | **Implemented & Verified** | `motherlypulse_app/classifier.py` (runs locally in `motherlypulse-bot`) |
+| Deterministic Triage & `112` Bypass | **Implemented & Verified** | `motherlypulse_app/classifier.py` (runs locally in bot container) |
 | Telegram Bot & Multilingual Flows | **Implemented & Verified** | `motherlypulse_app/telegram_bot.py` (`@MotherlyPulse_bot`) |
 | `ClinicalInvariantValidator` & Fallbacks | **Implemented & Verified** | `motherlypulse_app/ai_connector.py` |
-| VPS `chewie-llm` (`llama.cpp:server` `Q4_K_M`) | **Deployed & Verified** | Internal bridge inference (`8.91s` verified check); `.env.example` defaults to `disabled` |
-| `/compare` Dual-Model A/B Demo | **Partially Implemented** | Works with dual-model GPU endpoint; unavailable on single-model `chewie-llm` VPS stack |
+| VPS `llama.cpp` `Q4_K_M` Container | **Deployed & Verified** | Internal bridge inference verified via smoke test; `.env.example` defaults to `disabled` |
+| `/compare` Dual-Model A/B Demo | **Partially Implemented** | Works with dual-model GPU endpoint; unavailable on single-model VPS LLM stack |
 | Stdlib HTTP API (`GET /health`, `POST /api/chat`) | **Implemented (Local/API)** | `motherlypulse_app/server.py` |
 | Isolated Maternal Risk ML Module | **Implemented (Standalone)** | `maternal_risk_prediction/` (not wired into Telegram bot) |
 | WhatsApp Production Webhook | **Scaffold Only** | `motherlypulse_app/whatsapp_adapter.py` |

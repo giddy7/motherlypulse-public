@@ -118,13 +118,17 @@ See [docs/TECHNICAL_OVERVIEW.md](docs/TECHNICAL_OVERVIEW.md) for module-level de
 
 ## AI Architecture & Model Integration Status
 
-MotherlyPulse separates **offline model research**, **safe local template defaults**, and **VPS production serving**:
+MotherlyPulse separates **default template configuration**, **VPS deployment configuration**, **offline model evaluation**, and **live VPS inference capability**:
 
-- **Production Serving Status:** In the verified 24/7 VPS deployment (commit `a2be3a3`), `motherlypulse-bot` connects over an internal Docker bridge (`http://chewie-llm:8080/v1/chat/completions`) to `chewie-llm` serving `chewie-1.2-q4_k_m.gguf` (`8.91s` verified end-to-end inference + `ClinicalInvariantValidator` check), with automatic fallback to `DeterministicReference` if `chewie-llm` is unavailable. For safe local development and template defaults, `.env.example` keeps `AI_MODEL_BACKEND=disabled`.
+- **Default Configuration (`.env.example` & `AIModelConnector`):** Both `.env.example` and `AIModelConnector.__init__` default to `AI_MODEL_BACKEND=disabled` (deterministic-only mode) so local setups operate safely without a running LLM server.
+- **VPS Deployment Configuration:** On the deployed VPS, a private `.env` (not committed) configures `AIModelConnector` (`AI_MODEL_BACKEND=remote`, OpenAI-compatible `/v1/chat/completions`) to call the internal `llama.cpp` container over Docker's private bridge, with automatic fallback to `DeterministicReference`.
+- **Live VPS Inference Capability:** Container healthchecks and an internal smoke test verified that the bot container can reach the `chewie-1.2-q4_k_m.gguf` `llama.cpp` service and validate outputs through `ClinicalInvariantValidator`, while `DynamicTriageClassifier` (`112`) always executes locally first.
 - **Research Model (`Chewie 1.2`):** `google/gemma-2-2b-it` (revision `299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8`) fine-tuned via 4-bit NF4 QLoRA (`r=16`, `lora_alpha=32`, `lora_dropout=0.05`, attention projections only, `6,389,760` trainable parameters) for `1.514` epochs (`80` steps) on `420` multilingual pairs (`140` EN, `140` PCM, `140` YO).
 - **Saved Research Artifacts:** Training logs, adapter config, checksums, Colab notebooks, and raw evaluation CSVs are stored in `experiments/chewie_1_2_fresh_experiment/`.
 
 ### Offline Held-Out Evaluation (`n = 135`: 120 `test_*.jsonl` + 15 `fixed_15` prompts)
+
+> **Evaluation Scope Note:** These offline benchmark metrics (`n = 135`) were measured in a controlled Colab evaluation harness and **do not represent live production usage volume or formal clinical validation**.
 
 Metrics below are reconciled from `experiments/chewie_1_2_fresh_experiment/01_baseline/chewie_1_2_fresh_baseline_eval.csv` and `03_post_eval/chewie_1_2_fresh_finetuned_eval.csv`:
 
@@ -225,20 +229,20 @@ python -m unittest maternal_risk_prediction/test_prediction.py
 
 ## Deployment and Hosting Architecture
 
-MotherlyPulse is deployed 24/7 on a Linux VPS environment using **Docker** and **Docker Compose** (`motherlypulse` Compose project), isolated from other workloads on the host:
+MotherlyPulse is deployed on a Linux VPS environment using **Docker** and **Docker Compose**, isolated from other workloads on the host. Sanitized, reproducible container templates are provided in [Dockerfile](Dockerfile), [.dockerignore](.dockerignore), and [docker-compose.example.yml](docker-compose.example.yml):
 
 - **Two-Container Stack:**
-  - `motherlypulse-bot` (`python:3.11-slim-bookworm`, non-root `10001:10001`, `1.0` CPU, `512 MiB` RAM): Hosts outbound HTTPS Telegram long polling (`@MotherlyPulse_bot`, no inbound ports required), `DynamicTriageClassifier` (`112`), `ClinicalInvariantValidator`, `DeterministicReference` fallbacks, and SQLite persistence.
-  - `chewie-llm` (`ghcr.io/ggml-org/llama.cpp:server`, `3.0` CPUs, `2560 MiB` RAM): Serves `chewie-1.2-q4_k_m.gguf` (mounted read-only `:ro`) over an internal-only Docker bridge (`http://chewie-llm:8080/v1/chat/completions`) with zero public port exposure.
-- **Startup, Supervision & Health Checks:** Both containers run with `restart: unless-stopped` (`docker compose -p motherlypulse`), and `motherlypulse-bot` runs `healthcheck.py` every `60s` (SQLite read + Telegram `getMe`).
+  - **Bot Container (`python:3.11-slim-bookworm`, non-root `10001:10001`):** Hosts outbound HTTPS Telegram long polling (`@MotherlyPulse_bot`, no inbound ports required), `DynamicTriageClassifier` (`112`), `ClinicalInvariantValidator`, `DeterministicReference` fallbacks, and SQLite persistence.
+  - **LLM Container (`ghcr.io/ggml-org/llama.cpp:server`):** Serves `chewie-1.2-q4_k_m.gguf` (mounted read-only `:ro`) over an internal-only Docker bridge network with zero public port exposure.
+- **Startup, Supervision & Health Checks:** Both containers run with `restart: unless-stopped` under Docker Compose, with periodic health checks for SQLite read access, Telegram `getMe` connectivity, and the internal LLM `/health` endpoint.
 - **Persistence & Backups:** User profiles and reminders are stored in SQLite 3 (WAL mode) inside `./data/motherlypulse_user_store.db` (`10001:10001` ownership for `-wal`/`-shm` files). Daily online WAL-safe SQLite backups with `PRAGMA integrity_check;` and pre-deployment backups write to `./backups/`.
-- **Updates & Verification:** Updates are deployed via clean `git archive` `tar.gz` packages (preserving `.env`, `data/`, `backups/`, and `models/`) followed by `docker compose -p motherlypulse up -d --build`. Verified checks on commit `a2be3a3` confirmed `motherlypulse-bot` (`17.84 MiB / 512 MiB`), `chewie-llm` (`1.178 GiB / 2.5 GiB`), `healthcheck.py: OK`, `PRAGMA integrity_check: ('ok',)`, active Telegram polling, and end-to-end `AIModelConnector` inference (`8.91s` latency).
+- **Updates & Verification:** Updates are deployed via clean `git archive` `tar.gz` packages (preserving `.env`, `data/`, `backups/`, and `models/`) followed by `docker compose up -d --build`. Deployment checks confirmed healthy containers, active Telegram polling, SQLite `PRAGMA integrity_check` passing, and end-to-end `AIModelConnector` + `ClinicalInvariantValidator` inference against `chewie-1.2-q4_k_m.gguf`.
 
-See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for the complete deployment specification, operational commands, security hardening, and limitations.
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for the complete deployment specification, configuration distinction, security hardening, and limitations.
 
 ## Current Limitations & Development Roadmap
 
-- **VPS `/compare` & Latency:** `chewie-llm` loads only fine-tuned `chewie-1.2-q4_k_m.gguf` (so `/compare` requires a dual-model GPU endpoint) and CPU inference takes ~8–12s per reply (`AI_MODEL_TIMEOUT=45.0`).
+- **VPS `/compare` & Latency:** The VPS LLM container loads only fine-tuned `chewie-1.2-q4_k_m.gguf` (so `/compare` requires a dual-model GPU endpoint) and CPU inference takes several seconds per reply (`AI_MODEL_TIMEOUT=45.0`).
 - **Reboot & Restore Drills:** `restart: unless-stopped` is configured, though forced host reboot recovery was not independently tested after `a2be3a3`, and database restore into a fresh container remains a manual operational procedure.
 - **Yorùbá Emergency Escalation:** In offline neural evaluation without the deterministic bypass, Yorùbá clinical safety was `68.89%` (`11` missed `112` escalations plus `3` regressions), requiring the deterministic `DynamicTriageClassifier` bypass to remain mandatory.
 - **Prompt Wrapper Dependency:** `120/120` wrapped `test_*.jsonl` prompts emitted the triage prefix, whereas `0/15` raw un-wrapped `fixed_15` prompts did; any inference endpoint must apply the training prompt wrapper.

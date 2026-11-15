@@ -22,5 +22,5 @@ An isolated `scikit-learn` module trained on 30,000 synthetic ANC records across
 
 ## 3. Runtime Dependencies & Deployment Footprint
 
-The core `motherlypulse_app` runtime relies on Python 3.10+ standard library (`sqlite3`, `urllib.request`, `http.server`, `json`, `re`, `logging`) with zero heavy ML packages inside the bot container. In the verified Docker Compose VPS deployment, `motherlypulse-bot` runs at `17.84 MiB / 512 MiB` RAM alongside `chewie-llm` (`1.178 GiB / 2.5 GiB` RAM); see [DEPLOYMENT.md](DEPLOYMENT.md). `requirements.txt` lists `numpy`, `scipy`, `scikit-learn`, and `pandas` for the standalone risk-prediction and evaluation pipelines.
+The core `motherlypulse_app` runtime relies on Python 3.10+ standard library (`sqlite3`, `urllib.request`, `http.server`, `json`, `re`, `logging`) with zero heavy ML packages inside the bot container. In the Docker Compose VPS deployment, the bot container runs alongside an isolated `llama.cpp` server container; see [DEPLOYMENT.md](DEPLOYMENT.md) and [`../docker-compose.example.yml`](../docker-compose.example.yml). `requirements.txt` lists `numpy`, `scipy`, `scikit-learn`, and `pandas` for the standalone risk-prediction and evaluation pipelines.
 
