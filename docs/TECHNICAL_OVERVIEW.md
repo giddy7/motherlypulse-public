@@ -20,7 +20,7 @@
 
 An isolated `scikit-learn` module trained on 30,000 synthetic ANC records across low-, moderate-, and high-burden LMIC settings (`age_years`, `gravidity`, `parity`, `gestational_age_weeks`, `bmi_pre_pregnancy`, `systolic_bp_mmhg`, `diastolic_bp_mmhg`, `hemoglobin_gdl`, `fasting_glucose_mgdl`, `proteinuria`, `hiv_status`, `anc_visits`). Exposes `MaternalRiskPredictor` in `src/predictor.py` with WHO-aligned clinical rules.
 
-## 3. Runtime Dependencies
+## 3. Runtime Dependencies & Deployment Footprint
 
-The core `motherlypulse_app` runtime relies primarily on Python 3.10+ standard library (`sqlite3`, `urllib.request`, `http.server`, `json`, `re`, `logging`) without heavy ML dependencies in deterministic mode. `requirements.txt` lists `numpy`, `scipy`, `scikit-learn`, and `pandas` for the risk-prediction and evaluation pipelines.
+The core `motherlypulse_app` runtime relies on Python 3.10+ standard library (`sqlite3`, `urllib.request`, `http.server`, `json`, `re`, `logging`) with zero heavy ML packages inside the bot container. In the verified Docker Compose VPS deployment, `motherlypulse-bot` runs at `17.84 MiB / 512 MiB` RAM alongside `chewie-llm` (`1.178 GiB / 2.5 GiB` RAM); see [DEPLOYMENT.md](DEPLOYMENT.md). `requirements.txt` lists `numpy`, `scipy`, `scikit-learn`, and `pandas` for the standalone risk-prediction and evaluation pipelines.
 

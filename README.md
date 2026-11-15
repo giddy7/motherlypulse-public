@@ -12,7 +12,7 @@ MotherlyPulse addresses these gaps through a safety-first architecture:
 
 - **Operational Telegram Application:** Guides pregnant women and infant caregivers through onboarding, multilingual health queries, clinic discovery, and scheduled care reminders.
 - **Deterministic Emergency Triage & Clinical Guardrails:** Screens every incoming message for life-threatening danger signs before any generative model is called, escalating emergencies immediately to Nigeria's national emergency number **`112`**.
-- **Experimental Language Model Research (`Chewie 1.2`):** Includes training scripts, offline evaluation benchmarks, and optional `llama.cpp` / remote inference adapters for a QLoRA fine-tuned `google/gemma-2-2b-it` model. In the repository's default deployment configuration, `AI_MODEL_BACKEND=disabled` (deterministic-only mode).
+- **Fine-Tuned Language Model (`Chewie 1.2`):** A QLoRA fine-tuned `google/gemma-2-2b-it` model exported to `Q4_K_M` GGUF and deployed in an isolated `llama.cpp` container (`chewie-llm`) alongside `motherlypulse-bot` on the production VPS, with `.env.example` defaulting to `AI_MODEL_BACKEND=disabled` for safe local setups.
 
 ## Intended Users
 
@@ -40,7 +40,7 @@ MotherlyPulse addresses these gaps through a safety-first architecture:
 ## System Architecture
 
 ```text
-Incoming Message (Telegram / HTTP API / CLI)
+Incoming Message (Telegram Long Polling / HTTP API / CLI)
    │
    ▼
 ┌──────────────────────────────────────────────────────────┐
@@ -53,18 +53,19 @@ Incoming Message (Telegram / HTTP API / CLI)
 ┌──────────────────────────────────────────────────────────┐
 │ Context Retrieval & AIModelConnector                     │
 │                                                          │
-│  Default (AI_MODEL_BACKEND=disabled):                    │
+│  VPS Production (AI_MODEL_BACKEND=remote):               │
+│    └─► Internal Bridge ──► chewie-llm (llama.cpp Q4_K_M) │
+│                                                          │
+│  Safe Template Default (AI_MODEL_BACKEND=disabled):      │
 │    └─► DeterministicReference Passages & Templates       │
 │                                                          │
-│  Optional / Experimental (AI_MODEL_BACKEND=remote|local):│
-│    ├─► Optional llama-server / Cloud GPU / Local PEFT    │
-│    └─► ClinicalInvariantValidator                        │
-│          ├─ PASS ──► Validated AI Response               │
-│          └─ FAIL / Timeout ──► Deterministic Fallback    │
+│  ClinicalInvariantValidator (screens all AI outputs):    │
+│    ├─ PASS ──► Validated AI Response                     │
+│    └─ FAIL / Timeout ──► Deterministic Fallback          │
 └──────────────────────────────────────────────────────────┘
 ```
 
-For component details, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) and [docs/SAFETY_AND_VALIDATION.md](docs/SAFETY_AND_VALIDATION.md).
+For application and deployment architecture details, see [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), and [docs/SAFETY_AND_VALIDATION.md](docs/SAFETY_AND_VALIDATION.md).
 
 ## Technology Stack
 
@@ -117,9 +118,9 @@ See [docs/TECHNICAL_OVERVIEW.md](docs/TECHNICAL_OVERVIEW.md) for module-level de
 
 ## AI Architecture & Model Integration Status
 
-MotherlyPulse separates **offline model research** from **production application serving**:
+MotherlyPulse separates **offline model research**, **safe local template defaults**, and **VPS production serving**:
 
-- **Production Serving Status:** The repository's `.env.example` and recorded deployment configuration set `AI_MODEL_BACKEND=disabled` (deterministic-only mode). While `AI_MODEL_BACKEND=remote` (for `llama.cpp` `llama-server` or a remote GPU endpoint) is implemented and covered by unit/integration tests with mocked HTTP calls, **Chewie 1.2 is not represented as an active live production inference service**.
+- **Production Serving Status:** In the verified 24/7 VPS deployment (commit `a2be3a3`), `motherlypulse-bot` connects over an internal Docker bridge (`http://chewie-llm:8080/v1/chat/completions`) to `chewie-llm` serving `chewie-1.2-q4_k_m.gguf` (`8.91s` verified end-to-end inference + `ClinicalInvariantValidator` check), with automatic fallback to `DeterministicReference` if `chewie-llm` is unavailable. For safe local development and template defaults, `.env.example` keeps `AI_MODEL_BACKEND=disabled`.
 - **Research Model (`Chewie 1.2`):** `google/gemma-2-2b-it` (revision `299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8`) fine-tuned via 4-bit NF4 QLoRA (`r=16`, `lora_alpha=32`, `lora_dropout=0.05`, attention projections only, `6,389,760` trainable parameters) for `1.514` epochs (`80` steps) on `420` multilingual pairs (`140` EN, `140` PCM, `140` YO).
 - **Saved Research Artifacts:** Training logs, adapter config, checksums, Colab notebooks, and raw evaluation CSVs are stored in `experiments/chewie_1_2_fresh_experiment/`.
 
@@ -222,19 +223,34 @@ python maternal_risk_prediction/src/train_model.py
 python -m unittest maternal_risk_prediction/test_prediction.py
 ```
 
-## Deployment
+## Deployment and Hosting Architecture
 
-- **Deterministic Mode (Default):** Set `AI_MODEL_BACKEND=disabled` and run `run_telegram_bot.py` via `deployment/motherlypulse.service` or Docker using `deployment/setup_server.sh`, `deployment/deploy.sh`, and `deployment/backup_db.sh`.
-- **Optional `llama-server` Inference Setup:** `deployment/Export_Chewie_1_2_GGUF.ipynb` exports the fine-tuned adapter merged with `google/gemma-2-2b-it` into `Q4_K_M` GGUF format for `ghcr.io/ggml-org/llama.cpp:server` (`AI_MODEL_BACKEND=remote`, `AI_MODEL_API_FORMAT=openai`).
+MotherlyPulse is deployed 24/7 on a Linux VPS environment using **Docker** and **Docker Compose** (`motherlypulse` Compose project), isolated from other workloads on the host:
+
+- **Two-Container Stack:**
+  - `motherlypulse-bot` (`python:3.11-slim-bookworm`, non-root `10001:10001`, `1.0` CPU, `512 MiB` RAM): Hosts outbound HTTPS Telegram long polling (`@MotherlyPulse_bot`, no inbound ports required), `DynamicTriageClassifier` (`112`), `ClinicalInvariantValidator`, `DeterministicReference` fallbacks, and SQLite persistence.
+  - `chewie-llm` (`ghcr.io/ggml-org/llama.cpp:server`, `3.0` CPUs, `2560 MiB` RAM): Serves `chewie-1.2-q4_k_m.gguf` (mounted read-only `:ro`) over an internal-only Docker bridge (`http://chewie-llm:8080/v1/chat/completions`) with zero public port exposure.
+- **Startup, Supervision & Health Checks:** Both containers run with `restart: unless-stopped` (`docker compose -p motherlypulse`), and `motherlypulse-bot` runs `healthcheck.py` every `60s` (SQLite read + Telegram `getMe`).
+- **Persistence & Backups:** User profiles and reminders are stored in SQLite 3 (WAL mode) inside `./data/motherlypulse_user_store.db` (`10001:10001` ownership for `-wal`/`-shm` files). Daily online WAL-safe SQLite backups with `PRAGMA integrity_check;` and pre-deployment backups write to `./backups/`.
+- **Updates & Verification:** Updates are deployed via clean `git archive` `tar.gz` packages (preserving `.env`, `data/`, `backups/`, and `models/`) followed by `docker compose -p motherlypulse up -d --build`. Verified checks on commit `a2be3a3` confirmed `motherlypulse-bot` (`17.84 MiB / 512 MiB`), `chewie-llm` (`1.178 GiB / 2.5 GiB`), `healthcheck.py: OK`, `PRAGMA integrity_check: ('ok',)`, active Telegram polling, and end-to-end `AIModelConnector` inference (`8.91s` latency).
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for the complete deployment specification, operational commands, security hardening, and limitations.
 
 ## Current Limitations & Development Roadmap
 
-- **Live AI Serving Status:** Recorded deployment configuration uses `AI_MODEL_BACKEND=disabled`; end-to-end live production LLM inference for Telegram users is not claimed as active.
+- **VPS `/compare` & Latency:** `chewie-llm` loads only fine-tuned `chewie-1.2-q4_k_m.gguf` (so `/compare` requires a dual-model GPU endpoint) and CPU inference takes ~8–12s per reply (`AI_MODEL_TIMEOUT=45.0`).
+- **Reboot & Restore Drills:** `restart: unless-stopped` is configured, though forced host reboot recovery was not independently tested after `a2be3a3`, and database restore into a fresh container remains a manual operational procedure.
 - **Yorùbá Emergency Escalation:** In offline neural evaluation without the deterministic bypass, Yorùbá clinical safety was `68.89%` (`11` missed `112` escalations plus `3` regressions), requiring the deterministic `DynamicTriageClassifier` bypass to remain mandatory.
 - **Prompt Wrapper Dependency:** `120/120` wrapped `test_*.jsonl` prompts emitted the triage prefix, whereas `0/15` raw un-wrapped `fixed_15` prompts did; any inference endpoint must apply the training prompt wrapper.
 - **Pending Clinical & Linguistic Review:** Formal clinical board review and native-speaker Yorùbá and Nigerian Pidgin linguistic validation remain pending.
-- **Facility Verification:** Operational hours and 24-hour status of the 55 Ondo State PHC records require periodic field verification.
-- **WhatsApp Channel:** `motherlypulse_app/whatsapp_adapter.py` is a structural scaffold and is not wired to a live webhook.
+- **Standalone Risk Module & Channels:** `maternal_risk_prediction/` is standalone (trained on 30,000 synthetic records, not integrated into the Telegram bot); `motherlypulse_app/whatsapp_adapter.py` is a structural scaffold; and the 55 Ondo PHC records require periodic field verification.
+
+## Repository Documentation Guide
+
+- **Architecture & Deployment:** [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), [docs/TECHNICAL_OVERVIEW.md](docs/TECHNICAL_OVERVIEW.md)
+- **Safety & Clinical Validation:** [docs/SAFETY_AND_VALIDATION.md](docs/SAFETY_AND_VALIDATION.md)
+- **AI Models & Evaluation:** [docs/AI_MODEL_SELECTION.md](docs/AI_MODEL_SELECTION.md), [models/README.md](models/README.md), [models/MODEL_CARD_CHEWIE_1_2.md](models/MODEL_CARD_CHEWIE_1_2.md), [experiments/chewie_1_2_fresh_experiment/FRESH_CHEWIE_1_2_EXPERIMENT_REPORT.md](experiments/chewie_1_2_fresh_experiment/FRESH_CHEWIE_1_2_EXPERIMENT_REPORT.md)
+- **Datasets & Resources:** [DATASET_CARD.md](DATASET_CARD.md), [docs/DATA_SOURCES.md](docs/DATA_SOURCES.md), [MotherlyPulse_Data/06_Reports/README.md](MotherlyPulse_Data/06_Reports/README.md)
 
 ## Contributing
 

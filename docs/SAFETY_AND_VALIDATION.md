@@ -16,7 +16,7 @@ All non-emergency (`PRIORITY` / `ROUTINE`) neural outputs are screened locally b
 
 ## 3. Graceful Deterministic Fallback
 
-If `AI_MODEL_BACKEND=disabled`, `AI_MODEL_ENDPOINT` is unreachable/times out, or `ClinicalInvariantValidator` rejects a model output, `AIModelConnector` automatically returns the approved `DeterministicReference` passage from `MotherlyPulse_Data`.
+If `AI_MODEL_BACKEND=disabled`, `chewie-llm` is stopped/unreachable, a request exceeds `AI_MODEL_TIMEOUT` (`45.0s`), or `ClinicalInvariantValidator` rejects a model output, `AIModelConnector` automatically returns the approved `DeterministicReference` passage from `MotherlyPulse_Data`. All triage and validation execute locally inside `motherlypulse-bot`.
 
 ## 4. Known Safety Limitations
 
