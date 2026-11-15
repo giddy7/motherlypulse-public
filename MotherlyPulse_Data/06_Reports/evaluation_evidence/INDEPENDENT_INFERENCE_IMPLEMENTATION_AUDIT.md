@@ -220,5 +220,5 @@ The corrected `hybrid_router.py` was inspected against all clinical safety requi
 4. Chewie's base model requires Hugging Face authentication tokens that are not yet wired into the adapter.
 5. The profiler does not measure true Time to First Token (TTFT).
 
-*Audit complete. Proceed to `INFERENCE_REMEDIATION_PLAN.md` for prioritized corrective actions.*
+*Audit complete.*
 

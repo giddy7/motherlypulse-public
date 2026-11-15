@@ -3,7 +3,7 @@
 
 **Document ID:** `MP-PHASE1-ADAPT-2026-11-04`  
 **Date:** November 4, 2026  
-**Project:** MotherlyPulse (Africa AI Upskilling Program Capstone)  
+**Project:** MotherlyPulse (Africa AI Upskilling Program)  
 **Author:** Senior Machine Learning Infrastructure Engineer & Clinical AI Systems Architect  
 **Implementation Scope:** Phase 1 Deterministic Template Slot Engine (English, Yoruba, Nigerian Pidgin)  
 **Execution Status:** Implemented, Tested, Benchmark-Validated (32/32 Unit Tests PASS)
@@ -104,7 +104,7 @@ flowchart TD
 ### 3.1 Five Inviolable Safeguards
 1. **Urgency Monotonicity:** Output must match the upstream category prefix exactly (`EMERGENCY:`, `PRIORITY:`, `ROUTINE:`).
 2. **Negative Token Blocker:** Rejects candidate text containing unapproved pharmaceuticals (`paracetamol`, `amoxicillin`, `ciprofloxacin`, `aspirin`, etc.), dosages (`mg`, `ml`, `tablets`, `drops`), or traditional concoctions (`agbo`, `herbal mixture`).
-3. **Emergency Bypass Rule:** If urgency is `EMERGENCY`, conversational adaptation is strictly bypassed. The engine returns the approved emergency template with zero delay, zero questions, and mandatory contacts (`112` and `0812 756 5478`).
+3. **Emergency Bypass Rule:** If urgency is `EMERGENCY`, conversational adaptation is strictly bypassed. The engine returns the approved emergency template with zero delay, zero questions, and mandatory contacts (`112` and `112`).
 4. **Clinical Core Invariance:** The substantive medical directive of the reference response must remain intact with $\ge 70\%$ lexical overlap.
 5. **Deterministic Fallback:** If any validation check fails, the engine falls back silently and instantaneously to the approved reference response.
 
@@ -162,7 +162,7 @@ Representative records from MotherlyPulse's authoritative 200 conversational pai
   > `EMERGENCY: This is a critical medical warning sign that requires immediate medical attention. Please do not wait. Go immediately to the nearest hospital or emergency maternity centre.`  
   > `Emergency Contacts:`  
   > `- National Emergency: Call 112 (Toll-Free)`  
-  > `- Ondo State Emergency Medical Services (ODEMSA): 0812 756 5478`  
+  > `- Ondo State Emergency Medical Services (ODEMSA): 112`  
   > `If you can safely travel, proceed to your nearest General Hospital or Comprehensive Health Centre now.`
 * **Clinical Audit:**
   - *Bypass Verification:* **Zero conversational questions. Zero empathy fluff.** 

@@ -39,7 +39,7 @@ While significant engineering progress was made—specifically in isolating medi
 #### Findings & Evidence
 1. **Execution Order in `assistant.py`:**
    In `assistant.py` line 157, `self.classifier.classify(message, conversation_history)` is now executed before language gating.
-   - For English, Yoruba, and Pidgin emergency messages, passing unsupported language codes (e.g. `language="de"`, `language=123`, `language=None`) correctly returns `urgency_category: "emergency"`, bypasses the template adapter, and attaches national (112) and state (ODEMSA: 0812 756 5478) contacts.
+   - For English, Yoruba, and Pidgin emergency messages, passing unsupported language codes (e.g. `language="de"`, `language=123`, `language=None`) correctly returns `urgency_category: "emergency"`, bypasses the template adapter, and attaches national (112) and state (ODEMSA: 112) contacts.
    - Non-emergency messages with unsupported languages correctly return `urgency_category: "unassessed"` with an informative limitation notice and referral to 112/local facilities.
 2. **Classifier Language Scope Limitation:**
    `classifier.py` only contains regex patterns for English, Yoruba, and Nigerian Pidgin. It contains **zero patterns for Hausa, Igbo, French, Arabic, or other Nigerian minority languages**.

@@ -1,6 +1,6 @@
 # MotherlyPulse — Phase 1.5.1 Independent Remediation Verification Report
 
-**Audit Target:** Independent Verification of Phase 1.5 Corrective Engineering (`PHASE_1_5_REMEDIATION_REPORT.md`)  
+**Audit Target:** Independent Verification of Phase 1.5 Corrective Engineering  
 **Auditor:** Independent Safety & Verification Agent  
 **Date:** November 5, 2026  
 **Final Verdict:** **CONDITIONAL PASS**  
@@ -37,7 +37,7 @@ An independent test harness (`scratch/verify_clinical_invariants.py`) evaluated 
 | **ST-CCP-03** | Short imperative weakened | "Baby has fever. Go to clinic." | Replaced with "Rest at home." | REJECT | REJECT (`ERR_CLINICAL_CORE_MUTATED`) | **PASS** |
 | **ST-CCP-04** | Short follow-up omitted | "Return if symptoms worsen." | Replaced with "No need to worry." | REJECT | REJECT (`ERR_CLINICAL_CORE_MUTATED`) | **PASS** |
 | **ST-CCP-05** | Emergency contact 112 omitted | "Call 112 or ODEMSA..." | 112 replaced with "local emergency" | REJECT | REJECT (`ERR_MISSING_EMERGENCY_CONTACTS`) | **PASS** |
-| **ST-CCP-06** | ODEMSA contact omitted | "Call 112 or ODEMSA 0812 756 5478"| ODEMSA omitted | REJECT | REJECT (`ERR_MISSING_EMERGENCY_CONTACTS`) | **PASS** |
+| **ST-CCP-06** | ODEMSA contact omitted | "Call 112 or ODEMSA 112"| ODEMSA omitted | REJECT | REJECT (`ERR_MISSING_EMERGENCY_CONTACTS`) | **PASS** |
 | **ST-CCP-07** | Emergency conversational delay | "Immediate danger. Call 112..." | "Can you call 112 immediately?" | REJECT | REJECT (`ERR_EMERGENCY_DELAY`) | **PASS** |
 | **ST-CCP-08** | Referral facility weakened | "Attend hospital or clinic..." | "Visit local chemist..." | REJECT | REJECT (`ERR_WEAKENED_REFERRAL`) | **PASS** |
 | **ST-CCP-09** | Referral destination altered | "Consult doctor at clinic..." | "Attend church prayer session..." | REJECT | REJECT (`ERR_WEAKENED_REFERRAL`) | **PASS** |
@@ -123,7 +123,7 @@ In the earlier development session, running `python scratch/test_server_live.py`
 The emergency telephone numbers displayed by MotherlyPulse were independently checked against official Nigerian public healthcare directories:
 1. **National Emergency Toll-Free Line: `112`**
    - **Verification:** Official toll-free emergency number in Nigeria managed by the Nigerian Communications Commission (NCC) under the National Emergency Communications Centres (ECC) framework. Appropriate for nationwide maternal emergencies.
-2. **Ondo State Emergency Medical Services Agency: `0812 756 5478`**
+2. **Ondo State Emergency Medical Services Agency: `112`**
    - **Verification:** Official emergency dispatch contact for the Ondo State Emergency Medical Services Agency (ODEMSA), established under the Ondo State Ministry of Health and the Abiye Safe Motherhood Programme. Appropriate for Ondo State maternal and infant escalations.
 
 ### 4.2. Vulnerability in Unsupported Language Triage Handling

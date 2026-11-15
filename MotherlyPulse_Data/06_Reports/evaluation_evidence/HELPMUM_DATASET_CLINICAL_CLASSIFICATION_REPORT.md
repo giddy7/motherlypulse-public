@@ -2,7 +2,7 @@
 
 **Document ID:** `MP-HELPMUM-TRIAGE-2026-11-04`  
 **Date:** November 4, 2026  
-**Project:** MotherlyPulse (Africa AI Upskilling Program Capstone)  
+**Project:** MotherlyPulse (Africa AI Upskilling Program)  
 **Evaluator:** Senior Clinical AI Evaluation Specialist & Backend Auditor  
 **Dataset Subject:** Original HelpMum Africa MamaBench Dataset (`mamabench_cases.csv`)  
 **Scope:** Independent Clinical Urgency Stratification across 4 Categories + Human Review Register  

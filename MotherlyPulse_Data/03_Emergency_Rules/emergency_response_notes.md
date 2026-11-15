@@ -1,7 +1,7 @@
 # Emergency Response Architecture & Handling Notes
 
 **Project:** MotherlyPulse Maternal Health Assistant  
-**Version:** 1.0 (Capstone Scope)  
+**Version:** 1.0 (Project Scope)  
 **Status:** Provisional Architecture / Pending Clinical Review  
 **Date:** October 29, 2026  
 
@@ -43,7 +43,7 @@ In maternal and newborn triage, delays in care seeking and facility arrival are 
 ```text
 EMERGENCY ALERT: This is a critical medical warning sign. Please do not wait. 
 Go immediately to the nearest hospital or maternity emergency centre. 
-If you need urgent assistance, call the national emergency line 112 or Ondo State Emergency Medical Services on 0812 756 5478 / 0803 370 3792.
+If you need urgent assistance, call the national emergency line 112 or Ondo State Emergency Medical Services on 112 / 112.
 ```
 *(Note: Fluent speakers will adapt this exact prompt into Yoruba, Hausa, Igbo, and Nigerian Pidgin for identical fixed execution).*
 

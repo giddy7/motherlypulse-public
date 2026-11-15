@@ -16,7 +16,7 @@
    - The facility directory is restricted to 12 facilities in Akure South and Akure North LGAs. Pregnant women or mothers residing in the remaining 16 LGAs of Ondo State (e.g., Owo, Ondo West, Okitipupa) or other Nigerian states cannot be geolocated to nearest local facilities without further dataset expansion.
 
 3. **Immunization Directory Omission:**
-   - As established in the two-week capstone boundary, comprehensive facility-level vaccine availability schedules (e.g., BCG, OPV, Pentavalent supply days) were excluded and remain future work.
+   - As established in the two-week initial boundary, comprehensive facility-level vaccine availability schedules (e.g., BCG, OPV, Pentavalent supply days) were excluded and remain future work.
 
 ---
 

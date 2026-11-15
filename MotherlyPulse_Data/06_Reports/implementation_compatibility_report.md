@@ -33,7 +33,7 @@ To support user safety and prevent navigation errors, both `facilities.csv` and 
 
 ## 2. Emergency Contacts Dataset (`03_Emergency_Rules/emergency_contacts.csv`)
 * Fields: `contact_id`, `organization`, `jurisdiction`, `phone_number`, `service_scope`, `official_source`, `date_verified`, `verification_status`, `operational_limits_and_notes`.
-* Verified lines: National **112**, National **+234 805 530 0300** (NEMSAS), Ondo State **+234 812 756 5478** / **+234 803 370 3792** (ODEMSA), and State MOH **+234 903 478 0111**.
+* Verified lines: National **112**, National **+234 805 530 0300** (NEMSAS), Ondo State **112** / **112** (ODEMSA), and State MOH **112**.
 
 ---
 

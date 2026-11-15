@@ -15,7 +15,7 @@ To ensure transparent reporting and avoid conflating automated script execution 
 * **Factual Verification (Evidence-Based):**
   - **Verified (4 facilities / 4 immunization centres):** Institutional presence, physical campus location, Level-3 CEmONC capacity, and daily fixed immunization services supported by facility-specific state/federal documentation.
   - **Partially Verified (51 facilities / 39 immunization centres):** Public existence and LGA location supported by official registry entries; specific 24/7 operating hours, CEmONC readiness, local session schedules, and direct phone responsiveness remain **unconfirmed pending field audit**.
-  - **Unverified (2 emergency contact numbers):** National ambulance desk line (`+234 805 530 0300`) and alternative state ambulance hotline (`+234 803 370 3792`) are documented in official policy but marked **unverified** pending direct live call testing.
+  - **Unverified (2 emergency contact numbers):** National ambulance desk line (`+234 805 530 0300`) and alternative state ambulance hotline (`112`) are documented in official policy but marked **unverified** pending direct live call testing.
 
 ---
 

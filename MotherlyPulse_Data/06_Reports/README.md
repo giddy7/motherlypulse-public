@@ -1,86 +1,114 @@
-# MotherlyPulse Data Package (Capstone Scope)
+# MotherlyPulse Data and Evaluation Resources
 
-**Project:** MotherlyPulse Maternal & Child Health Assistant  
-**Institution:** Federal University of Technology, Akure (FUTA) — Africa AI Upskilling Program  
-**Release Version:** v1.0 (Capstone Baseline Data Package)  
-**Date:** October 29, 2026  
-**Primary Architect / Maintainer:** Goodness Ajayi & Project Team  
+This directory and its sibling folders under `MotherlyPulse_Data/` contain the curated clinical reference passages, deterministic emergency triage rules, multilingual conversational/evaluation datasets, Ondo State healthcare facility and immunization directories, and evaluation artifacts for **MotherlyPulse**—a maternal and infant (0–1 year) health support system for Nigeria.
 
 ---
 
-## 1. Overview and Purpose
-MotherlyPulse is an AI-powered conversational maternal health assistant designed to operate over Telegram and WhatsApp for pregnant women and mothers up to 12 months after delivery in Nigeria. The project aims to provide scheduled appointment/medication reminders, culturally appropriate health education, rule-based emergency triage, and verified local facility referral.
+## 1. Purpose and Scope
 
-This dataset package serves as the verified data substrate for:
-1. Grounding a quantized/fine-tuned language model (Gemma 3 1B using LoRA).
-2. Supplying a deterministic rule-based emergency triage engine.
-3. Powering a localized primary healthcare facility referral directory for Akure, Ondo State.
+`MotherlyPulse_Data/` provides the structured knowledge and evaluation substrate for:
+1. **Deterministic Emergency Triage & Escalation:** Rule definitions (`EMERGENCY`, `PRIORITY`, `ROUTINE`) and national `112` emergency routing guidance.
+2. **Grounded Clinical Guidance:** Curated antenatal, postnatal, and infant-care passages used by `PassageRetriever` and as deterministic fallbacks.
+3. **Multilingual Training & Evaluation:** Aligned English, Èdè Yorùbá, and Nigerian Pidgin conversational pairs and safety/triage benchmarks (with canonical `420/60/120` train/val/test JSONL splits stored in root `data/`).
+4. **Local Care Navigation:** Ondo State Primary Health Centre (PHC) and NPHCDA routine immunization schedules.
 
 ---
 
-## 2. Directory Structure
+## 2. Supported Languages, Formats, and Triage Categories
+
+- **Languages:** English (`en`), Èdè Yorùbá (`yo`), and Nigerian Pidgin (`pcm`).
+- **Formats:** CSV, JSON, JSONL, Parquet, and Markdown.
+- **Triage Categories:**
+  - **`EMERGENCY`:** Life-threatening obstetric or neonatal danger signs requiring immediate hospital care and national **`112`** emergency escalation (handled deterministically before any generative model).
+  - **`PRIORITY`:** Symptoms or questions requiring prompt clinical assessment within 24 hours.
+  - **`ROUTINE`:** General antenatal, postnatal, nutrition, hygiene, and immunization guidance.
+
+---
+
+## 3. Directory Structure (Verified Contents)
+
 ```text
 MotherlyPulse_Data/
-├── 00_Project_Docs/                  # Project proposals, scope definitions, data cards
-├── 01_Sources/                       # Authoritative source summaries and master register
-│   ├── source_register.csv           # Master register of all clinical and registry sources
-│   └── source_summaries.txt          # Summaries of WHO, FMoH, and state guidelines
-├── 02_Passages/                      # Grounding passages for RAG and QA
-│   ├── passages.csv                  # 35 structured plain-English health passages
-│   ├── passages.json                 # JSON formatted equivalent
-│   └── create_passages.py            # Transformation & validation script
-├── 03_Emergency_Rules/               # Deterministic safety triage engine definitions
-│   ├── emergency_rules.csv           # 24 danger sign triage rules
-│   ├── emergency_rules.json          # JSON formatted equivalent
-│   ├── rule_traceability.csv         # Clinical lineage from guideline to rule
-│   ├── emergency_contacts.csv        # Confirmed national & Ondo State emergency dispatch lines
-│   ├── emergency_response_notes.md   # Architectural principles for emergency routing
-│   └── create_emergency_rules.py     # Rule generation script
-├── 04_Conversation_Data/             # SFT and alignment dialogue dataset
-│   ├── english_pairs.jsonl           # 40 dialogue pairs (32 train, 8 test)
-│   ├── english_pairs.csv             # Tabular version
-│   ├── emergency_scenarios_en.csv    # 5 full emergency scenario dialogues
-│   ├── safety_tests_en.csv           # 10 adversarial boundary and safety unit tests
-│   ├── adaptation_template.csv       # Multi-language adaptation template (Yo, Ha, Ig, Pcm)
-│   ├── intent_definitions.md         # Intent disambiguation and boundary specifications
-│   └── create_conversation_pairs.py  # Pair compilation script
-├── 05_Facilities_Ondo/               # Verified healthcare facility directory
-│   ├── facilities.csv                # 12 verified facilities in Akure North & South
-│   ├── facilities.json               # JSON formatted equivalent
-│   ├── facility_verification_report.md # Verification methodology and registry audit
-│   └── create_facilities.py          # Directory compilation script
-└── 06_Reports/                       # Governance, quality, and clinical review audits
-    ├── README.md                     # This file
-    ├── data_quality_report.md        # Comprehensive integrity metrics and field audits
-    ├── gaps_and_limits.md            # Transparent operational constraints and known gaps
-    ├── clinical_review_checklist.md  # Formal verification sheet for clinical auditors
-    ├── completion_report.md          # Project deliverable reconciliation report
-    └── validate_data.py              # Automated dataset integrity validator
+├── 01_Sources/
+│   ├── source_register.csv                  # 10 authoritative clinical/registry source entries
+│   └── source_summaries.txt                 # Summaries of WHO, FMoH, Ondo MOH, UNICEF, NPHCDA sources
+├── 02_Passages/
+│   ├── passages.csv / passages.json         # 35 curated clinical guidance passages
+│   └── create_passages.py                   # Passage generation script
+├── 03_Emergency_Rules/
+│   ├── emergency_rules.csv / .json          # 24 emergency/triage rules
+│   ├── rule_traceability.csv                # 24 guideline-to-rule traceability records
+│   ├── emergency_contacts.csv               # 1 confirmed national emergency routing record (112)
+│   ├── emergency_response_notes.md          # Emergency routing protocol notes
+│   └── create_emergency_rules.py            # Rule compilation script
+├── 04_Conversation_Data/
+│   ├── english_pairs.{csv,jsonl}            # 200 English QA pairs
+│   ├── yoruba_pairs.{csv,jsonl}             # 200 Yorùbá QA pairs
+│   ├── pidgin_pairs.{csv,jsonl}             # 200 Nigerian Pidgin QA pairs
+│   ├── multilingual_pairs.{csv,jsonl}       # 200 aligned EN/YO/PCM records
+│   ├── adaptation_template.csv              # 200-row multilingual adaptation template
+│   ├── emergency_scenarios_en.csv           # 6 emergency scenario cases
+│   ├── safety_tests_en.csv                  # 11 boundary & safety test cases
+│   ├── fixed_15_evaluation_prompts.json     # 15 cross-lingual benchmark prompts (5 EN, 5 YO, 5 PCM)
+│   └── intent_definitions.md                # Intent and clinical boundary definitions
+├── 05_Facilities_Ondo/
+│   ├── facilities.csv / facilities.json     # 55 Ondo State Primary Health Centre records
+│   ├── facility_verification_report.md      # Facility registry audit notes
+│   └── create_facilities.py                 # Facility compilation script
+├── 06_Reports/
+│   ├── README.md                            # This documentation & index
+│   ├── data_quality_report.md               # Dataset integrity and field checks
+│   ├── gaps_and_limits.md                   # Known dataset gaps and operational limits
+│   ├── clinical_review_checklist.md         # Checklist for clinical reviewers
+│   ├── MULTILINGUAL_HUMAN_REVIEW_CHECKLIST.md # Checklist for native-speaker review
+│   ├── source_and_verification_register.md  # Source verification register
+│   ├── statewide_coverage_report.md         # Ondo State geographic coverage summary
+│   ├── implementation_compatibility_report.md # Application schema compatibility notes
+│   ├── RETRIEVAL_EVALUATION_REPORT.md       # Passage retrieval benchmark output
+│   ├── mamabench_evaluation_report.md       # MamaBench evaluation output
+│   ├── COMPARATIVE_EVALUATION_RESULTS.md    # Comparative evaluation summary
+│   ├── *.csv                                # Raw comparative & error-analysis CSVs
+│   ├── validate_data.py / validate_multilingual_data.py # Dataset validation scripts
+│   └── evaluation_evidence/                 # Preserved historical benchmark, safety & QA reports
+├── 07_Immunization_Ondo/
+│   ├── immunization_centers.csv / .json     # 43 Ondo State immunization center records
+│   ├── national_immunization_schedule_nigeria.csv # 21 NPHCDA schedule entries
+│   └── immunization_verification_report.md  # Immunization dataset notes
+└── mamabench_evaluation/
+    ├── mamabench_cases.{csv,parquet}        # 434 MamaBench evaluation vignettes
+    ├── helpmum_mamabench_classified.csv     # 434 classified vignettes
+    └── helpmum_human_review_cases.csv       # 1 human-review sample record
 ```
 
 ---
 
-## 3. Data Provenance & Authoritative Citations
-All medical content originates strictly from official, non-copyright-infringing, public-domain or CC BY-NC-SA 3.0 IGO licensed health guidelines:
-- **World Health Organization (WHO):**
-  - *WHO recommendations on antenatal care for a positive pregnancy experience (2016)*
-  - *WHO recommendations on maternal and newborn care for a positive postnatal experience (2022)*
-  - *Managing Complications in Pregnancy and Childbirth (IMPAC 2nd Ed, 2017)*
-- **Federal Ministry of Health and Social Welfare (Nigeria):**
-  - *National Antenatal Care Guidelines and Training Manual (2020)*
-  - *National Life Saving Skills (LSS) Protocol for Primary Healthcare (2019)*
-  - *Nigeria Health Facility Registry (NHFR) Master List (2024)*
-- **Ondo State Authorities:**
-  - *Ondo State Ministry of Health & Primary Health Care Development Agency (OSPHCDA) Directory (2024)*
-  - *Ondo State Emergency Medical Services Agency (ODEMSA)*
-- **UNICEF:**
-  - *Facts for Life: Maternal and Newborn Danger Signs Community Guide (2021)*
+## 4. Data Provenance and Sources
+
+Clinical content is derived from public-health guidelines listed in `01_Sources/source_register.csv`:
+- **World Health Organization (WHO):** *Antenatal Care (2016)*, *Postnatal Care (2022)*, and *Managing Complications in Pregnancy and Childbirth (IMPAC, 2017)*.
+- **Federal Ministry of Health and Social Welfare (Nigeria):** *National Antenatal Care Guidelines (2020)*, *National Life Saving Skills (LSS) Protocol (2019)*, and *Nigeria Health Facility Registry (NHFR)*.
+- **Ondo State Authorities:** *Ondo State Ministry of Health / OSPHCDA Directory*.
+- **UNICEF & NPHCDA:** *Facts for Life (2021)* and Nigeria's routine infant immunization schedule.
 
 ---
 
-## 4. Key Rules and System Boundaries
-1. **No Medical Hallucination / Invention:** The assistant never invents diseases, medications, or facility records.
-2. **Deterministic Emergency Escalation:** Red flags bypass the LLM and output an immediate fixed urgent-care referral with emergency dispatch numbers.
-3. **Clinical Role Boundary:** The assistant explicitly declines to diagnose conditions, prescribe medications, or recommend dosages.
-4. **Pending Clinical Review:** All rules, passages, and conversation pairs are marked provisional pending review by certified Nigerian midwives and medical officers.
+## 5. Limitations, Privacy, and Responsible Use
 
+- **No Patient PII:** All conversational, passage, and benchmark files contain curated reference or synthetic examples—no real patient records or personal health information are included.
+- **Pending Clinical & Linguistic Review:** Formal review by certified Nigerian clinicians/midwives and native-speaker Yorùbá/Nigerian Pidgin reviewers remains pending.
+- **Facility Operational Status:** The 55 Ondo State PHC records and 43 immunization center records require periodic on-ground verification for current opening hours and 24-hour staffing.
+- **Clinical Boundary:** These resources support health education, triage routing, and clinic discovery; they do not provide medical diagnosis or prescriptions.
+
+---
+
+## 6. Inspecting and Validating the Data
+
+Run the dataset validation scripts from the repository root:
+```bash
+python MotherlyPulse_Data/06_Reports/validate_data.py
+python MotherlyPulse_Data/06_Reports/validate_multilingual_data.py
+```
+
+### Documentation Index
+- **Core Data & Coverage Docs (Category A):** [data_quality_report.md](data_quality_report.md), [gaps_and_limits.md](gaps_and_limits.md), [statewide_coverage_report.md](statewide_coverage_report.md), [source_and_verification_register.md](source_and_verification_register.md), [clinical_review_checklist.md](clinical_review_checklist.md), [MULTILINGUAL_HUMAN_REVIEW_CHECKLIST.md](MULTILINGUAL_HUMAN_REVIEW_CHECKLIST.md).
+- **Research & Evaluation Evidence (Category B):** [evaluation_evidence/](evaluation_evidence/), [RETRIEVAL_EVALUATION_REPORT.md](RETRIEVAL_EVALUATION_REPORT.md), [mamabench_evaluation_report.md](mamabench_evaluation_report.md), [COMPARATIVE_EVALUATION_RESULTS.md](COMPARATIVE_EVALUATION_RESULTS.md), and root [DATASET_CARD.md](../../DATASET_CARD.md).

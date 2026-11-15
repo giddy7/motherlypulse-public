@@ -57,7 +57,7 @@ User Message Input (with language parameter)
 ### Safety Rules Enforced:
 1. **Zero Downgrade:** If triage evaluates an input as `emergency`, the category remains `emergency` unconditionally, regardless of language tags.
 2. **No Routine Invention:** If emergency cannot be determined because the language is unsupported, the system returns `urgency_category: "unassessed"` with `status: "language_not_supported"`. It **never** fabricates a `routine` category.
-3. **Emergency Escalation Contacts:** Both 112 and ODEMSA (0812 756 5478) are provided in all unsupported-language responses.
+3. **Emergency Escalation Contacts:** Both 112 and ODEMSA (112) are provided in all unsupported-language responses.
 
 ---
 
@@ -88,7 +88,7 @@ Example response payload for an Emergency inquiry with an unsupported language p
   "medication_safety_triggered": false,
   "language": "English",
   "requested_language": "Hausa",
-  "response": "EMERGENCY: This is a critical medical warning sign that requires immediate medical attention. Please do not wait. Go immediately to the nearest hospital or emergency maternity centre.\nEmergency Contacts:\n- National Emergency: Call 112 (Toll-Free)\n- Ondo State Emergency Medical Services (ODEMSA): 0812 756 5478\nIf you can safely travel, proceed to your nearest General Hospital or Comprehensive Health Centre now.\n\nNotice: You requested 'Hausa'. While MotherlyPulse cannot converse in 'Hausa', a critical medical emergency was detected. Please call 112 or ODEMSA immediately as instructed above.",
+  "response": "EMERGENCY: This is a critical medical warning sign that requires immediate medical attention. Please do not wait. Go immediately to the nearest hospital or emergency maternity centre.\nEmergency Contacts:\n- National Emergency: Call 112 (Toll-Free)\n- Ondo State Emergency Medical Services (ODEMSA): 112\nIf you can safely travel, proceed to your nearest General Hospital or Comprehensive Health Centre now.\n\nNotice: You requested 'Hausa'. While MotherlyPulse cannot converse in 'Hausa', a critical medical emergency was detected. Please call 112 or ODEMSA immediately as instructed above.",
   "delay_incurred": false,
   "action": "Immediate Emergency Hospital Escalation"
 }

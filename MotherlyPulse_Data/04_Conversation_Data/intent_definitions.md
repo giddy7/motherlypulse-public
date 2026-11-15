@@ -2,7 +2,7 @@
 
 **Project:** MotherlyPulse Maternal Health Assistant  
 **Classification System:** 5 Intent Classes & 3 Provisional Triage Levels  
-**Scope:** Two-Week Capstone Architecture  
+**Scope:** Two-Week Initial Architecture  
 
 ---
 
@@ -18,7 +18,7 @@
 ### 2. `Non_Emergency_Symptom`
 * **Definition:** Common, physiological, mild, or moderate pregnancy or postpartum symptoms that are uncomfortable but not acutely life-threatening, or symptoms requiring prompt scheduled primary care evaluation rather than emergency ambulance dispatch.
 * **Triage Level:** `Routine` (for mild physiological symptoms) or `Priority` (for symptoms needing same-day clinic visits like suspected UTI or mild mastitis).
-* **Execution Pathway:** Grounded passage lookup + Gemma 3 1B model response.
+* **Execution Pathway:** Grounded passage lookup + Gemma-2-2B model response.
 * **Key Symptoms Included:** Mild morning sickness / nausea, heartburn, constipation, mild evening foot swelling, mild backache, or routine breast fullness.
 * **Expected System Response:** Kind, reassuring 2–4 sentence reply based directly on verified passages, offering non-pharmacological comfort tips and advising the user to mention it at their next antenatal checkup.
 
@@ -32,7 +32,7 @@
 ### 4. `General_Maternal_Edu`
 * **Definition:** Informational questions regarding pregnancy stages, recommended antenatal schedules, balanced local nutrition, labour preparation, exclusive breastfeeding, baby hygiene, or postpartum family planning.
 * **Triage Level:** `Routine`
-* **Execution Pathway:** Grounded passage lookup + Gemma 3 1B model response.
+* **Execution Pathway:** Grounded passage lookup + Gemma-2-2B model response.
 * **Expected System Response:** Simple, supportive, 2–4 sentence informational response grounded entirely within checked health passages.
 
 ### 5. `Routine_Reminder_Ack`

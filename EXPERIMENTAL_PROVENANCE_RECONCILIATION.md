@@ -307,7 +307,7 @@ Peak Training VRAM:     7.24 GB Allocated | 8.56 GB Reserved
 | **D9** | MamaBot-Llama Post-Training Eval | STAGED | PENDING | PENDING | PENDING | Awaiting Meta Review |
 | **D10**| Telegram AI Connector & Scaffold | YES | YES | YES | YES (Git & Drive) | YES (189 Tests Pass) |
 | **D11**| Master Comparative Evaluation | YES (Chewie) | YES | YES | YES (Git & Drive) | Ready for MamaBot |
-| **D12**| Hybrid Architecture Benchmark | YES | YES | YES | YES (Git & Drive) | YES (0.05ms Bypass) |
+| **D12**| Hybrid Architecture Benchmark | YES | YES | YES | YES (Git & Drive) | YES (Deterministic Bypass) |
 | **D13**| End-to-End System Regression | YES | YES | YES | YES (Git & Drive) | YES (6/6 Steps Pass) |
 | **D14**| System Showcase & Packaging | YES | YES | YES | YES (Git & Drive) | Pending Human Board |
 

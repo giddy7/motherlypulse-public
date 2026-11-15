@@ -18,7 +18,7 @@ Data sources used for cross-checking:
 ---
 
 ### 2. Breakdown of Verification Status
-Of the 12 verified facilities:
+Of the 12 initial Akure facilities (later expanded to 55 statewide PHC records):
 * **`cross_checked_second_source` (7 facilities):** Confirmed in both NHFR and official Ondo State Ministry of Health / ODCHC directories:
   - UNIMEDTH Akure Complex (`FAC-OND-AKS-001`)
   - State Specialist Hospital / Mother and Child Hospital Oke-Aro (`FAC-OND-AKS-002`)
@@ -46,5 +46,5 @@ Of the 12 verified facilities:
 
 ### 4. Service Capabilities & Operational Caveats
 * **Emergency & Delivery Services:** Delivery capability is explicitly marked only where verified by primary health guidelines or state comprehensive designations. Basic Health Centres (BHCs) are recorded as `"needs confirmation"` regarding night delivery coverage.
-* **Telephone Numbers:** The master registries do not reliably list public dispatch numbers for individual PHCs. National and State hotlines (**112**, **08055300300**, and ODEMSA lines) are therefore provided as the verified escalation conduits.
+* **Telephone Numbers:** The master registries do not reliably list public dispatch numbers for individual PHCs. National and State hotlines (**112**, **112**, and ODEMSA lines) are therefore provided as the verified escalation conduits.
 

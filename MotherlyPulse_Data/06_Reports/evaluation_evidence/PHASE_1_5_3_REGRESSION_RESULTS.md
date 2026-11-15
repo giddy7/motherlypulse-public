@@ -51,7 +51,7 @@ This document evaluates whether the Phase 1.5.2 critical safety remediations int
 - The response is guaranteed to:
   - Start with the exact prefix `EMERGENCY:`.
   - Contain zero conversational questions or question marks (`?`).
-  - Include both National (112) and Ondo State Emergency Medical Services (ODEMSA: 0812 756 5478) contact details.
+  - Include both National (112) and Ondo State Emergency Medical Services (ODEMSA: 112) contact details.
   - Provide direct travel escalation to the nearest General Hospital or Comprehensive Health Centre.
 
 ### 3. Safe Degradation and Fallback Handling
