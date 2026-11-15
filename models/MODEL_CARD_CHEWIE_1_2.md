@@ -15,7 +15,7 @@
 Chewie 1.2 is an adapted language model designed to deliver culturally nuanced, empathetic maternal and child health guidance for pregnant women, new mothers, and caregivers in Ondo State, Nigeria. It was fine-tuned to classify and respond in three clinical tiers: `EMERGENCY:`, `PRIORITY:`, and `ROUTINE:`.
 
 Chewie 1.2 operates strictly inside the **MotherlyPulse Hybrid Safety Pipeline**:
-1. **Deterministic Emergency Bypass:** Life-threatening emergencies bypass the model entirely in 0.05 ms and return vetted 112 escalation instructions.
+1. **Deterministic Emergency Bypass:** Life-threatening emergencies bypass the model entirely and return vetted 112 escalation instructions.
 2. **Clinical Invariant Validator:** Model responses are screened for forbidden substances (e.g., *agbo*, aspirin in pregnancy) and required escalation protocols before reaching a user.
 3. **Deterministic Fallback:** Any model failure, timeout, or safety violation seamlessly defaults to approved reference text.
 
@@ -68,7 +68,7 @@ Evaluated across 135 held-out records (120 test scenarios + 15 fixed benchmark p
 ## 5. Known Limitations & Safety Mitigation
 1. **Low-Resource Language Token Loops (Yoruba 2B):**
    The 2B parameter base model exhibits token loops and attention sink failure on complex, polysyllabic Yoruba emergency queries, occasionally generating `ROUTINE:` instead of escalating to 112.  
-   *Mitigation:* In the live MotherlyPulse architecture, **the deterministic triage classifier intercepts emergency keywords in 0.05 ms before model generation**, ensuring 100% of emergency presentations receive 112 escalation regardless of base model capacity.
+   *Mitigation:* In the MotherlyPulse safety architecture, **the deterministic triage classifier intercepts emergency keywords before model generation**, ensuring emergency presentations receive 112 escalation regardless of base model capacity.
 2. **False Alarms on Prohibitive Warnings:**
    Keyword filters can flag responses where the model correctly warns *against* dangerous practices (e.g., advising against *agbo* in pregnancy). The deterministic fallback safely replaces these with verified reference text.
 3. **No Unassisted Clinical Prescribing:**

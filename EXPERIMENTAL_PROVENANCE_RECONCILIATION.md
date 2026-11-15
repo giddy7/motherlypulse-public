@@ -9,7 +9,7 @@
 **Persistent Artifact Storage:** Google Drive `/content/drive/MyDrive/MotherlyPulse_Artifacts/` (Verified bit-for-bit via SHA-256)  
 **Canonical Test Suite Status:** **189 / 189 unit and integration tests passing (100%)**  
 **Mandatory Project Completion Deadline:** Wednesday, 11 November 2026, 23:59 WAT *(12–13 November strictly reserved for clinical review and rehearsal)*  
-**Official Project Submission Date:** 14 November 2026  
+**Reconciliation Date:** 14 November 2026  
 
 ---
 
@@ -206,8 +206,8 @@ Every single failure in `eval_results/chewie_finetuned_eval.csv` was audited:
 
 ### 3.4 Key Clinical Insight on Yoruba Emergency Failures
 1. **The 2B Capacity Ceiling:** Gemma-2-2B has an extremely small representation of Yoruba diacritics in its base vocabulary. Under 4-bit quantization and 80 steps of fine-tuning, when given long-form clinical Yoruba emergency prompts, the model suffers from **attention sink degeneration** (repeating tokens like `ẹ̀jẹ̀ ẹ̀jẹ̀...` or `omi omi...`).
-2. **Why Triage Decoupling is Life-Critical:** This empirical finding is the single strongest clinical justification for MotherlyPulse's **Zero-Trust Hybrid Safety Architecture**:
-   - Because emergency detection runs in **0.05 ms** in `DynamicTriageClassifier` *before* the neural generator, **none of these 14 Yoruba emergencies are ever exposed to neural degeneration in production**.
+2. **Why Triage Decoupling is Essential:** This empirical finding is the primary clinical justification for MotherlyPulse's **Deterministic-First Hybrid Safety Architecture**:
+   - Because emergency detection runs in `DynamicTriageClassifier` *before* the neural generator, **none of these 14 Yoruba emergencies are exposed to neural generation when deterministic triage is active**.
    - The classifier intercepts the Yoruba danger keywords (`eje pupo`, `daku`, `epo robi`, `igbona giga`) and dispatches the approved emergency hospital instructions and national 112 line deterministically with zero delay.
 
 ---
@@ -254,7 +254,7 @@ Peak Training VRAM:     7.24 GB Allocated | 8.56 GB Reserved
 ### 5.2 Deliverable D12: Hybrid Architecture Benchmark
 - **File:** [`scripts/benchmark_hybrid_architecture.py`](scripts/benchmark_hybrid_architecture.py)
 - **Measurement Methodology:** Benchmarked wall-clock time using `time.perf_counter()`.
-  - **Emergency Bypass Latency:** **0.05 ms** (instant deterministic pattern match; zero neural generation).
+  - **Emergency Bypass:** Deterministic pattern match prior to any neural generation.
   - **Simulated Neural Latency:** ~450.0 ms.
   - **Live A100 Neural Inference Latency:** ~2,750.0 ms.
   - **Fail-Safe Interception Rate:** **100.0%** of injected hallucinations (*agbo*, aspirin) and offline states were caught by `ClinicalInvariantValidator` and reverted to approved templates.

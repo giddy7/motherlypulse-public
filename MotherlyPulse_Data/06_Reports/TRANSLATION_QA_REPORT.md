@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-In accordance with academic supervision recommendations, the authoritative 200-pair English conversational dataset has been extended and localized into **Yoruba (`yo`)** and **Nigerian Pidgin (`pcm`)**.
+The authoritative 200-pair English conversational dataset has been extended and localized into **Yoruba (`yo`)** and **Nigerian Pidgin (`pcm`)**.
 
 - **Total Scenarios:** 200 clinical conversational scenarios (100 Pregnancy, 100 Infant & Postnatal Care).
 - **Total Multilingual Units:** 600 conversational pairs across 3 languages (English: 200, Yoruba: 200, Nigerian Pidgin: 200).

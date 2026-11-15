@@ -4,7 +4,7 @@
 
 - **Selected Base Model:** `google/gemma-2-2b-it` (pinned HF revision `299a8560bedf22ed1c72a8a11e7dce4a7f9f51f8`).
 - **Why Gemma-2-2B-IT (`Chewie 1.2`):**
-  1. Compact `2.62B` parameter footprint enables 4-bit QLoRA training on a single GPU in `< 3` minutes and CPU deployment as a `1.59 GiB` `Q4_K_M` GGUF (`~1.18 GiB` RAM in `llama-server`) on a `7.8 GiB` RAM VPS.
+  1. Compact `2.62B` parameter footprint enables 4-bit QLoRA training on a single GPU in `< 3` minutes and optional CPU inference via `llama.cpp` (`Q4_K_M` GGUF, `1.59 GiB` file size).
   2. Strong instruction-following baseline in English and Nigerian Pidgin, adaptable to structured clinical prefixes (`EMERGENCY:`, `PRIORITY:`, `ROUTINE:`).
 - **Deferred Alternative:** A planned second model (`MamaBot-Llama`, `meta-llama/Llama-3.1-8B-Instruct`) was deferred to future work due to gated access timing and higher VPS RAM requirements.
 

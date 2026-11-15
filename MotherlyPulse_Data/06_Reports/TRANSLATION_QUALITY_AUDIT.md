@@ -119,7 +119,7 @@ In Test 10 of `validate_data.py`, the original logic asserted that all translati
 2. Verify that `user_message_ha`, `reply_ha`, `user_message_ig`, and `reply_ig` remain **100% blank** (as Hausa and Igbo translation was excluded from this phase).
 
 ### B. Why the Modification Was Necessary
-The previous project phase operated under an explicit instruction: *"Generate English content ONLY... Do not attempt to populate Yoruba dataset fields"*. Consequently, Test 10 was created to guard against unverified machine translation. When the supervisor subsequently instructed the team to extend the dataset to Yoruba and Nigerian Pidgin, the adaptation template was populated. Without updating Test 10, the test suite failed purely because the template was no longer empty.
+The previous project phase operated under an explicit instruction: *"Generate English content ONLY... Do not attempt to populate Yoruba dataset fields"*. Consequently, Test 10 was created to guard against unverified machine translation. When the project was subsequently extended to the dataset to Yoruba and Nigerian Pidgin, the adaptation template was populated. Without updating Test 10, the test suite failed purely because the template was no longer empty.
 
 ### C. Were Existing Validation Checks Weakened?
 - **No core safety checks were weakened or removed.** All tests evaluating:

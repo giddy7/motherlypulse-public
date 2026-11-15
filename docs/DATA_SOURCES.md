@@ -14,7 +14,7 @@
 
 ## 2. Ondo State Healthcare Facility & Immunization Data
 
-- **`MotherlyPulse_Data/05_Facilities_Ondo/facilities.json` & `facilities.csv`:** Directory of `52` verified Primary Health Centres (PHCs) across Ondo State LGAs (Akure, Ondo, Owo, etc.) with coordinates and addresses for `LocationService`.
+- **`MotherlyPulse_Data/05_Facilities_Ondo/facilities.json` & `facilities.csv`:** Directory of `55` Primary Health Centre (PHC) records across Ondo State LGAs (Akure, Ondo, Owo, etc.) with coordinates and addresses for `LocationService`.
 - **`MotherlyPulse_Data/07_Immunization_Ondo/`:** Nigerian National Primary Health Care Development Agency (NPHCDA) routine infant immunization schedule (BCG, OPV, Pentavalent, Measles, Yellow Fever) powering `ReminderEngine`.
 
 ## 3. Maternal Risk Prediction Synthetic Dataset (`maternal_risk_prediction/data/`)

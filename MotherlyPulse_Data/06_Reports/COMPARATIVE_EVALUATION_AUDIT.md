@@ -11,7 +11,7 @@
 
 ## 1. Executive Summary & Result Classification Matrix
 
-Following the supervisor's directive, an independent, rigorous technical and methodological audit of the comparative evaluation pipeline (`motherlypulse_app/eval_models/`, `motherlypulse_app/run_comparative_eval.py`, and associated datasets) was conducted.
+An independent, rigorous technical and methodological audit of the comparative evaluation pipeline (`motherlypulse_app/eval_models/`, `motherlypulse_app/run_comparative_eval.py`, and associated datasets) was conducted.
 
 The audit investigated three core anomalies:
 1. **Identical Standalone Metrics:** Why Chewie 1.2 and MamaBot-Llama reported identical scores across almost every clinical metric.
@@ -50,7 +50,7 @@ An inspection of `motherlypulse_app/eval_models/` (`base_model.py`, `chewie_mode
 
 ## 3. Root Cause Analysis: Why Chewie and MamaBot Produced Identical Metrics
 
-The supervisor rightly questioned why two vastly different architectures (MedGemma-4B vs. Llama-3.1-8B) produced identical scores across 120 multilingual instances and 434 MamaBench vignettes.
+Technical review questioned why two vastly different architectures (MedGemma-4B vs. Llama-3.1-8B) produced identical scores across 120 multilingual instances and 434 MamaBench vignettes.
 
 Our line-by-line code audit revealed the exact mechanism:
 
@@ -85,7 +85,7 @@ Our line-by-line code audit revealed the exact mechanism:
 
 ## 4. Audit of the Hybrid Router: The "Unsafe Reassurance" Bug
 
-The supervisor observed that the Hybrid Router paradoxically:
+Audit review observed that the Hybrid Router paradoxically:
 - Improved Correct Escalation Rate (84.17% vs. 81.67%)
 - Improved Delayed Referral Rate (5.13% vs. 17.95%)
 - **Worsened Unsafe Reassurance Rate (14.29% vs. 6.35%)**

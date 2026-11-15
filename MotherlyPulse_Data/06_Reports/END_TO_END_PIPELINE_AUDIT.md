@@ -36,7 +36,7 @@ The diagram below traces an incoming message from the client entry point to the 
       • Zero question marks            • Enforces category prefix
       • Direct 112 / ODEMSA                      │
       • Invariant validation bypassed            ▼
-      • Guaranteed < 0.05 ms         [4. Symptom Extraction: extract_symptom()]
+      • Deterministic rule match         [4. Symptom Extraction: extract_symptom()]
                  │                     • Language-scoped lexicon (EN, YO, PCM)
                  │                     • Clause-bounded negation check
                  │                     • Denied symptoms return None
@@ -116,7 +116,7 @@ The diagram below traces an incoming message from the client entry point to the 
 - **Mechanism:**
   Emergency messages immediately return `self.emergency_templates` (lines 133–153 of `assistant.py`) and do **not** invoke `self.validator.validate()`.
 - **Audit Assessment:**
-  This is an intentional architectural bypass to guarantee sub-millisecond emergency dispatch (< 0.05 ms) and prevent any runtime validation failure from blocking life-critical emergency contacts. Because the emergency templates are static, immutable, pre-approved strings containing official numbers (112, ODEMSA 0812 756 5478), this bypass is clinically safe and operationally justified.
+  This is an intentional architectural bypass to prevent any runtime validation failure from blocking life-critical emergency contacts. Because the emergency templates are static, immutable, pre-approved strings containing official numbers (112), this bypass is clinically safe and operationally justified.
 
 ### Pipeline Finding E2E-03: Silent Default on Unsupported / Empty Inputs (MEDIUM)
 - **Mechanism:**

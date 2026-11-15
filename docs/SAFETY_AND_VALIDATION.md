@@ -1,6 +1,6 @@
 # Safety & Clinical Validation Architecture
 
-## 1. Strict Emergency Preemption (`0.05 ms` Deterministic Bypass)
+## 1. Deterministic Emergency Preemption
 
 Before any AI model is invoked, `DynamicTriageClassifier` (`motherlypulse_app/classifier.py`) scans incoming messages using curated multilingual keywords and fuzzy regex rules across English, Yoruba, and Nigerian Pidgin:
 - **Emergency triggers** (e.g., severe vaginal bleeding, convulsions/eclampsia, unconsciousness, neonatal fever/difficulty breathing) immediately return an approved deterministic emergency template instructing the user to call **Nigeria National Emergency Number `112`** and go to the nearest hospital.

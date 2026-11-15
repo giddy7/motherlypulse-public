@@ -40,7 +40,7 @@ The benchmark incorporated:
 ## 3. Workload Breakdown
 
 ### 3.1. Distribution by Urgency Category
-- **EMERGENCY:** 418 transactions (41.8%) — *Bypasses adaptation; mean latency < 0.05 ms*
+- **EMERGENCY:** 418 transactions (41.8%) — *Bypasses adaptation; deterministic bypass*
 - **PRIORITY:** 167 transactions (16.7%) — *Full 4-slot adaptation with facility/timeframe enforcement*
 - **ROUTINE:** 415 transactions (41.5%) — *Full 4-slot educational/safety adaptation*
 

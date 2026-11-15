@@ -86,7 +86,7 @@ class MamaBotModel(BaseHealthcareLLM):
 
 ## 4. Inference Mechanism Audit: Why Chewie and MamaBot Produced Identical Metrics
 
-The supervisor observed that **Chewie 1.2 and MamaBot-Llama produced identical values across almost every clinical metric**:
+Audit review observed that **Chewie 1.2 and MamaBot-Llama produced identical values across almost every clinical metric**:
 - CER: 81.67%
 - CERR: 74.36%
 - URR: 6.35%
